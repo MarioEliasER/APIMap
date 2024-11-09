@@ -1,0 +1,398 @@
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start; 
+	color: #003459;
+	height: 100vh;
+	background-color: #f4f4f4;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	position: relative;
+  z-index: 2;
+	background: rgba(255, 255, 255, 0.8); 
+
+	background-color: #1B396A;
+	padding: 20px;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	text-align: center;
+	width: 300px;
+	position: fixed;
+	top: 60px;
+	left: 0;
+	right: 0;
+	margin: auto; 
+}
+
+header h1 {
+	font-size: 16px;
+	font-weight: normal;
+	align-items: center;
+	margin: 0;
+	text-align: center;
+}
+
+.iconTitle {
+	display: flex;
+	align-items: center;	
+}
+
+.icon {
+	width: 40px;
+	padding-right: 5px;
+	margin-top: -10px
+}
+
+.iconMenu {
+	width: 25px;
+	margin-top: 5px;
+}
+
+.Lista-Container {
+	background-color: #fff;
+	padding: 20px;
+	text-align: center;
+	width: 300px;
+	margin: auto; 
+ height: 470px;
+ position: fixed;
+	bottom: 60px;
+	left: 0;
+	right: 0;
+}
+
+
+.search {
+	display: flex;
+	align-items: center;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	margin: -10px;
+	padding: 5px;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+
+.search2 {
+	position: relative;
+  z-index: 2;
+	background: rgba(255, 255, 255, 0.8);
+
+	display: flex;
+	align-items: center;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	margin: -10px;
+	margin-left: -10px;
+	margin-right: -10px;
+	padding: 5px;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+
+.busquedaIcon {
+	margin-right: 10px;
+	width: 18px;
+	height: 18px;
+}
+
+.searchtext {
+	border: none;
+	outline: none; 
+	-webkit-appearance: none; /* Quita estilos por defecto en Chrome/Safari */
+	-moz-appearance: none; /* Quita estilos por defecto en Firefox */
+	appearance: none; /* Para otros navegadores */
+	padding: 3px;
+	font-size: 15px;
+	width: 100%;
+	border-radius: 3px;
+	background: transparent;
+}
+
+.ListaElementos {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-left: -9px;
+	margin-right: -9px;
+}
+.ListaElementos a{
+	text-decoration: none;
+}
+
+.elementos {
+	display: flex;
+	background-color: #007EA7;
+	font-size: 14px;
+	text-align: left;
+	border-radius: 10px;
+	height: 60px;
+	color: white;
+	align-items: center;
+}
+
+.elementos img {
+	width: 40px; 
+	margin-right: 10px;
+	margin-left: 5px;
+}
+
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+	margin-top:-110px ;
+	margin-left: -18px;
+}
+
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; 
+}
+
+	.scroll-container {
+		position: relative;
+		background: rgba(255, 255, 255, 0.9);
+		z-index: 2;
+		width: 320px;
+		height: 80px;
+		overflow-y: auto;
+		padding: 10px;
+		display: flex;
+		gap: 5px;
+		margin-top: -27px;
+		margin-left: -20px;
+		font-size: 8px;
+	}
+	
+	.description {
+		display: flex;
+		align-items: center;
+		text-align: left;
+		background-color: #2a6fb4;
+		color: white;
+		padding: 10px;
+		border-radius: 8px;
+		width: 110px;
+		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	}
+	.scroll-container a{
+		display: flex;
+		align-items: center;
+		text-align: left;
+		color: #fff;
+		width: 320px;
+		height: 80px;
+		text-decoration: none;
+	}
+	
+	.place-icon {
+		width: 25px;
+		height: 25px;
+		border-radius: 4px;
+		margin-right: 10px;
+		object-fit: cover;
+	}
+	
+	.Title h2 {
+		font-weight: bold;
+		font-size: 11px;
+	}
+	
+
+/* Botón flotante */
+.floating-button {
+	position: relative;
+		background: rgba(255, 255, 255, 255);
+		z-index: 2;
+	top: -430px;
+	left: 135px;
+	padding: 5px 5px;
+	border-radius: 8px;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+.floating-button img{
+	width: 40px;
+	height: 40px;
+}
+
+nav {
+	background-color: #D9D9D9;
+	display: flex;
+	position: fixed;
+	bottom: 30px;
+	left: 0;
+	right: 0;
+	justify-content: space-around;
+	text-align: center;
+	padding: 5px 0;
+	width: 340px;
+	margin: 10px auto;
+}
+
+.nav-item a {
+	text-decoration: none;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.nav-item img {
+	width: 30px;
+	height: 30px;
+}
+
+nav h3 {
+	margin-top: 5px;
+	margin-bottom: 2px;
+	font-size: 13px;
+}
+
+/*Vista Detalles */
+.ImgAula{
+	width: 300px;
+	min-height: 260px;
+	max-height: 270px;
+	border-radius: 2px;
+}
+
+
+.ImgMapa{
+  position: relative;
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+	margin-top:-300px ;
+	margin-left: -18px;
+}
+
+.ImgMapa2 {
+  position: absolute;
+  top: -25px;
+  left: 32px;
+  width: 80%;
+  height: 75%;
+  object-fit:contain;
+  z-index: 0; 
+}
+
+.Info{
+	background-color: #296EB4;
+	color: white;
+	height: 120px;
+	max-height: 120px;
+	border-radius: 10px;
+}
+.Info h4{
+	font-size: medium;
+	padding-top: 10px;
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+.Info p{
+	padding: 8px;
+	padding-top: 0;
+	font-size: small;
+	margin-top: 1;
+	text-align: left;
+}
+
+.SeleccionarRuta2{
+	position: relative;
+	background: rgba(255, 255, 255, 255);
+	z-index: 2;
+	top: 275px;
+	left: 2px;
+}
+
+.SeleccionarRuta2 p{
+	margin-top: 2px;
+	padding: 0;
+	color: black;
+	text-align: left;
+	margin-bottom: 5px;
+}
+.SeleccionarRuta p{
+	margin-top: 2px;
+	padding: 0;
+	color: black;
+	text-align: left;
+	margin-bottom: 5px;
+}
+.ruta{
+	width: 300px;
+	max-width: 300px;
+	margin-bottom: 4px;
+	border-radius: 8px;
+	border: none;
+	background-color: #D9D9D9;
+	text-align: center;	
+	height: 20px;
+}
+
+.GenerarRuta{
+	margin-top: 5.5px;	
+	/*background-color: #296EB4; NO DEBERIA TENER FONDO*/ 
+	border-radius: 6px;
+	height: 25px;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+
+/* Vista ayuda */
+.informacion{
+	font-size: small;
+}
+.informacion p{
+	text-align: left;
+}
+.listaAreas{
+text-align: left;
+}
+.imagAyuda{
+	width: 130px;
+}
+.imagAyuda2{
+	width: 260px;
+}
+
+/* Vista InfoDesarrollador */
+.imagLogo{
+	max-width: 230px;
+}
+#title{
+	margin-top: 40px;
+	margin-bottom: -5px;
+}
+.Desarrolladores{
+	text-align: left;
+	color: black;
+	margin-bottom: 20px;
+}
+.login{
+	width: 150px;
+	height: 30px;
+	background-color: #007EA7;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 16px;
+
+}

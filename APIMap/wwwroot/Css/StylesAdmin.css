@@ -1,0 +1,398 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #003459;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #1B396A;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    width: 300px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+    header h1 {
+        font-size: 16px;
+        font-weight: normal;
+        align-items: center;
+        margin: 0;
+        text-align: center;
+    }
+
+.iconTitle {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 40px;
+    margin-top: -10px;
+    padding-right: 5px;
+}
+
+.iconMenu {
+    width: 30px;
+    margin-top: 5px;
+    margin-right: -5px;
+}
+
+.Lista-Container {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    height: 470px;
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+}
+
+
+.search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: -10px;
+    padding: 5px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.busquedaIcon {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.searchtext {
+    border: none;
+    outline: none;
+    -webkit-appearance: none; /* Quita estilos por defecto en Chrome/Safari */
+    -moz-appearance: none; /* Quita estilos por defecto en Firefox */
+    appearance: none; /* Para otros navegadores */
+    padding: 3px;
+    font-size: 15px;
+    width: 100%;
+    border-radius: 3px;
+    background: transparent;
+}
+
+.ElementosCategorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f0f8ff;
+    border: 1px solid #296EB4;
+    color: #1B396A;
+    border-radius: 8px;
+    padding: 10px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .categoria img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .categoria:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+
+.ListaElementos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: -9px;
+    margin-right: -9px;
+}
+
+    .ListaElementos a {
+        text-decoration: none;
+    }
+
+.elementos {
+    display: flex;
+    background-color: #007EA7;
+    justify-content: space-between;
+    border-radius: 10px;
+    color: white;
+    height: 60px;
+    align-items: center;
+}
+
+    .elementos p {
+        text-align: left;
+        font-size: 14px;
+    }
+
+.elemento {
+    height: 60px;
+    display: flex;
+    background-color: #007EA7;
+    border-radius: 10px;
+    color: white;
+    align-items: center;
+}
+
+.elementos img {
+    width: 40px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+
+.btn img {
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;
+}
+
+
+
+.btnAgregar {
+    position: fixed;
+    bottom: 120px;
+    right: 610px;
+    background-color: #296EB4;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+    .btnAgregar:hover {
+        background-color: #1B396A;
+    }
+
+
+nav {
+    background-color: #D9D9D9;
+    display: flex;
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    justify-content: space-around;
+    text-align: center;
+    padding: 5px 0;
+    width: 340px;
+    margin: 10px auto;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item img {
+    width: 30px;
+    height: 30px;
+}
+
+nav h3 {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    text-align: center;
+    font-size: 13px;
+}
+
+nav #salir {
+    margin-right: 7px;
+}
+
+/* Agregar y editar*/
+.form-container {
+    font-size: 14px;
+    background-color: #2e70b6;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    height: 345px;
+    max-height: 345px;
+    max-width: 280px;
+    margin: -10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+    .form-group label {
+        color: white;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+
+    .form-group:nth-child(1),
+    .form-group:nth-child(2) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+        .form-group:nth-child(1) label,
+        .form-group:nth-child(2) label {
+            width: 80px;
+            margin-bottom: 0;
+        }
+
+
+        .form-group:nth-child(1) input,
+        .form-group:nth-child(2) select {
+            flex: 1;
+            text-align: center;
+            font-size: 13px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            height: 25px;
+        }
+/* .form-group:nth-child(1) input{
+	padding: 10px;
+} */
+
+#descripcion {
+    /* width: 100%; */
+    padding: 5px;
+    font-size: 13px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    resize: none;
+    height: 40px;
+    font-family: Arial, sans-serif;
+}
+
+#imagen-preview {
+    max-width: auto;
+    margin-top: 0px;
+    height: 170px;
+    max-height: 170px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+
+#imagen-preview-Edit {
+    width: 100%;
+    max-width: auto;
+    margin-top: 5px;
+    height: 150px;
+    max-height: 150px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    margin-top: 5px;
+}
+
+
+/* Estilos para los botones */
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    width: 320px;
+    background-color: #00A8E8;
+    align-items: center;
+    margin-left: -9px;
+    border-radius: 10px;
+}
+
+    .button-group .btn {
+        display: flex;
+        align-items: center;
+        padding: 10px 30px;
+        text-decoration: none;
+        color: black;
+        margin-left: 0px;
+        width: 40px;
+        height: 40px;
+        max-height: 40px;
+    }
+
+        .button-group .btn img {
+            width: 45px;
+            height: 45px;
+        }
+
+
+/* Eliminar */
+.MensajeEliminar {
+    background-color: #2e70b6;
+    height: 50px;
+    color: white;
+    border-radius: 8px;
+    margin-top: -5px;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.Eliminar {
+    background-color: #2e70b6;
+    height: 280px;
+    padding-top: 10px;
+    border-radius: 8px;
+}
+
+    .Eliminar label {
+        font-size: 20px;
+        color: white;
+    }
+
+.imagenEliminar {
+    width: 280px;
+    height: 230px;
+    margin-top: 15px;
+}

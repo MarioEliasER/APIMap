@@ -1,0 +1,137 @@
+
+.login {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	color: #003459;
+	align-items: center;
+	height: 100vh;
+	background-color: #f4f4f4;
+	font-style: italic; 
+	 font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.login .login-container {
+	background-color: #fff;
+	padding: 20px;
+	height: 500px;
+	border-radius: 10px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	width: 300px;
+}
+.login .login-container .title{
+	text-align: center;
+	align-self: flex-start;
+	margin-bottom: 40px;
+}
+
+.login .login-container .title img {
+	width: 160px;
+	height: 160px;
+}
+
+.login .login-container h1 {
+	margin-top: 0;
+	margin-bottom: 0px;
+	font-family: 'Playfair Display', serif;  
+}
+.login .title p{
+	margin-top: 0px;
+}
+
+.login .input-box {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+
+/* icon */
+.login .input-box i {
+	color: #888;
+	margin-right: 10px;
+}
+
+.login .input-box input {
+	flex: 1;
+	padding: 10px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+}
+
+.login .error {
+	color: red;
+	font-size: 12.5px;
+	margin-top: 0px;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	text-align: left;
+}
+
+.login .btnLogin {
+	width: 164px;
+	height: 42px;
+	padding: 10px;
+	background-color: #296EB4;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-top: 15px;
+}
+
+.login .btnLogin:hover {
+	background-color: #003459;
+}
+
+.login .line-container {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.login .line {
+	border-top: 1px solid black;
+	flex-grow: 1;
+	margin: 0 5px;
+}
+
+.login .text {
+	font-size: 16px;
+	margin:5px 15px 10px 15px;
+}
+.login .access{
+	color:#003459;
+	font-size: 16px;
+}
+ .login .access:active{	
+	color:#1a1aff;
+}
+
+
+#principal{
+	background-color: #162B4E;
+}
+#principal img{
+	margin-top: 50%;
+	width: auto;
+}
+
+#principal2{
+	background-color: white;
+}
+#principal2 img{
+	margin-top: 50%;
+	width: auto;
+}
+/* #mapaCompleto img{
+	width: 100px;
+	height: 200px;
+} */

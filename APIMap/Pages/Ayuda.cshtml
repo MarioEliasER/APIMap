@@ -1,0 +1,118 @@
+﻿@page
+@model UbicaTec.Pages.AyudaModel
+@{
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="~/Css/Styles.css" />
+	<title>Ayuda</title>
+</head>
+<body>
+	<header>
+		<div class="iconTitle">
+			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
+			<h1>Ubica-Tec</h1>
+		</div>
+		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
+	</header>
+
+	<main class="Lista-Container">
+		<div class="search">
+			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
+			<input class="searchtext" type="search" placeholder="Buscar..." />
+		</div>
+
+		<h4>Que es Ubica-Tec?</h4>
+		<div class="informacion">
+			<p>Es un mapa escolar que te permite visualizar las diferentes áreas de la escuela, como:</p>
+			<ul class="listaAreas">
+				<li>Salones de clases</li>
+				<li>Áreas comunes</li>
+				<li>Oficinas administrativas</li>
+				<li>Edificios</li>
+				<li>Departamentos</li>
+			</ul>
+			<img class="imagAyuda" src="~/Images/Diseños/sin login.png" />
+
+			<ul class="listaAreas">
+				<li>
+					<strong>Buscar áreas específicas:</strong>
+					Utiliza la barra de búsqueda que
+					se encuentra en la parte superior
+					de la pantalla para encontrar
+					rápidamente una ubicación.
+				</li>
+				<li>
+					<strong>Instrucciones:</strong>
+					Escribe el nombre
+					de la ubicación que deseas
+					encontrar y selecciona de la lista
+					de resultados.
+				</li>
+				<!-- <li><strong>Ver en pantalla completa:</strong> el botón de pantalla completa
+				   (ubicado en la esquina del mapa)
+				   para ampliar el mapa a pantalla
+				   completa, lo que facilita la
+				   visualización de detalles sin distracciones.</li> -->
+			</ul>
+			<!-- <h5>Funciones Especiales</h5>
+			<ul class="listaAreas">
+				<li><strong></strong></li>
+				<li><strong></strong></li>
+			</ul>
+			<h5>Menu de navegacion inferior</h5>
+			<img class="imagAyuda2" src="Images/menuInferior.png"/>
+			<ul class="listaAreas">
+				<li><strong></strong></li>
+				<li><strong></strong></li>
+			</ul> -->
+		</div>
+	</main>
+
+	<nav>
+		<div class="nav-item">
+			<a class="GenerarRuta">
+				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
+				<h3>Ruta</h3>
+			</a>
+		</div>
+		<div class="nav-item">
+			<a class="Inicio">
+				<img src="~/Images/Diseños/casa.png" alt="home icon" />
+				<h3>Inicio</h3>
+			</a>
+		</div>
+		<div class="nav-item">
+			<a class="Ayuda">
+				<img src="~/Images/Diseños/Help.png" alt="help icon" />
+				<h3>Ayuda</h3>
+			</a>
+		</div>
+	</nav>
+
+	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+	<script>
+		//NAVEGACION
+
+		//ICONO SUPERIOR IZQUIERDO
+		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
+			window.location.replace("/AboutUs");
+		});
+
+		//NAVBAR INFERIOR
+		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
+			window.location.replace("/Index");
+		});
+		let Ruta = document.querySelector(".GenerarRuta").addEventListener("click", function () {
+			window.location.replace("/GenerarRuta");
+		});
+		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
+			window.location.replace("/Ayuda");
+		});
+	</script>
+</body>
+</html>
+
