@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="~/Css/Styles.css" />
+	<link href="~/Css/Styles.css" rel="stylesheet" />
 	<title>Ubica-Tec</title>
 </head>
 <body>
@@ -16,6 +16,7 @@
 			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
 			<h1>Ubica-Tec</h1>
 		</div>
+
 		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
 	</header>
 	<main class="Lista-Container">
@@ -25,12 +26,12 @@
 		</div>
 
 		<div class="map-container">
-			<img class="map" src="~/Images/Diseños/Mapa1.png" alt="map" />
+			<img class="map" src="~/Images/Diseños/MapaV3.svg" alt="map" />
 		</div>
 
 
 
-		<div class="scroll-container"> @* aqui hay que hacer un metodo para que muestre 5 lugares aleatorios *@
+		<div class="scroll-container">
 			<div class="description">
 				<a class="Detalles">
 					<img class="place-icon" src="~/Images/Diseños/ubicacion.png" alt="icon" />
@@ -40,37 +41,63 @@
 							y finanzas</h2>
 					</div>
 				</a>
+
 			</div>
 			<div class="description">
 				<a class="Detalles">
 					<img class="place-icon" src="~/Images/Diseños/ubicacion.png" alt="icon" />
 					<div class="Title">
 						<h2>
-							Departamento de planeación
-							y vinculación
+							Departamento de contabilidad
+							y finanzas
 						</h2>
-						<!-- <p>Esta ubicado cerca de la biblioteca.</p> -->
 					</div>
 				</a>
-			</div>
-			<div class="description">
+
+			</div><div class="description">
 				<a class="Detalles">
 					<img class="place-icon" src="~/Images/Diseños/ubicacion.png" alt="icon" />
 					<div class="Title">
-						<h2>Centro de Idiomas</h2>
+						<h2>
+							Departamento de contabilidad
+							y finanzas
+						</h2>
 					</div>
 				</a>
+
+			</div><div class="description">
+				<a class="Detalles">
+					<img class="place-icon" src="~/Images/Diseños/ubicacion.png" alt="icon" />
+					<div class="Title">
+						<h2>
+							Departamento de contabilidad
+							y finanzas
+						</h2>
+					</div>
+				</a>
+
+			</div><div class="description">
+				<a class="Detalles">
+					<img class="place-icon" src="~/Images/Diseños/ubicacion.png" alt="icon" />
+					<div class="Title">
+						<h2>
+							Departamento de contabilidad
+							y finanzas
+						</h2>
+					</div>
+				</a>
+
 			</div>
 
 		</div>
-		<div>
-			<a id="MapaCompleto" class="floating-button"><img src="~/Images/Diseños/Zoom.png" /></a>
 
-		</div>
+			<div>
+				<a id="MapaCompleto" class="floating-button"><img src="~/Images/Diseños/Zoom.png" /></a>
+			</div>
 	</main>
 	<nav>
 		<div class="nav-item">
-			<a class="GenerarRuta">
+			<a class="GenerarRutas">
 				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
 				<h3>Ruta</h3>
 			</a>
@@ -88,36 +115,36 @@
 			</a>
 		</div>
 	</nav>
+	<script>
+		//NAVEGACION
 
-<script>
-	//NAVEGACION
+		//ICONO SUPERIOR IZQUIERDO
+		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
+			window.location.replace("/AboutUs");
+		});
+		//NAVBAR INFERIOR
+		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
+			window.location.replace("/Index");
+		});
+		let Ruta = document.querySelector(".GenerarRutas").addEventListener("click", function () {
+			window.location.replace("/GenerarRuta");
+		});
+		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
+			window.location.replace("/Ayuda");
+		});
 
-	//ICONO SUPERIOR IZQUIERDO
-	let Icono = document.querySelector(".Icono").addEventListener("click", function () {
-		window.location.replace("/AboutUs");
-	});
-	//NAVBAR INFERIOR
-	let Home = document.querySelector(".Inicio").addEventListener("click", function () {
-		window.location.replace("/Index");
-	});
-	let Ruta = document.querySelector(".GenerarRuta").addEventListener("click", function () {
-		window.location.replace("/GenerarRuta");
-	});
-	let help = document.querySelector(".Ayuda").addEventListener("click", function () {
-		window.location.replace("/Ayuda");
-	});
-
-	//SCROLL HORIZONTAL
-	let Detalle = document.querySelector(".Detalles").addEventListener("click", function () {
-		window.location.replace("/Detalles");
-	});
-	//AMPLIAR MAPA INDEX
-	let MapaCompleto = document.querySelector("#MapaCompleto").addEventListener("click", function () {
-		window.location.replace("/MapaCompleto");
-	});
-</script>
+		//SCROLL HORIZONTAL
+		let Detalle = document.querySelector(".Detalles").addEventListener("click", function () {
+			window.location.replace("/Detalles");
+		});
+		//AMPLIAR MAPA INDEX
+		let MapaCompleto = document.querySelector("#MapaCompleto").addEventListener("click", function () {
+			window.location.replace("/MapaCompleto");
+		});
+	</script>
 </body>
-
 </html>
+
+	
 
 
