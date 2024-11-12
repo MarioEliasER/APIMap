@@ -13,7 +13,7 @@ namespace APIMap.Repositories
 
 		public IEnumerable<Usuario> GetAll()
 		{
-			return Context.Usuario.OrderBy(x => x.Id);
+			return Context.Usuario.OrderBy(x => x.Nombreusuario);
 		}
 
         public Usuario? Get(int id)
