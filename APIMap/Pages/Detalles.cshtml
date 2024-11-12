@@ -3,12 +3,12 @@
 @{
 }
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="~/Css/Styles.css" />
-	<title>Detalles</title>
+	<link href="~/Css/Styles.css" rel="stylesheet" />
+	<title>Ubica-Tec</title>
 </head>
 <body>
 	<header>
@@ -16,14 +16,16 @@
 			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
 			<h1>Ubica-Tec</h1>
 		</div>
+
 		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
 	</header>
-
 	<main class="Lista-Container">
-		<div class="search">
+		<div class="search2">
 			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
 			<input class="searchtext" type="search" placeholder="Buscar..." />
 		</div>
+		<a id="Edificios"  class="floating-button2"><img src="~/Images/Diseños/flecha-izquierda.png" /></a>
+
 		<img class="ImgAula" src="~/Images/Diseños/Sistemas.png" />
 
 		<div class="Info">
@@ -31,10 +33,9 @@
 			<p>Ubicado en un lado del Estacionamiento de los docentes y enfrente del Departamento de finanzas.</p>
 		</div>
 	</main>
-
 	<nav>
 		<div class="nav-item">
-			<a  class="GenerarRuta">
+			<a class="GenerarRutas">
 				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
 				<h3>Ruta</h3>
 			</a>
@@ -46,15 +47,13 @@
 			</a>
 		</div>
 		<div class="nav-item">
-			<a  class="Ayuda">
+			<a class="Ayuda">
 				<img src="~/Images/Diseños/Help.png" alt="help icon" />
 				<h3>Ayuda</h3>
 			</a>
 		</div>
 	</nav>
 
-
-	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 <script>
 		//NAVEGACION
 
@@ -62,11 +61,15 @@
 		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
 			window.location.replace("/AboutUs");
 		});
+		//REGRESAR A VISTA EDIFICIOS
+	let EdificiosView = document.querySelector("#Edificios").addEventListener("click", function () {
+		window.location.replace("/Edificios")
+	});
 		//NAVBAR INFERIOR
 		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
 			window.location.replace("/Index");
 		});
-		let Ruta = document.querySelector(".GenerarRuta").addEventListener("click", function () {
+		let Ruta = document.querySelector(".GenerarRutas").addEventListener("click", function () {
 			window.location.replace("/GenerarRuta");
 		});
 		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
