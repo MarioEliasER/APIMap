@@ -3,12 +3,12 @@
 @{
 }
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="~/Css/Styles.css" />
-	<title>Generar Ruta</title>
+	<link href="~/Css/Styles.css" rel="stylesheet" />
+	<title>Ubica-Tec</title>
 </head>
 <body>
 	<header>
@@ -16,77 +16,80 @@
 			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
 			<h1>Ubica-Tec</h1>
 		</div>
+
 		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
 	</header>
-
 	<main class="Lista-Container">
 		<div class="search2">
 			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
 			<input class="searchtext" type="search" placeholder="Buscar..." />
 		</div>
-		<div class="ImagMapa">
-			<img class="ImgMapa2" src="~/Images/Diseños/Mapa1.png" />
-		</div>
 
+		<img class="ImgRuta" src="~/Images/Diseños/RutaMapa.png" />
 
-		<div class="SeleccionarRuta2">
+		<div class="SeleccionarRuta">
 			<p>Mi ubicación:</p>
 			<select class="ruta" id="Ruta" name="Ruta">
+				<option disabled selected>-- Selecciona un origen --</option>
+				<option disabled>Edificios</option>
 				<option value="Ruta1">Edificio de Industrial</option>
 				<option value="Ruta2">Edificio B</option>
+				<option disabled>Departamentos</option>
 				<option value="Ruta3">Departamento de Escolares</option>
 			</select>
 			<p>Mi destino:</p>
-			<select class="ruta" id="Ruta" name="Ruta">
+			<select class="ruta" id="Destino" name="Destino">
+				<option disabled selected>-- Selecciona un destino --</option>
+				<option disabled>Edificios</option>
 				<option value="Ruta1">Edificio de Industrial</option>
 				<option value="Ruta2">Edificio B</option>
+				<option disabled>Departamentos</option>
 				<option value="Ruta3">Departamento de Escolares</option>
 			</select>
-			<a href="#" class="GenerarRuta"><input class="GenerarRuta" type="button" value="Generar Ruta" /></a>
+			<a href="#"><input class="GenerarRuta" type="button" value="Generar Ruta" /></a>
 		</div>
-	</main>
 
+	</main>
 	<nav>
 		<div class="nav-item">
-			<a class="GenerarRuta">
+			<a class="GenerarRutas">
 				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
 				<h3>Ruta</h3>
 			</a>
 		</div>
 		<div class="nav-item">
-			<a  class="Inicio">
+			<a href="Index.html" class="Inicio">
 				<img src="~/Images/Diseños/casa.png" alt="home icon" />
 				<h3>Inicio</h3>
 			</a>
 		</div>
-		<div class="nav-item" >
+		<div class="nav-item">
 			<a class="Ayuda">
 				<img src="~/Images/Diseños/Help.png" alt="help icon" />
 				<h3>Ayuda</h3>
 			</a>
 		</div>
 	</nav>
+	
+	<script>
+		//NAVEGACION
 
+		//ICONO SUPERIOR IZQUIERDO
+		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
+			window.location.replace("/AboutUs");
+		});
+		//NAVBAR INFERIOR
+		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
+			window.location.replace("/Index");
+		});
+		let Ruta = document.querySelector(".GenerarRutas").addEventListener("click", function () {
+			window.location.replace("/GenerarRuta");
+		});
+		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
+			window.location.replace("/Ayuda");
+		});
 
-	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
-<script>
-			//NAVEGACION
-
-	//ICONO SUPERIOR IZQUIERDO
-	let Icono = document.querySelector(".Icono").addEventListener("click", function () {
-		window.location.replace("/AboutUs");
-	});
-	//NAVBAR INFERIOR
-	let Home = document.querySelector(".Inicio").addEventListener("click", function () {
-		window.location.replace("/Index");
-	});
-	let Ruta = document.querySelector(".GenerarRuta").addEventListener("click", function () {
-		window.location.replace("/GenerarRuta");
-	});
-	let help = document.querySelector(".Ayuda").addEventListener("click", function () {
-		window.location.replace("/Ayuda");
-	});
-
-</script>
+	</script>
 </body>
 </html>
+
