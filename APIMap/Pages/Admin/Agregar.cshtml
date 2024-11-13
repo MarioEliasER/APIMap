@@ -16,7 +16,7 @@
 			<a><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
 			<h1>Ubica-Tec</h1>
 		</div>
-		<a href="/PrimeraVista.html"><img class="iconMenu" src="/Images/CerrarSesion.png" alt="filter icon" /></a>
+		<a href="/PrimeraVista.html"><img class="iconMenu" src="~/Images/Diseños/CerrarSesion.png" alt="filter icon" /></a>
 	</header>
 
 	<main class="Lista-Container">
@@ -48,7 +48,6 @@
 		</div>
 
 		<div class="button-group">
-			<label class="Error"> Error</label>
 			<a href="#" class="btn aceptar"><img src="~/Images/Diseños/Aceptar.png" alt="Aceptar Icono" /> </a>
 			<a href="Index.html" class="btn cancelar"><img src="~/Images/Diseños/Cancelar.png" alt="Cancelar Icono" /> </a>
 		</div>
@@ -63,25 +62,20 @@
 				<h3>Inicio</h3>
 			</a>
 		</div>
-		<!-- <div class="nav-item">
-				<a href="#">
-						<img src="/Images/CerrarSesion.png" alt="help icon"/>
-						<h3 id="salir">Salir</h3>
-				</a>
-		</div> -->
+
 	</nav>
 
 	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 	<script>
-					document.getElementById('imagen').addEventListener('change', function(event) {
-		  const file = event.target.files[0];
-		  if (file) {
-			const reader = new FileReader();
-			reader.onload = function(e) {
-			  document.getElementById('imagen-preview').src = e.target.result;
-			};
-			reader.readAsDataURL(file);
-		  }
+		document.getElementById('imagen').addEventListener('change', function (event) {
+			const file = event.target.files[0];
+			if (file) {
+				const reader = new FileReader();
+				reader.onload = function (e) {
+					document.getElementById('imagen-preview').src = e.target.result;
+				};
+				reader.readAsDataURL(file);
+			}
 		});
 
 	</script>

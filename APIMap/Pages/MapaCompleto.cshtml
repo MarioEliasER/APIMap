@@ -7,15 +7,21 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="~/Css/StyleLogin.css" />
-	<title>Mapa</title>
+	<link href="~/Css/StyleMapa.css" rel="stylesheet" />
+	<title>Ubica-Tec</title>
 </head>
-<body class="login">
-	<main class="login-container" id="MapaCompleto">
-		<img src="~/Images/Diseños/Mapa1.png" />
+<body>
+
+	<main class="Lista-Container">
+		<a id="Inicio" class="floating-buttonReturn"><img src="~/Images/Diseños/flecha-izquierda.png" /></a>
+		<div class="map-container2">
+			<img class="mapCompleto" src="~/Images/Diseños/MapaV3.svg" alt="map" />
+		</div>
 	</main>
-
-
+	<script>
+		let Home = document.querySelector("#Inicio").addEventListener("click", function () {
+			window.location.replace("/Index");
+		});
+	</script>
 </body>
 </html>

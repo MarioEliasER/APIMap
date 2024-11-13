@@ -1,0 +1,349 @@
+﻿/* Contenedor principal */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #003459;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Evita el scroll horizontal y vertical */
+}
+
+header {
+    background: rgba(255, 255, 255, 0.8);
+    background-color: #1B396A;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+    header h1 {
+        font-size: 18px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+.iconTitle {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 40px;
+    padding-right: 5px;
+    margin-top: -10px;
+}
+
+.iconMenu {
+    width: 25px;
+    margin-top: 5px;
+}
+
+
+
+.search2 {
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    width: 700px;
+    justify-self: center;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.busquedaIcon {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.searchtext {
+    border: none;
+    outline: none;
+    -webkit-appearance: none; /* Quita estilos por defecto en Chrome/Safari */
+    -moz-appearance: none; /* Quita estilos por defecto en Firefox */
+    appearance: none; /* Para otros navegadores */
+    padding: 3px;
+    font-size: 17px;
+    width: 100%;
+    border-radius: 3px;
+    background: transparent;
+}
+
+
+.map-container {
+    width: 75%;
+    text-align: center;
+    margin-left: 200px;
+}
+
+.map {
+    width: 75%;
+}
+
+.map-container2 {
+    width: 85%;
+    text-align: center;
+    align-content: center;
+    margin-top: 40px;
+    margin-left: 120px;
+}
+
+.mapCompleto {
+    width: 100%;
+}
+
+
+
+.scroll-container {
+    height: 80px;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    margin-top: -5px;
+    justify-self: center;
+    font-size: 8px;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    background-color: #2a6fb4;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 150px;
+    max-width: 130px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-container a {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: #fff;
+    width: 320px;
+    height: 80px;
+    text-decoration: none;
+}
+
+.place-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.Title h2 {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+/* Botón flotante */
+.floating-button {
+    position: fixed;
+    top: 130px;
+    right: 340px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 2;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+    .floating-button img {
+        width: 35px;
+        height: 35px;
+    }
+
+.floating-buttonReturn {
+    position: fixed;
+    top: 40px;
+    left: 30px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 2;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+    .floating-buttonReturn img {
+        width: 35px;
+        height: 35px;
+    }
+
+
+.ListaElementos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+    .ListaElementos a {
+        text-decoration: none;
+    }
+
+.elementos {
+    display: flex;
+    background-color: #007EA7;
+    font-size: 17px;
+    text-align: left;
+    border-radius: 10px;
+    height: 60px;
+    color: white;
+    align-items: center;
+}
+
+    .elementos img {
+        width: 45px;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+
+/*Vista Detalles */
+.ImgAula {
+    width: 450px;
+    height: 395px;
+    border-radius: 5px;
+    margin-left: 550px;
+}
+
+.Info {
+    background-color: #296EB4;
+    color: white;
+    height: 100px;
+    width: 700px;
+    justify-self: center;
+    border-radius: 10px;
+    text-align: center;
+}
+
+    .Info h4 {
+        font-size: 20px;
+        padding-top: 10px;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .Info p {
+        padding: 12px;
+        padding-top: 0;
+        font-size: 14px;
+        margin-top: 1;
+    }
+
+.floating-button2 {
+    position: fixed;
+    top: 70px;
+    left: 15px;
+    /* background: rgba(255, 255, 255, 1); */
+    z-index: 2;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    .floating-button2 img {
+        width: 35px;
+        height: 35px;
+    }
+
+/*Vista Ruta */
+.ImgRuta {
+    width: 355px;
+    margin-top: 70px;
+    height: 355px;
+    border-radius: 5px;
+    border: #003459 1px solid;
+    margin-left: 415px;
+}
+
+.SeleccionarRuta {
+    position: relative;
+    z-index: 2;
+    top: -270px;
+    right: -800px;
+    font-size: 17px;
+}
+
+    .SeleccionarRuta p {
+        margin-top: 2px;
+        padding: 0;
+        color: black;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+.ruta {
+    width: 300px;
+    max-width: 300px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    border: none;
+    background-color: #D9D9D9;
+    text-align: center;
+    height: 20px;
+}
+
+.GenerarRuta {
+    position: relative;
+    z-index: 2;
+    bottom: -40px;
+    right: 200px;
+    margin-top: 5.5px;
+    background-color: #296EB4;
+    border-radius: 6px;
+    height: 30px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* Navegación inferior */
+nav {
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    height: 55px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item img {
+    width: 35px;
+    height: 35px;
+}
+
+nav h3 {
+    font-size: 14px;
+    margin:  5px 0;
+}
+body {
+}
