@@ -34,6 +34,7 @@
 				<option disabled>Edificios</option>
 				<option value="Ruta1">Edificio de Industrial</option>
 				<option value="Ruta2">Edificio B</option>
+				<option value="Ruta2">sistemas</option>
 				<option disabled>Departamentos</option>
 				<option value="Ruta3">Departamento de Escolares</option>
 			</select>
@@ -45,9 +46,12 @@
 				<option value="Ruta2">Edificio B</option>
 				<option disabled>Departamentos</option>
 				<option value="Ruta3">Departamento de Escolares</option>
+				<option value="Ruta3">Biblioteca</option>
 			</select>
-			<a href="#"><input class="GenerarRuta" type="button" value="Generar Ruta" /></a>
-		</div>
+@* 			<a><input class="GenerarRuta" type="button" value="Generar Ruta" /></a>
+ *@
+ <input type="submit" class="GenerarRuta" value="Obtener Ruta" onclick="obtenerRuta()"/>
+</div>
 
 	</main>
 	<nav>
@@ -71,7 +75,7 @@
 		</div>
 	</nav>
 
-	
+	<script src="~/Scripts/ObtenerRuta.js"></script>
 	<script>
 		//NAVEGACION
 
