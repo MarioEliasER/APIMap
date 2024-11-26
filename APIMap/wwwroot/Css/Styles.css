@@ -317,3 +317,42 @@ nav h3 {
     font-size: 14px;
     margin:  5px 0;
 }
+
+/* Estilo del menú flotante */
+.dropdown-menu {
+    position: absolute;
+    top: 70px; /* Ajustar para que quede fuera del header */
+    right: 20px; /* Alineado al borde derecho */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+    overflow: hidden;
+    width: 250px; /* Tamaño del menú */
+}
+
+    .dropdown-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dropdown-menu li {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+        gap: 10px;
+        transition: background-color 0.2s ease;
+    }
+
+        .dropdown-menu li:hover {
+            background-color: #f0f0f0;
+        }
+
+    .dropdown-menu img {
+        width: 24px;
+        height: 24px;
+    }

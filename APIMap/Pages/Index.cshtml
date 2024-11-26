@@ -17,8 +17,41 @@
 			<h1>Ubica-Tec</h1>
 		</div>
 
-		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
+		<div class="menu-toggle">
+			<img src="menu.png" alt="menu icon" />
+		</div>
+
+		
 	</header>
+	<!-- Menú desplegable flotante -->
+	<div class="dropdown-menu" id="dropdownMenu">
+		<ul>
+			<li>
+				<img src="edificios.png" alt="Edificios" />
+				Edificios
+			</li>
+			<li>
+				<img src="salones.png" alt="Salones" />
+				Salones
+			</li>
+			<li>
+				<img src="laboratorios.png" alt="Laboratorios" />
+				Laboratorios
+			</li>
+			<li>
+				<img src="departamentos.png" alt="Departamentos" />
+				Departamentos
+			</li>
+			<li>
+				<img src="areascomunes.png" alt="Áreas Comunes" />
+				Áreas Comunes
+			</li>
+			<li>
+				<img src="salir.png" alt="Salir" />
+				Salir
+			</li>
+		</ul>
+	</div>
 	<main class="Lista-Container">
 		<div class="search2">
 			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
@@ -141,6 +174,21 @@
 		//AMPLIAR MAPA INDEX
 		let MapaCompleto = document.querySelector("#MapaCompleto").addEventListener("click", function () {
 			window.location.replace("/MapaCompleto");
+		});
+		  // Mostrar/Ocultar el menú desplegable
+		document.querySelector('.menu-toggle').addEventListener('click', function () {
+			const menu = document.querySelector('#dropdownMenu');
+			menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+		});
+
+		// Cerrar el menú al hacer clic fuera de él
+		document.addEventListener('click', function (event) {
+			const menu = document.querySelector('#dropdownMenu');
+			const toggle = document.querySelector('.menu-toggle');
+
+			if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+				menu.style.display = 'none';
+			}
 		});
 	</script>
 </body>
