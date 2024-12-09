@@ -1,66 +1,95 @@
-﻿/* Contenedor principal */
-body {
+﻿@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    color: #003459;
-    background-color: #fefefe;
-    font-family: Arial, sans-serif;
-    overflow: hidden; /* Evita el scroll horizontal y vertical */
+    overflow-y: auto; /* Evita el scroll horizontal y vertical */
+    overflow-x: hidden;
 }
 
-header {
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template:
+        "header" 60px
+        "navbar" 50px
+        "main" auto
+        "footer" 60px;
+}
+
+
+.header {
+    grid-area: header;
     background: rgba(255, 255, 255, 0.8);
     background-color: #1B396A;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
     color: white;
+    height: 60px;
 }
 
-    header h1 {
-        font-size: 18px;
-        font-weight: normal;
-        margin: 0;
-    }
+header h1 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+}
 
 .iconTitle {
+    margin-left: -2%;
     display: flex;
     align-items: center;
 }
 
 .icon {
-    width: 40px;
+    width: 35px;
     padding-right: 5px;
-    margin-top: -10px;
 }
 
 .iconMenu {
-    width: 28px;
-    margin-top: 5px;
+    margin-right: -1px;
+    margin-top: 4px;
+    width: 30px;
 }
 
+.navbar {
+    grid-area: navbar;
+    background-color: #fff;
+    align-content: center;
+    justify-items: center;
+    top: 70%;
+}
 
-.search {
-    background: rgba(255, 255, 255, 0.8);
-    display: flex;
+.search2 {
+    grid-area: navbar;
+    background: rgba(255, 255, 255, 255);
+    width: 60%;
+    top: 20%;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 10px;
-    width: 700px;
-    justify-self: center;
+    display: flex;
     padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    ;
     background-color: #fff;
 }
 
 .busquedaIcon {
-    margin-right: 10px;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
+    margin-right: 20px;
 }
 
 .searchtext {
@@ -70,41 +99,44 @@ header {
     -moz-appearance: none; /* Quita estilos por defecto en Firefox */
     appearance: none; /* Para otros navegadores */
     padding: 3px;
-    font-size: 17px;
+    font-size: 16px;
     width: 100%;
     border-radius: 3px;
     background: transparent;
 }
 
-
+.main {
+    grid-area: main;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
 
 .Lista-Container {
     background-color: #fff;
-    padding: 20px;
+    padding-left: 5px;
     text-align: center;
-    margin: auto;
-    height: 520px;
-    /* position: fixed; 
-	 bottom: 70px;
-	left: 0;
-	right: 0; */
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
 }
+
 
 .ElementosCategorias {
     display: grid;
+    margin-top: 8%;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 36px;
-    padding: 10px;
-    width: 400px;
-    justify-content: center;
+    gap: 5px;
     justify-items: center;
     justify-self: center;
+    width: 80%;
 }
 
 
 .categoria {
     display: flex;
-    width: 120px;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -118,22 +150,30 @@ header {
 }
 
     .categoria img {
-        max-width: 100%;
+        width: 60%;
         height: auto;
     }
 
     .categoria:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: scale(1.00);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
+.Lista-Container2 {
+    background-color: #fff;
+    text-align: center;
+    margin-top: 2%;
+    width: 55%;
+    justify-self: center;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
 
 .ListaElementos {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-left: -9px;
-    margin-right: -9px;
 }
 
     .ListaElementos a {
@@ -147,6 +187,7 @@ header {
     border-radius: 10px;
     color: white;
     height: 60px;
+    padding-left: 10px;
     align-items: center;
 }
 
@@ -160,12 +201,13 @@ header {
     display: flex;
     background-color: #007EA7;
     border-radius: 10px;
+    width: 100%;
     color: white;
     align-items: center;
 }
 
 .elementos img {
-    width: 40px;
+    width: 45px;
     margin-right: 10px;
     margin-left: 5px;
 }
@@ -176,19 +218,28 @@ header {
     margin: 5px;
 }
 
-    .btn-group img {
-        width: 25px;
+
+.btn img {
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;
+}
+
+    .btn img:hover {
+        cursor: pointer;
     }
+
+
 
 .btnAgregar {
     position: fixed;
-    bottom: 100px;
-    right: 40px;
+    bottom: 120px;
+    right: 610px;
     background-color: #296EB4;
     border: none;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,24 +253,58 @@ header {
     }
 
 
+/* Navegación inferior */
+nav {
+    background-color: #D9D9D9;
+    display: flex;
+    position: fixed;
+    justify-content: space-around;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    align-items: center;
+}
 
+.nav-item a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item img {
+    width: 35px;
+}
+
+nav h3 {
+    font-size: 13px;
+    margin: 5px 0;
+}
 /* Agregar y editar*/
+.Lista-Container3 {
+    background-color: #fff;
+    text-align: center;
+    margin-top: 1%;
+    width: 100%;
+    justify-self: center;
+    height: 80%;
+    left: 0;
+    right: 0;
+}
+
 .form-container {
     font-size: 14px;
     background-color: #2e70b6;
     padding: 20px;
     border-radius: 10px;
-    width: auto;
-    height: 440px;
-    /* max-height: 345px;
-  max-width: 280px;  */
-    margin: -8px;
+    width: 100%;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
     .form-group label {
@@ -264,10 +349,10 @@ header {
 }
 
 #imagen-preview {
-    max-width: auto;
+    max-width: 300px;
     margin-top: 0px;
-    height: 190px;
-    max-height: 190px;
+    height: 150px;
+    max-height: 170px;
     border: 1px solid #ccc;
     background-color: #ccc;
     border-radius: 5px;
@@ -276,9 +361,8 @@ header {
 
 #imagen-preview-Edit {
     width: 100%;
-    max-width: auto;
     margin-top: 5px;
-    height: 150px;
+    height: 200px;
     max-height: 150px;
     border: 1px solid #ccc;
     background-color: #ccc;
@@ -294,24 +378,25 @@ input[type="file"] {
 .button-group {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
-    width: 330px;
+    /* margin-top: 15px; */
+    width: 100%;
     background-color: #00A8E8;
     align-items: center;
-    margin-left: 2px;
+    margin-left: -9px;
     border-radius: 10px;
 }
 
     .button-group .btn {
         display: flex;
         align-items: center;
-        padding: 10px 30px;
+        justify-content: center;
+        /* padding: 10px 30px; */
         text-decoration: none;
         color: black;
         margin-left: 0px;
-        width: 40px;
-        height: 40px;
-        max-height: 40px;
+        width: 50%;
+        height: 10%;
+        /* max-height: 40px; */
     }
 
         .button-group .btn img {
@@ -319,94 +404,1873 @@ input[type="file"] {
             height: 45px;
         }
 
-
 /* Eliminar */
+.Lista-Container4 {
+    background-color: #fff;
+    text-align: center;
+    width: 40%;
+    justify-self: center;
+    height: 100%;
+    overflow-y: hidden;
+    left: 0;
+    right: 0;
+}
+
 .MensajeEliminar {
-    background-color: #2e70b6;
-    height: 50px;
+    background-color: #00A8E8;
+    height: 35px;
     color: white;
     border-radius: 8px;
-    margin-top: -5px;
-    font-size: 20px;
-    padding-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    /* padding-top: 12px; */
     padding-left: 10px;
-    text-align: left;
+    align-content: center;
+    text-align: center;
 }
 
 .Eliminar {
     background-color: #2e70b6;
-    height: 370px;
-    width: 330px;
+    height: 70%;
     padding-top: 10px;
     border-radius: 8px;
 }
 
     .Eliminar label {
         font-size: 20px;
+        padding-left: 6%;
+        position: fixed;
         color: white;
     }
 
 .imagenEliminar {
-    width: 290px;
-    height: 270px;
-    margin-top: 25px;
+    width: 60%;
+    height: 85%;
+    margin-top: 40px;
 }
 
 .button-group2 {
     display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    width: 330px;
+    justify-self: center;
+    margin-top: 5px;
+    width: 100%;
     background-color: #00A8E8;
     align-items: center;
-    margin-left: 1px;
+    height: 11%;
+    margin-left: 2px;
     border-radius: 10px;
 }
 
     .button-group2 .btn {
         display: flex;
         align-items: center;
-        padding: 10px 30px;
+        justify-content: center;
         text-decoration: none;
         color: black;
-        margin-left: 0px;
-        width: 40px;
-        height: 40px;
-        max-height: 40px;
+        width: 100%;
+        height: 100%;
     }
 
         .button-group2 .btn img {
-            width: 45px;
-            height: 45px;
+            width: 16%;
+            height: 85%;
+        }
+
+/* Personalización del scroll */
+.ListaElementos::-webkit-scrollbar {
+    width: 2px; /* Ancho del scroll */
+}
+
+.ListaElementos::-webkit-scrollbar-thumb {
+    background-color: #296EB4; /* Color de la barra de scroll */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+    .ListaElementos::-webkit-scrollbar-thumb:hover {
+        background-color: #1B396A; /* Color al pasar el mouse */
+    }
+
+/* Pantallas pequeñas (celulares) */
+@media screen and (max-width: 700px) {
+    body {
+        flex-direction: column;
+        overflow-y: auto; /* Permite el scroll vertical si es necesario */
+        height: auto;
+    }
+
+    header {
+        justify-content: space-between;
+        position: fixed;
+    }
+
+
+    .iconTitle {
+        margin-left: 1%;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon {
+        width: 35px;
+        padding-right: 5px;
+    }
+
+    .iconMenu {
+        margin-right: 8px;
+        width: 30px;
+    }
+
+    .search2 {
+        grid-area: navbar;
+        background: rgba(255, 255, 255, 255);
+        width: 90%;
+        top: 10%;
+        left: 5%;
+        align-items: center;
+        display: flex;
+        position: fixed;
+        padding: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        ;
+        background-color: #fff;
+    }
+
+    .busquedaIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .main {
+        grid-area: main;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .Lista-Container {
+        width: 90%;
+        height: 100%;
+    }
+
+    .ElementosCategorias {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        margin-left: 12%;
+        gap: 20px;
+        width: 88%;
+    }
+
+    .categoria {
+        width: 100%;
+    }
+
+        .categoria img {
+            width: 80%;
+        }
+
+        .categoria p {
+            font-size: 17px;
+            padding: 10px;
         }
 
 
-/* Navegación inferior */
-nav {
-    background-color: #D9D9D9;
-    display: flex;
-    justify-content: space-around;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0;
-    height: 55px;
+
+    .btnAgregar {
+        bottom: 14%;
+        right: 6%;
+        width: 65px;
+        height: 65px;
+    }
+
+    .Lista-Container2 {
+        background-color: #fff;
+        text-align: center;
+        margin-top: 6%;
+        width: 90%;
+        justify-self: center;
+        height: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .elementos {
+        display: flex;
+        background-color: #007EA7;
+        justify-content: space-between;
+        border-radius: 10px;
+        color: white;
+        height: 65px;
+        padding-left: 1px;
+        align-items: center;
+    }
+
+        .elementos p {
+            text-align: left;
+            font-size: 15px;
+            width: 95%;
+        }
+
+    .elemento {
+        height: 60px;
+        display: flex;
+        background-color: #007EA7;
+        border-radius: 10px;
+        width: 100%;
+        color: white;
+        align-items: center;
+    }
+
+    .elementos img {
+        width: 15%;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+
+    .btn-group {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+    }
+
+
+    .btn img {
+        width: 22px;
+        height: 22px;
+        margin-left: 5px;
+    }
+
+        .btn img:hover {
+            cursor: pointer;
+        }
+
+    /* Agregar y editar*/
+    .Lista-Container3 {
+        background-color: #fff;
+        text-align: center;
+        width: 190%;
+        justify-self: center;
+        height: 87%;
+        margin-top: 0;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .title {
+        background-color: #00A8E8;
+        width: 50%;
+        padding: 5px;
+        font-size: 18px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        justify-self: center;
+    }
+
+    .form-container {
+        font-size: 15px;
+        background-color: #2e70b6;
+        border-radius: 10px;
+        width: 50%;
+        justify-items: center;
+        justify-self: center;
+        height: 94%;
+    }
+
+    .form-group {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+        .form-group label {
+            color: white;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-group:nth-child(1),
+        .form-group:nth-child(2) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .form-group:nth-child(1) label,
+            .form-group:nth-child(2) label {
+                width: 70px;
+                margin-bottom: 0;
+            }
+
+
+            .form-group:nth-child(1) input,
+            .form-group:nth-child(2) select {
+                flex: 1;
+                font-size: 14px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                height: 30px;
+            }
+
+
+    #descripcion {
+        width: 100%;
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        resize: none;
+        height: 80px;
+        font-family: Arial, sans-serif;
+    }
+
+    #imagen-preview {
+        max-width: 60%;
+        margin-top: 0px;
+        height: 15%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+
+
+    #imagen-preview-Edit {
+        width: 100%;
+        margin-top: 5px;
+        height: 5%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+    /* Estilos para los botones */
+    .button-group {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 96%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 11%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group .btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group .btn img {
+                width: 30%;
+                height: 85%;
+            }
+    /* Eliminar */
+    .Lista-Container4 {
+        background-color: #fff;
+        text-align: center;
+        width: 95%;
+        justify-self: center;
+        height: 110%;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .MensajeEliminar {
+        background-color: #00A8E8;
+        height: 35px;
+        color: white;
+        border-radius: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        padding-left: 10px;
+        align-content: center;
+        text-align: center;
+    }
+
+    .Eliminar {
+        background-color: #2e70b6;
+        height: 70%;
+        padding-top: 10px;
+        border-radius: 8px;
+    }
+
+        .Eliminar label {
+            font-size: 18px;
+            padding-left: 5%;
+            position: relative;
+            color: white;
+        }
+
+    .imagenEliminar {
+        width: 96%;
+        height: 75%;
+        margin-top: 40px;
+    }
+
+    .button-group2 {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 100%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 10%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group2 .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group2 .btn img {
+                width: 30%;
+                height: 80%;
+            }
 }
 
-.nav-item a {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media screen and (min-width:700px) and (max-width: 767px) {
+    body {
+        flex-direction: column;
+        overflow-y: auto; /* Permite el scroll vertical si es necesario */
+        height: auto;
+    }
+
+    header {
+        justify-content: space-between;
+        position: fixed;
+    }
+
+
+    .iconTitle {
+        margin-left: 1%;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon {
+        width: 35px;
+        padding-right: 5px;
+    }
+
+    .iconMenu {
+        margin-right: 8px;
+        width: 30px;
+    }
+
+    .search2 {
+        grid-area: navbar;
+        background: rgba(255, 255, 255, 255);
+        width: 90%;
+        top: 6%;
+        left: 5%;
+        align-items: center;
+        display: flex;
+        position: fixed;
+        padding: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        ;
+        background-color: #fff;
+    }
+
+    .busquedaIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .main {
+        grid-area: main;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .Lista-Container {
+        width: 90%;
+        height: 100%;
+    }
+
+    .ElementosCategorias {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        margin-left: 10%;
+        gap: 20px;
+        width: 88%;
+    }
+
+    .categoria {
+        margin-top: 10%;
+        width: 90%;
+    }
+
+        .categoria img {
+            width: 60%;
+        }
+
+        .categoria p {
+            font-size: 18px;
+            padding: 10px;
+        }
+
+
+
+    .btnAgregar {
+        bottom: 15%;
+        right: 8%;
+        width: 75px;
+        height: 75px;
+    }
+
+    .Lista-Container2 {
+        background-color: #fff;
+        text-align: center;
+        margin-top: 5%;
+        width: 80%;
+        justify-self: center;
+        height: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .elementos {
+        display: flex;
+        background-color: #007EA7;
+        justify-content: space-between;
+        border-radius: 10px;
+        color: white;
+        height: 65px;
+        padding-left: 10px;
+        align-items: center;
+    }
+
+        .elementos p {
+            text-align: left;
+            font-size: 16px;
+        }
+
+    .elemento {
+        height: 60px;
+        display: flex;
+        background-color: #007EA7;
+        border-radius: 10px;
+        width: 100%;
+        color: white;
+        align-items: center;
+    }
+
+    .elementos img {
+        width: 45px;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+
+    .btn-group {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+    }
+
+
+    .btn img {
+        width: 22px;
+        height: 22px;
+        margin-left: 5px;
+    }
+
+        .btn img:hover {
+            cursor: pointer;
+        }
+
+    /* Agregar y editar*/
+    .Lista-Container3 {
+        background-color: #fff;
+        text-align: center;
+        width: 160%;
+        justify-self: center;
+        height: 87%;
+        margin-top: 0;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .title {
+        background-color: #00A8E8;
+        width: 50%;
+        padding: 5px;
+        font-size: 18px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        justify-self: center;
+    }
+
+    .form-container {
+        font-size: 15px;
+        background-color: #2e70b6;
+        border-radius: 10px;
+        width: 50%;
+        justify-items: center;
+        justify-self: center;
+        height: 94%;
+    }
+
+    .form-group {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+        .form-group label {
+            color: white;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-group:nth-child(1),
+        .form-group:nth-child(2) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .form-group:nth-child(1) label,
+            .form-group:nth-child(2) label {
+                width: 100px;
+                margin-bottom: 0;
+            }
+
+
+            .form-group:nth-child(1) input,
+            .form-group:nth-child(2) select {
+                flex: 1;
+                font-size: 15px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                height: 35px;
+            }
+
+
+    #descripcion {
+        width: 100%;
+        padding: 5px;
+        font-size: 15px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        resize: none;
+        height: 120px;
+        font-family: Arial, sans-serif;
+    }
+
+    #imagen-preview {
+        max-width: 50%;
+        margin-top: 0px;
+        height: 5%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+
+
+    #imagen-preview-Edit {
+        width: 70%;
+        margin-top: 5px;
+        height: 5%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+    /* Estilos para los botones */
+    .button-group {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 80%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 11%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group .btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group .btn img {
+                width: 40%;
+                height: 80%;
+            }
+    /* Eliminar */
+    .Lista-Container4 {
+        background-color: #fff;
+        text-align: center;
+        width: 95%;
+        justify-self: center;
+        height: 110%;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .MensajeEliminar {
+        background-color: #00A8E8;
+        height: 35px;
+        color: white;
+        border-radius: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        padding-left: 10px;
+        align-content: center;
+        text-align: center;
+    }
+
+    .Eliminar {
+        background-color: #2e70b6;
+        height: 70%;
+        padding-top: 10px;
+        border-radius: 8px;
+    }
+
+        .Eliminar label {
+            font-size: 20px;
+            padding-left: 5%;
+            position: relative;
+            color: white;
+        }
+
+    .imagenEliminar {
+        width: 96%;
+        height: 60%;
+        margin-top: 30%;
+    }
+
+    .button-group2 {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 100%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 10%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group2 .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group2 .btn img {
+                width: 30%;
+                height: 70%;
+            }
 }
 
-.nav-item img {
-    width: 35px;
-    height: 35px;
+/* Pantallas grandes (tablets y computadoras) */
+
+@media screen and (min-width: 767px) and (max-width:800px) {
+    header {
+        justify-content: space-between;
+        position: fixed;
+    }
+
+
+    .iconTitle {
+        margin-left: 1%;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon {
+        width: 35px;
+        padding-right: 5px;
+    }
+
+    .iconMenu {
+        margin-right: 8px;
+        width: 30px;
+    }
+
+    .search2 {
+        grid-area: navbar;
+        background: rgba(255, 255, 255, 255);
+        width: 75%;
+        top: 10%;
+        left: 13%;
+        align-items: center;
+        display: flex;
+        position: fixed;
+        padding: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        ;
+        background-color: #fff;
+    }
+
+    .busquedaIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .main {
+        grid-area: main;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .Lista-Container {
+        width: 90%;
+        height: 100%;
+    }
+
+    .ElementosCategorias {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        margin-left: 12%;
+        gap: 20px;
+        width: 80%;
+    }
+
+    .categoria {
+        width: 100%;
+    }
+
+        .categoria img {
+            width: 100%;
+        }
+
+        .categoria p {
+            font-size: 18px;
+            padding: 20px;
+        }
+
+
+    .btnAgregar {
+        bottom: 13%;
+        right: 12%;
+        width: 75px;
+        height: 75px;
+    }
+
+    nav {
+        height: 60px;
+    }
+
+    .Lista-Container2 {
+        background-color: #fff;
+        text-align: center;
+        margin-top: 5%;
+        width: 70%;
+        justify-self: center;
+        height: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .elementos {
+        display: flex;
+        background-color: #007EA7;
+        justify-content: space-between;
+        border-radius: 10px;
+        color: white;
+        height: 65px;
+        padding-left: 10px;
+        align-items: center;
+    }
+
+        .elementos p {
+            text-align: left;
+            font-size: 17px;
+        }
+
+    .elemento {
+        height: 60px;
+        display: flex;
+        background-color: #007EA7;
+        border-radius: 10px;
+        width: 100%;
+        color: white;
+        align-items: center;
+    }
+
+    .elementos img {
+        width: 50px;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+
+    .btn img {
+        width: 24px;
+        height: 24px;
+        margin-left: 5px;
+    }
+
+        .btn img:hover {
+            cursor: pointer;
+        }
+
+    /* Agregar y editar*/
+    .Lista-Container3 {
+        background-color: #fff;
+        text-align: center;
+        width: 120%;
+        justify-self: center;
+        height: 87%;
+        margin-top: 0;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .title {
+        background-color: #00A8E8;
+        width: 50%;
+        padding: 5px;
+        font-size: 18px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        justify-self: center;
+    }
+
+    .form-container {
+        font-size: 15px;
+        background-color: #2e70b6;
+        border-radius: 10px;
+        width: 50%;
+        justify-items: center;
+        justify-self: center;
+        height: 94%;
+    }
+
+    .form-group {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+        .form-group label {
+            color: white;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-group:nth-child(1),
+        .form-group:nth-child(2) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .form-group:nth-child(1) label,
+            .form-group:nth-child(2) label {
+                width: 70px;
+                margin-bottom: 0;
+            }
+
+
+            .form-group:nth-child(1) input,
+            .form-group:nth-child(2) select {
+                flex: 1;
+                font-size: 15px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                height: 30px;
+            }
+
+
+    #descripcion {
+        width: 100%;
+        padding: 5px;
+        font-size: 15px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        resize: none;
+        height: 100px;
+        font-family: Arial, sans-serif;
+    }
+
+    #imagen-preview {
+        max-width: 60%;
+        margin-top: 0px;
+        height: 15%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+
+
+    #imagen-preview-Edit {
+        width: 100%;
+        margin-top: 5px;
+        height: 10%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+    /* Estilos para los botones */
+    .button-group {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 60%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 11%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group .btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group .btn img {
+                width: 35%;
+                height: 85%;
+            }
+
+    /* Eliminar */
+    .Lista-Container4 {
+        background-color: #fff;
+        text-align: center;
+        width: 95%;
+        justify-self: center;
+        height: 110%;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .MensajeEliminar {
+        background-color: #00A8E8;
+        height: 35px;
+        color: white;
+        border-radius: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        padding-left: 10px;
+        align-content: center;
+        text-align: center;
+    }
+
+    .Eliminar {
+        background-color: #2e70b6;
+        height: 70%;
+        padding-top: 10px;
+        border-radius: 8px;
+    }
+
+        .Eliminar label {
+            font-size: 18px;
+            padding-left: 5%;
+            position: relative;
+            color: white;
+        }
+
+    .imagenEliminar {
+        width: 96%;
+        height: 80%;
+        margin-top: 40px;
+    }
+
+    .button-group2 {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 100%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 10%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group2 .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group2 .btn img {
+                width: 20%;
+                height: 80%;
+            }
 }
 
-nav h3 {
-    font-size: 14px;
-/*    margin:  5px 0;
-*/}
+
+@media screen and (min-width: 800px)and (max-width:1024px) {
+    header {
+        justify-content: space-between;
+        position: fixed;
+    }
+
+
+    .iconTitle {
+        margin-left: 1%;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon {
+        width: 35px;
+        padding-right: 5px;
+    }
+
+    .iconMenu {
+        margin-right: 8px;
+        width: 30px;
+    }
+
+    .search2 {
+        grid-area: navbar;
+        background: rgba(255, 255, 255, 255);
+        width: 75%;
+        top: 10%;
+        left: 13%;
+        align-items: center;
+        display: flex;
+        position: fixed;
+        padding: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        ;
+        background-color: #fff;
+    }
+
+    .busquedaIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .main {
+        grid-area: main;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .Lista-Container {
+        width: 90%;
+        height: 100%;
+        justify-items: center;
+    }
+
+    .ElementosCategorias {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        margin-left: 12%;
+        margin-top: 10%;
+        gap: 10px;
+        width: 70%;
+    }
+
+    .categoria {
+        width: 90%;
+    }
+
+        .categoria img {
+            width: 70%;
+        }
+
+        .categoria p {
+            font-size: 18px;
+            padding: 20px;
+        }
+
+
+    .btnAgregar {
+        bottom: 16%;
+        right: 13%;
+        width: 60px;
+        height: 60px;
+    }
+
+    nav {
+        height: 60px;
+    }
+
+
+    .Lista-Container2 {
+        background-color: #fff;
+        text-align: center;
+        margin-top: 10%;
+        width: 70%;
+        margin-left: 3%;
+        justify-self: center;
+        height: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .elementos {
+        display: flex;
+        background-color: #007EA7;
+        justify-content: space-between;
+        border-radius: 10px;
+        color: white;
+        height: 65px;
+        padding-left: 10px;
+        align-items: center;
+    }
+
+        .elementos p {
+            text-align: left;
+            font-size: 17px;
+        }
+
+    .elemento {
+        height: 60px;
+        display: flex;
+        background-color: #007EA7;
+        border-radius: 10px;
+        width: 100%;
+        color: white;
+        align-items: center;
+    }
+
+    .elementos img {
+        width: 50px;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+
+    .btn img {
+        width: 24px;
+        height: 24px;
+        margin-left: 5px;
+    }
+
+        .btn img:hover {
+            cursor: pointer;
+        }
+
+    /* Agregar y editar*/
+    .Lista-Container3 {
+        background-color: #fff;
+        text-align: center;
+        width: 150%;
+        justify-self: center;
+        height: 87%;
+        margin-top: 0;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .title {
+        background-color: #00A8E8;
+        width: 50%;
+        padding: 5px;
+        font-size: 18px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        justify-self: center;
+    }
+
+    .form-container {
+        font-size: 15px;
+        background-color: #2e70b6;
+        border-radius: 10px;
+        width: 50%;
+        justify-items: center;
+        justify-self: center;
+        height: 94%;
+    }
+
+    .form-group {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+        .form-group label {
+            color: white;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-group:nth-child(1),
+        .form-group:nth-child(2) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .form-group:nth-child(1) label,
+            .form-group:nth-child(2) label {
+                width: 100px;
+                margin-bottom: 0;
+            }
+
+
+            .form-group:nth-child(1) input,
+            .form-group:nth-child(2) select {
+                flex: 1;
+                font-size: 14px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                height: 30px;
+            }
+
+
+    #descripcion {
+        width: 100%;
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        resize: none;
+        height: 100px;
+        font-family: Arial, sans-serif;
+    }
+
+    #imagen-preview {
+        max-width: 40%;
+        margin-top: 0px;
+        height: 15%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+
+
+    #imagen-preview-Edit {
+        width: 50%;
+        margin-top: 5px;
+        height: 5%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+    /* Estilos para los botones */
+    .button-group {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 75%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 11%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group .btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group .btn img {
+                width: 25%;
+                height: 75%;
+            }
+    /* Eliminar */
+    .Lista-Container4 {
+        background-color: #fff;
+        text-align: center;
+        width: 95%;
+        justify-self: center;
+        height: 110%;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .MensajeEliminar {
+        background-color: #00A8E8;
+        height: 35px;
+        color: white;
+        border-radius: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 22px;
+        padding-left: 10px;
+        align-content: center;
+        text-align: center;
+    }
+
+    .Eliminar {
+        background-color: #2e70b6;
+        height: 75%;
+        padding-top: 10px;
+        border-radius: 8px;
+    }
+
+        .Eliminar label {
+            font-size: 20px;
+            padding-left: 5%;
+            position: relative;
+            color: white;
+        }
+
+    .imagenEliminar {
+        width: 96%;
+        height: 70%;
+        margin-top: 100px;
+    }
+
+    .button-group2 {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 100%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 9%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group2 .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group2 .btn img {
+                width: 20%;
+                height: 75%;
+            }
+}
+
+/* Pantallas extra grandes (más de 1200px) */
+@media screen and (min-width: 1025px) {
+    header {
+        justify-content: space-between;
+        position: fixed;
+    }
+
+
+    .iconTitle {
+        margin-left: 1%;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon {
+        width: 35px;
+        padding-right: 5px;
+    }
+
+    .iconMenu {
+        margin-right: 8px;
+        width: 30px;
+    }
+
+    .search2 {
+        grid-area: navbar;
+        background: rgba(255, 255, 255, 255);
+        width: 60%;
+        top: 10%;
+        left: 20%;
+        align-items: center;
+        display: flex;
+        position: fixed;
+        padding: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        ;
+        background-color: #fff;
+    }
+
+    .busquedaIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .main {
+        grid-area: main;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .Lista-Container {
+        width: 70%;
+        height: 100%;
+        margin-left: 15%;
+    }
+
+    .ElementosCategorias {
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        justify-items: center;
+        gap: 10px;
+        justify-self: center;
+        width: 80%;
+        margin-top: 5%;
+    }
+
+    .ListaElementos {
+        height: 100%;
+        width: 100%;
+    }
+
+    .categoria {
+        width: 90%;
+    }
+
+    .btnAgregar {
+        bottom: 20%;
+        right: 10%;
+        width: 65px;
+        height: 65px;
+    }
+
+
+    .Lista-Container2 {
+        background-color: #fff;
+        text-align: center;
+        margin-top: 2%;
+        width: 55%;
+        justify-self: center;
+        height: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+        .ListaElementos a {
+            text-decoration: none;
+        }
+
+    .elementos {
+        display: flex;
+        background-color: #007EA7;
+        justify-content: space-between;
+        border-radius: 10px;
+        color: white;
+        height: 60px;
+        padding-left: 10px;
+        align-items: center;
+    }
+
+        .elementos p {
+            text-align: left;
+            font-size: 16px;
+        }
+
+    .elemento {
+        height: 60px;
+        display: flex;
+        background-color: #007EA7;
+        border-radius: 10px;
+        width: 100%;
+        color: white;
+        align-items: center;
+    }
+
+    .elementos img {
+        width: 50px;
+        margin-right: 10px;
+        margin-left: 1px;
+    }
+
+    .btn img {
+        width: 25px;
+        height: 25px;
+        margin-left: 5px;
+    }
+
+        .btn img:hover {
+            cursor: pointer;
+        }
+
+
+    /* Agregar y editar*/
+    .Lista-Container3 {
+        background-color: #fff;
+        text-align: center;
+        width: 70%;
+        justify-self: center;
+        height: 87%;
+        margin-top: 0;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .title {
+        background-color: #00A8E8;
+        width: 50%;
+        padding: 5px;
+        font-size: 18px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        justify-self: center;
+    }
+
+    .form-container {
+        font-size: 14px;
+        background-color: #2e70b6;
+        border-radius: 10px;
+        width: 50%;
+        justify-items: center;
+        justify-self: center;
+        height: 94%;
+    }
+
+    .form-group {
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+        .form-group label {
+            color: white;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-group:nth-child(1),
+        .form-group:nth-child(2) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .form-group:nth-child(1) label,
+            .form-group:nth-child(2) label {
+                width: 90px;
+                margin-bottom: 0;
+            }
+
+
+            .form-group:nth-child(1) input,
+            .form-group:nth-child(2) select {
+                flex: 1;
+                font-size: 13px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                height: 30px;
+            }
+
+
+    #descripcion {
+        width: 100%;
+        padding: 5px;
+        font-size: 13px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        resize: none;
+        height: 70px;
+        font-family: Arial, sans-serif;
+    }
+
+    #imagen-preview {
+        max-width: 50%;
+        margin-top: 0px;
+        height: 170px;
+        max-height: 170px;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+
+
+    #imagen-preview-Edit {
+        width: 100%;
+        margin-top: 5px;
+        height: 5%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="file"] {
+        margin-top: 5px;
+    }
+
+
+    /* Estilos para los botones */
+    .button-group {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 35%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 11%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group .btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group .btn img {
+                width: 20%;
+                height: 95%;
+            }
+
+
+    /* Eliminar */
+    .Lista-Container4 {
+        background-color: #fff;
+        text-align: center;
+        width: 40%;
+        justify-self: center;
+        height: 100%;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+    }
+
+    .MensajeEliminar {
+        background-color: #00A8E8;
+        height: 35px;
+        color: white;
+        border-radius: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 22px;
+        /* padding-top: 12px; */
+        padding-left: 10px;
+        align-content: center;
+        text-align: center;
+    }
+
+    .Eliminar {
+        background-color: #2e70b6;
+        height: 70%;
+        padding-top: 10px;
+        border-radius: 8px;
+    }
+
+        .Eliminar label {
+            font-size: 20px;
+            padding-left: 6%;
+            position: fixed;
+            color: white;
+        }
+
+    .imagenEliminar {
+        width: 60%;
+        height: 85%;
+        margin-top: 40px;
+    }
+
+    .button-group2 {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 100%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 11%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group2 .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group2 .btn img {
+                width: 16%;
+                height: 85%;
+            }
+}

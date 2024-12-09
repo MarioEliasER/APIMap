@@ -10,61 +10,80 @@
     <link rel="stylesheet" href="~/Css/StylesAdmin.css" />
     <title>Index Admin</title>
 </head>
-<body>
-    <header>
-        <div class="iconTitle">
-            <a><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
-            <h1>Ubica-Tec</h1>
-        </div>
-        <a href="/PrimeraVista.html"><img class="iconMenu" src="~/Images/Diseños/CerrarSesion.png" alt="filter icon" /></a>
-    </header>
+<body class="grid-container">
+	<header class="header">
+		<div class="iconTitle">
+			<a><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
+			<h1>Ubica-Tec</h1>
+		</div>
+		<a id="index"><img class="iconMenu" src="~/Images/Diseños/CerrarSesion.png" alt="filter icon" /></a>
+	</header>
+	<article class="navbar">
+		<div class="search2">
+			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
+			<input class="searchtext" type="search" placeholder="Buscar..." />
+		</div>
+	</article>
 
-    <main class="Lista-Container">
-        <div class="search">
-            <img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
-            <input class="searchtext" type="search" placeholder="Buscar..." />
-        </div>
-        <div class="ElementosCategorias">
-            <a href="EdificiosAdmin.html" class="categoria">
-                <img src="~/Images/Diseños/LogoSistemas.png" />
-                <p>Edificios</p>
-            </a>
-            <a href="EdificiosAdmin.html" class="categoria">
-                <img src="~/Images/Diseños/LogoSistemas.png" />
-                <p>Areas</p>
-            </a>
-            <a href="EdificiosAdmin.html" class="categoria">
-                <img src="~/Images/Diseños/LogoSistemas.png" />
-                <p>Laboratorios</p>
-            </a>
-            <a href="EdificiosAdmin.html" class="categoria">
-                <img src="~/Images/Diseños/LogoSistemas.png" />
-                <p>Salones</p>
-            </a>
-            <a href="EdificiosAdmin.html" class="categoria">
-                <img src="~/Images/Diseños/LogoSistemas.png" />
-                <p>Departamentos</p>
-            </a>
+	<main class="main">
+		<div class="Lista-Container">
+			<div class="ElementosCategorias">
+				<a href="EdificiosAdmin.html" class="categoria" data-url="Edificios">
+					<img src="~/Images/Diseños/LogoSistemas.png" />
+					<p>Edificios</p>
+				</a>
+				<a href="EdificiosAdmin.html" class="categoria" data-url="AreasAdmin.html">
+					<img src="~/Images/Diseños/LogoSistemas.png" />
+					<p>Areas</p>
+				</a>
+				<a href="EdificiosAdmin.html" class="categoria" data-url="LaboratoriosAdmin.html">
+					<img src="~/Images/Diseños/LogoSistemas.png" />
+					<p>Laboratorios</p>
+				</a>
+				<a href="EdificiosAdmin.html" class="categoria" data-url="SalonesAdmin.html">
+					<img src="~/Images/Diseños/LogoSistemas.png" />
+					<p>Salones</p>
+				</a>
+				<a href="EdificiosAdmin.html" class="categoria" data-url="DepartamentosAdmin.html">
+					<img src="~/Images/Diseños/LogoSistemas.png" />
+					<p>Departamentos</p>
+				</a>
+			</div>
+		</div>
 
-        </div>
-        <a href="Agregar.html" class="btnAgregar"><img class="btnAgregar" src="~/Images/Diseños/boton-agregar.png" /></a>
-    </main>
 
-    <nav>
-        <div class="nav-item">
-            <a href="Index.html">
-                <img src="~/Images/Diseños/casa.png" alt="home icon" />
-                <h3>Inicio</h3>
-            </a>
-        </div>
-        <!-- <div class="nav-item">
-            <a href="#">
-                <img src="/Images/CerrarSesion.png" alt="help icon"/>
-                <h3 id="salir">Salir</h3>
-            </a>
-        </div> -->
-    </nav>
 
-    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+		<a id="Agregar" class="btnAgregar"><img class="btnAgregar" src="~/Images/Diseños/boton-agregar.png" /></a>
+	</main>
+
+	<nav class="footer">
+		<div class="nav-item">
+			<a id="Inicio">
+				<img src="~/Images/Diseños/casa.png" alt="home icon" />
+				<h3>Inicio</h3>
+			</a>
+		</div>
+	</nav>
+	<script>
+		//NAVEGACION
+		let Home = document.getElementById('Inicio').addEventListener("click", function () {
+			window.location.replace("Index");
+		});
+		let add= document.getElementById('Agregar').addEventListener("click",function(){
+			window.location.replace("Agregar");
+		});
+			// Seleccionar todos los enlaces con la clase "categoria"
+		document.querySelectorAll('.categoria').forEach(enlace => {
+			enlace.addEventListener('click', (event) => {
+				event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+				const url = enlace.getAttribute('data-url'); // Obtiene la URL desde el atributo data-url
+				window.location.replace(url); // Reemplaza la URL en la vista actual
+			});
+		});
+		let index= document.getElementById('index').addEventListener("click",function(){
+			window.location.replace("/Index");
+		});
+	</script>
+	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
 </html>
