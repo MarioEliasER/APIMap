@@ -1,7 +1,5 @@
 ﻿@page
-@model UbicaTec.Pages.Admin.EdificiosModel
-@{
-}
+@model APIMap.Pages.Admin.AreasModel
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,10 +32,10 @@
 						<img src="~/Images/Diseños/LogoSistemas.png" alt="Edificio Sistemas" />
 						<p>Edificio Sistemas</p>
 					</div>
-						<div class="btn-group">
-							<a id="Editar" class="btn"><img class="btn" src="~/Images/Diseños/editar.png" /></a>
-							<a id="Eliminar" class="btn"><img class="btn" src="~/Images/Diseños/marca-x.png" /></a>
-						</div>
+					<div class="btn-group">
+						<a id="Editar" class="btn"><img class="btn" src="~/Images/Diseños/editar.png" /></a>
+						<a id="Eliminar" class="btn"><img class="btn" src="~/Images/Diseños/marca-x.png" /></a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -65,8 +63,9 @@
 		let Salir =document.getElementById('Salir').addEventListener("click", function(){
 			window.location.replace("/Index");
 		});
-		
+
 	</script>
 	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
 </html>
+

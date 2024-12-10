@@ -28,23 +28,23 @@
 	<main class="main">
 		<div class="Lista-Container">
 			<div class="ElementosCategorias">
-				<a href="EdificiosAdmin.html" class="categoria" data-url="Edificios">
+				<a class="categoria" id="Edificios">
 					<img src="~/Images/Diseños/LogoSistemas.png" />
 					<p>Edificios</p>
 				</a>
-				<a href="EdificiosAdmin.html" class="categoria" data-url="AreasAdmin.html">
+				<a  class="categoria" id="Areas">
 					<img src="~/Images/Diseños/LogoSistemas.png" />
 					<p>Areas</p>
 				</a>
-				<a href="EdificiosAdmin.html" class="categoria" data-url="LaboratoriosAdmin.html">
+				<a class="categoria" id="Laboratorios">
 					<img src="~/Images/Diseños/LogoSistemas.png" />
 					<p>Laboratorios</p>
 				</a>
-				<a href="EdificiosAdmin.html" class="categoria" data-url="SalonesAdmin.html">
+				<a class="categoria" id="Salones">
 					<img src="~/Images/Diseños/LogoSistemas.png" />
 					<p>Salones</p>
 				</a>
-				<a href="EdificiosAdmin.html" class="categoria" data-url="DepartamentosAdmin.html">
+				<a class="categoria" id="Departamentos">
 					<img src="~/Images/Diseños/LogoSistemas.png" />
 					<p>Departamentos</p>
 				</a>
@@ -72,13 +72,27 @@
 		let add= document.getElementById('Agregar').addEventListener("click",function(){
 			window.location.replace("Agregar");
 		});
-			// Seleccionar todos los enlaces con la clase "categoria"
-		document.querySelectorAll('.categoria').forEach(enlace => {
-			enlace.addEventListener('click', (event) => {
-				event.preventDefault(); // Previene el comportamiento predeterminado del enlace
-				const url = enlace.getAttribute('data-url'); // Obtiene la URL desde el atributo data-url
-				window.location.replace(url); // Reemplaza la URL en la vista actual
-			});
+		// document.querySelectorAll('.categoria').forEach(enlace => {
+		// 	enlace.addEventListener('click', (event) => {
+		// 		event.preventDefault(); 
+		// 		const url = enlace.getAttribute('data-url');
+		// 		window.location.replace(url); 
+		// 	});
+		// });
+		let Areas= document.getElementById('Areas').addEventListener("click",function(){
+			window.location.replace("Areas");
+		});
+		let Departamentos=document.getElementById('Departamentos').addEventListener("click", function(){
+			window.location.replace("Departamentos");
+		});
+		let Edificios=document.getElementById('Edificios').addEventListener("click",function(){
+			window.location.replace("Edificios");
+		});
+		let Laboratorios=document.getElementById('Laboratorios').addEventListener("click", function(){
+			window.location.replace("Laboratorios");
+		});
+		let Salones=document.getElementById('Salones').addEventListener("click",function(){
+			window.location.replace("Salones");
 		});
 		let index= document.getElementById('index').addEventListener("click",function(){
 			window.location.replace("/Index");

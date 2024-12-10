@@ -1,5 +1,5 @@
 ﻿@page
-@model UbicaTec.Pages.Admin.EdificiosModel
+@model APIMap.Pages.Admin.SalonesModel
 @{
 }
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="~/Css/StylesAdmin.css" />
-	<title>Edificios Admin</title>
+	<title>Salones</title>
 </head>
 <body class="grid-container">
 	<header class="header">
@@ -34,10 +34,10 @@
 						<img src="~/Images/Diseños/LogoSistemas.png" alt="Edificio Sistemas" />
 						<p>Edificio Sistemas</p>
 					</div>
-						<div class="btn-group">
-							<a id="Editar" class="btn"><img class="btn" src="~/Images/Diseños/editar.png" /></a>
-							<a id="Eliminar" class="btn"><img class="btn" src="~/Images/Diseños/marca-x.png" /></a>
-						</div>
+					<div class="btn-group">
+						<a id="Editar" class="btn"><img class="btn" src="~/Images/Diseños/editar.png" /></a>
+						<a id="Eliminar" class="btn"><img class="btn" src="~/Images/Diseños/marca-x.png" /></a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -62,10 +62,10 @@
 		let cancel=document.getElementById('Eliminar').addEventListener("click", function(){
 			window.location.replace("Eliminar");
 		});
-		let Salir =document.getElementById('Salir').addEventListener("click", function(){
+		let Salir= document.getElementById('Salir').addEventListener("click", function(){
 			window.location.replace("/Index");
 		});
-		
+
 	</script>
 	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
