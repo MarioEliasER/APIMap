@@ -21,23 +21,23 @@ namespace APIMap.Controllers
             jwthelper = helper;
         }
 
-        [HttpPost]
-        public IActionResult Login(LoginDTO dto)
-        {
-            LoginValidator validator = new LoginValidator();
-            var result = validator.Validate(dto);
-            if (result.IsValid)
-            {
-                var encrypt = Encriptacion.StringToSHA512(dto.Password);
-                var us = repository.GetAll().FirstOrDefault(x => x.Nombreusuario == dto.Username && x.Contraseña == encrypt);
-                if (us == null)
-                {
-                    return Unauthorized();
-                }
+        //[HttpPost]
+        //public IActionResult Login(LoginDTO dto)
+        //{
+        //    LoginValidator validator = new LoginValidator();
+        //    var result = validator.Validate(dto);
+        //    if (result.IsValid)
+        //    {
+        //        //var encrypt = Encriptacion.StringToSHA512(dto.Password);
+        //        var us = repository.GetAll().FirstOrDefault(x => x.Nombreusuario == dto.Username && x.Contraseña == encrypt);
+        //        if (us == null)
+        //        {
+        //            return Unauthorized();
+        //        }
 
-                var token = jwthelper.GetToken(us.Nombreusuario, us.Id, new List<Claim> { });
-            }
-            return BadRequest(result.Errors.Select(x => x.ErrorMessage));
-        }
+        //        var token = jwthelper.GetToken(us.Nombreusuario, us.Id, new List<Claim> { });
+        //    }
+        //    return BadRequest(result.Errors.Select(x => x.ErrorMessage));
+        //}
     }
 }
