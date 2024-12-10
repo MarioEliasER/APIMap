@@ -32,9 +32,7 @@
 				<div class="form-group">
 					<label for="area">Área:</label>
 					<select id="area" name="area">
-						<option value="edificios">Edificios</option>
-						<option value="laboratorio">Laboratorio</option>
-						<option value="departamento">Departamento</option>
+						
 					</select>
 				</div>
 
@@ -92,84 +90,42 @@
 			let Salir =document.getElementById('Salir').addEventListener("click", function(){
 			window.location.replace("/Index");
 		});
-			// Cargar áreas disponibles
-		async function cargarAreas() {
-			console.log("Cargando áreas disponibles...");
+			
+	</script>
+	<script>
+				async function fetchAreas() {
 			try {
-						const response = await fetch('https://apimap.websitos256.com/areas'); // Cambiar endpoint según la API
-				console.log("Respuesta de la API recibida para áreas.");
-
+				const response = await fetch('https://apimap.websitos256.com/api/ubicacion');
 				if (!response.ok) {
-					throw new Error(`Error al obtener áreas: ${response.statusText}`);
+					throw new Error('Error al obtener datos de la API');
+				}
+				else{
+					console.log("accedio");
 				}
 
-				const areas = await response.json();
-				console.log("Áreas obtenidas:", areas);
+				const data = await response.json();
 
+				// Filtrar las áreas únicas
+				const uniqueAreas = [...new Set(data.map(item => item.area))];
+
+				console.log('Áreas disponibles:', uniqueAreas);
+
+				// Agregar las áreas al select
 				const areaSelect = document.getElementById('area');
-				// Limpiar opciones actuales
-				areaSelect.innerHTML = '';
-				console.log("Opciones anteriores eliminadas.");
-
-				// Agregar nuevas opciones
-				areas.forEach(area => {
+				uniqueAreas.forEach(area => {
 					const option = document.createElement('option');
-					option.value = area.id; // Asume que la API devuelve un "id" para el área
-					option.textContent = area.nombre; // Asume que la API devuelve un "nombre" para el área
+					option.value = area.toLowerCase(); // Convertir a minúsculas para consistencia
+					option.textContent = area;
 					areaSelect.appendChild(option);
 				});
-				console.log("Nuevas opciones añadidas al select.");
 			} catch (error) {
-				console.error('Error al cargar áreas:', error);
+				console.error('Error:', error);
 			}
 		}
 
-		// Agregar nuevo elemento
-		async function agregarElemento() {
-			console.log("Iniciando proceso para agregar un nuevo elemento...");
-			try {
-				const nombre = document.getElementById('nombre').value;
-				const area = document.getElementById('area').value;
-				const descripcion = document.getElementById('descripcion').value;
-				const imagen = document.getElementById('imagen').files[0];
+		// Llamar la función al cargar la página
+		document.addEventListener('DOMContentLoaded', fetchAreas);
 
-				console.log("Datos capturados del formulario:", { nombre, area, descripcion, imagen });
-
-				// Crear formData para enviar datos, incluyendo la imagen
-				const formData = new FormData();
-				formData.append('nombre', nombre);
-				formData.append('area', area);
-				formData.append('descripcion', descripcion);
-				if (imagen) {
-					formData.append('imagen', imagen);
-					console.log("Imagen añadida al FormData.");
-				}
-
-				console.log("Enviando solicitud a la API para agregar el elemento...");
-						const response = await fetch('https://apimap.websitos256.com/elementos', { // Cambiar endpoint según la API
-					method: 'POST',
-					body: formData
-				});
-				console.log("Respuesta recibida de la API.");
-
-				if (!response.ok) {
-					throw new Error(`Error al agregar elemento: ${response.statusText}`);
-				}
-
-				console.log("Elemento agregado exitosamente.");
-				alert('Elemento agregado exitosamente.');
-				window.location.replace("Index");
-			} catch (error) {
-				console.error('Error al agregar elemento:', error);
-				alert('Hubo un error al agregar el elemento.');
-			}
-		}
-
-		// Llamar a cargarAreas al cargar la página
-		window.addEventListener('DOMContentLoaded', () => {
-			console.log("Página cargada. Llamando a cargarAreas...");
-			cargarAreas();
-		});
 	</script>
 	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
