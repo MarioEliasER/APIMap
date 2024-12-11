@@ -10,8 +10,8 @@
 	<link href="~/Css/Styles.css" rel="stylesheet" />
 	<title>Ubica-Tec</title>
 </head>
-<body>
-	<header>
+<body class="grid-container2">
+	<header class="header">
 		<div class="iconTitle">
 			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
 			<h1>Ubica-Tec</h1>
@@ -19,11 +19,17 @@
 
 		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
 	</header>
-	<main class="Lista-Container">
+
+	<article class="navbar">
 		<div class="search2">
 			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
 			<input class="searchtext" type="search" placeholder="Buscar..." />
 		</div>
+	</article>
+
+
+	<main class="main2">
+		<a id="Index" class="floating-button2"><img src="~/Images/Diseños/flecha-izquierda.png" /></a>
 
 		<div class="ListaElementos">
 			<a id="Detalle" class="elementos">
@@ -53,7 +59,7 @@
 		</div>
 		
 	</main>
-	<nav>
+	<nav class="footer">
 		<div class="nav-item">
 			<a class="GenerarRutas">
 				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
@@ -85,6 +91,10 @@
 		// 	window.location.replace("/Edificios");
 		// });
 
+		//REGRESAR A VISTA EDIFICIOS
+		let EdificiosView = document.querySelector("#Index").addEventListener("click", function () {
+			window.location.replace("/Index")
+		});
 		//NAVEGAR A VISTA DETALLES
 		let DetalleView = document.querySelector("#Detalle").addEventListener("click", function () {
 			window.location.replace("/Detalles")

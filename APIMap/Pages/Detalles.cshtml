@@ -10,8 +10,8 @@
 	<link href="~/Css/Styles.css" rel="stylesheet" />
 	<title>Ubica-Tec</title>
 </head>
-<body>
-	<header>
+<body class="grid-container2">
+	<header class="header">
 		<div class="iconTitle">
 			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
 			<h1>Ubica-Tec</h1>
@@ -19,21 +19,27 @@
 
 		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
 	</header>
-	<main class="Lista-Container">
+	<article class="navbar">
 		<div class="search2">
 			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
 			<input class="searchtext" type="search" placeholder="Buscar..." />
 		</div>
-		<a id="Edificios"  class="floating-button2"><img src="~/Images/Diseños/flecha-izquierda.png" /></a>
+	</article>
 
-		<img class="ImgAula" src="~/Images/Diseños/Sistemas.png" />
+	<main class="main2">
+		<div class="Lista-Container">
+			<a id="Edificios" class="floating-button2"><img src="~/Images/Diseños/flecha-izquierda.png" /></a>
 
-		<div class="Info">
-			<h4>Edificio Ing. Sistemas</h4>
-			<p>Ubicado en un lado del Estacionamiento de los docentes y enfrente del Departamento de finanzas.</p>
+			<img class="ImgAula" src="~/Images/Diseños/Sistemas.png" />
+
+			<div class="Info">
+				<h4>Edificio Ing. Sistemas</h4>
+				<p>Ubicado en un lado del Estacionamiento de los docentes y enfrente del Departamento de finanzas.</p>
+			</div>
 		</div>
+		
 	</main>
-	<nav>
+	<nav class="footer">
 		<div class="nav-item">
 			<a class="GenerarRutas">
 				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />

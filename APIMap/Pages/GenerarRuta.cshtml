@@ -10,8 +10,8 @@
 	<link href="~/Css/Styles.css" rel="stylesheet" />
 	<title>Ubica-Tec</title>
 </head>
-<body>
-	<header>
+<body class="grid-container2">
+	<header class="header">
 		<div class="iconTitle">
 			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
 			<h1>Ubica-Tec</h1>
@@ -19,13 +19,45 @@
 
 		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
 	</header>
-	<main class="Lista-Container">
+
+	<article class="navbar">
 		<div class="search2">
 			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
 			<input class="searchtext" type="search" placeholder="Buscar..." />
 		</div>
+	</article>
+	<main class="main2">
+		<div class="ListaElementos">
+			<div class="ImgMapa">
+				<img class="ImgRuta" src="~/Images/Diseños/RutaMapa.png" />
+			</div>
+			<div class="SeleccionarRuta2">
+				<p>Mi ubicación:</p>
+				<select class="ruta" id="Ruta" name="Ruta">
+					<option disabled selected>-- Selecciona un origen --</option>
+					<option disabled>Edificios</option>
+					<option value="Ruta1">Edificio de Industrial</option>
+					<option value="Ruta2">Edificio B</option>
+					<option value="Ruta2">sistemas</option>
+					<option disabled>Departamentos</option>
+					<option value="Ruta3">Departamento de Escolares</option>
+				</select>
+				<p>Mi destino:</p>
+				<select class="ruta" id="Destino" name="Destino">
+					<option disabled selected>-- Selecciona un destino --</option>
+					<option disabled>Edificios</option>
+					<option value="Ruta1">Edificio de Industrial</option>
+					<option value="Ruta2">Edificio B</option>
+					<option disabled>Departamentos</option>
+					<option value="Ruta3">Departamento de Escolares</option>
+					<option value="Ruta3">Biblioteca</option>
+				</select>
+			
+				<input type="submit" class="GenerarRuta" value="Obtener Ruta" onclick="obtenerRuta()" />
+			</div>
+		</div>
 
-		<img class="ImgRuta" src="~/Images/Diseños/RutaMapa.png" />
+		@* <img class="ImgRuta" src="~/Images/Diseños/RutaMapa.png" />
 
 		<div class="SeleccionarRuta">
 			<p>Mi ubicación:</p>
@@ -48,13 +80,12 @@
 				<option value="Ruta3">Departamento de Escolares</option>
 				<option value="Ruta3">Biblioteca</option>
 			</select>
-@* 			<a><input class="GenerarRuta" type="button" value="Generar Ruta" /></a>
- *@
+
  <input type="submit" class="GenerarRuta" value="Obtener Ruta" onclick="obtenerRuta()"/>
 </div>
-
+ *@
 	</main>
-	<nav>
+	<nav class="footer">
 		<div class="nav-item">
 			<a class="GenerarRutas">
 				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
