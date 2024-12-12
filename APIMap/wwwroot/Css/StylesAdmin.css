@@ -189,7 +189,7 @@ header h1 {
     height: 60px;
     padding-left: 10px;
     align-items: center;
-
+    margin-bottom:10px;
 }
 
     .elementos p {
@@ -612,6 +612,7 @@ input[type="file"] {
         height: 65px;
         padding-left: 1px;
         align-items: center;
+        margin-bottom: 10px;
     }
 
         .elementos p {
@@ -973,6 +974,7 @@ input[type="file"] {
         height: 65px;
         padding-left: 10px;
         align-items: center;
+        margin-bottom: 10px;
     }
 
         .elementos p {
@@ -1331,6 +1333,7 @@ input[type="file"] {
         height: 65px;
         padding-left: 10px;
         align-items: center;
+        margin-bottom: 10px;
     }
 
         .elementos p {
@@ -1686,6 +1689,7 @@ input[type="file"] {
         height: 65px;
         padding-left: 10px;
         align-items: center;
+        margin-bottom: 10px;
     }
 
         .elementos p {
@@ -2034,6 +2038,7 @@ input[type="file"] {
         height: 60px;
         padding-left: 10px;
         align-items: center;
+        margin-bottom: 10px;
     }
 
         .elementos p {
