@@ -7,11 +7,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="~/Css/StylesAyuda.css" rel="stylesheet" />
+	<link href="~/Css/Styles.css" rel="stylesheet" />
 	<title>Ubica-Tec</title>
 </head>
-<body>
-	<header>
+<body class="grid-container2">
+	<header class="header">
 		<div class="iconTitle">
 			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
 			<h1>Ubica-Tec</h1>
@@ -19,20 +19,21 @@
 
 		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
 	</header>
-	<main class="Lista-Container">
+	<main class="main2">
+		<div class="Container">
+			<img class="imagLogo" src="~/Images/Diseños/sin-login.png" />
+			<h4 id="title">Desarrolladores:</h4>
+			<ul class="Desarrolladores">
+				<li> Diseñador: Alexander Contreras</li>
+				<li> Desarrollador Front-End: Yadira Zamarrón</li>
+				<li> Desarrollador Back-End: Mario Espinoza</li>
+			</ul>
 
-		<img class="imagLogo" src="~/Images/Diseños/sin-login.png" />
-		<h4 id="title">Desarrolladores:</h4>
-		<ul class="Desarrolladores">
-			<li> Diseñador: Alexander Contreras</li>
-			<li> Desarrollador Front-End: Yadira Zamarrón</li>
-			<li> Desarrollador Back-End: Mario Espinoza</li>
-		</ul>
+			<a class="LoginAdmin"><input class="login" type="button" value="Iniciar Sesión" /></a>
 
-		<a class="LoginAdmin"><input class="login" type="button" value="Iniciar Sesión" /></a>
-
+		</div>
 	</main>
-	<nav>
+	<nav class="footer">
 		<div class="nav-item">
 			<a class="GenerarRutas">
 				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />

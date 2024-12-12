@@ -17,7 +17,9 @@
 			<h1>Ubica-Tec</h1>
 		</div>
 
-		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
+		<div class="menu-toggle">
+			<img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" />
+		</div>
 	</header>
 	<article class="navbar">
 		<div class="search2">
@@ -31,7 +33,7 @@
 			<h3 class="informacion">¿Qué es Ubica-Tec?</h3>
 			<div class="informacion">
 				<p>Es un mapa escolar que te permite visualizar las diferentes áreas de la escuela, como:</p>
-				<ul class="listaAreas">
+				<ul class="listaAreas2">
 					<li>Salones de clases</li>
 					<li>Áreas comunes</li>
 					<li>Oficinas administrativas</li>
@@ -90,7 +92,7 @@
 		</div>
 
 	</main>
-	<nav>
+	<nav class="footer">
 		<div class="nav-item">
 			<a class="GenerarRutas">
 				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
@@ -127,6 +129,22 @@
 		});
 		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
 			window.location.replace("/Ayuda");
+		});
+
+		// Mostrar/Ocultar el menú desplegable
+		document.querySelector('.menu-toggle').addEventListener('click', function () {
+			const menu = document.querySelector('#dropdownMenu');
+			menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+		});
+
+		// Cerrar el menú al hacer clic fuera de él
+		document.addEventListener('click', function (event) {
+			const menu = document.querySelector('#dropdownMenu');
+			const toggle = document.querySelector('.menu-toggle');
+
+			if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+				menu.style.display = 'none';
+			}
 		});
 	</script>
 	</body>
