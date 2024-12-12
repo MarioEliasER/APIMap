@@ -66,67 +66,7 @@
 
 	</nav>
 
-	<script>
-		//NAVEGACION
-		let Home = document.getElementById('Inicio').addEventListener("click", function () {
-			window.location.replace("Index");
-		});
-		let acept= document.getElementById('aceptar').addEventListener("click", function(){
-			window.location.replace("Index");
-		});
-		let cancel= document.getElementById('cancelar').addEventListener("click", function(){
-			window.location.replace("Index");
-		});
-					document.getElementById('imagen').addEventListener('change', function(event) {
-		  const file = event.target.files[0];
-		  if (file) {
-			const reader = new FileReader();
-			reader.onload = function(e) {
-			  document.getElementById('imagen-preview').src = e.target.result;
-			};
-			reader.readAsDataURL(file);
-		  }
-		});
-			let Salir =document.getElementById('Salir').addEventListener("click", function(){
-			window.location.replace("/Index");
-		});
-			
-	</script>
-	<script>
-				async function fetchAreas() {
-			try {
-				const response = await fetch('https://apimap.websitos256.com/api/ubicacion');
-				if (!response.ok) {
-					throw new Error('Error al obtener datos de la API');
-				}
-				else{
-					console.log("accedio");
-				}
-
-				const data = await response.json();
-
-				// Filtrar las áreas únicas
-				const uniqueAreas = [...new Set(data.map(item => item.area))];
-
-				console.log('Áreas disponibles:', uniqueAreas);
-
-				// Agregar las áreas al select
-				const areaSelect = document.getElementById('area');
-				uniqueAreas.forEach(area => {
-					const option = document.createElement('option');
-					option.value = area.toLowerCase(); // Convertir a minúsculas para consistencia
-					option.textContent = area;
-					areaSelect.appendChild(option);
-				});
-			} catch (error) {
-				console.error('Error:', error);
-			}
-		}
-
-		// Llamar la función al cargar la página
-		document.addEventListener('DOMContentLoaded', fetchAreas);
-
-	</script>
+	<script src="~/Scripts/Agregar.js"></script>
 	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
 </html>

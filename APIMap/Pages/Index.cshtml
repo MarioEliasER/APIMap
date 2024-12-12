@@ -28,23 +28,23 @@
 	<div class="dropdown-menu" id="dropdownMenu">
 		<ul>
 			<li>
-				<img src="~/Images/Diseños/casa.png" alt="Edificios" />
+				<img id="Edificios" src="~/Images/Diseños/casa.png" alt="Edificios" />
 				Edificios
 			</li>
 			<li>
-				<img src="salones.png" alt="Salones" />
+				<img id="Salones" src="salones.png" alt="Salones" />
 				Salones
 			</li>
 			<li>
-				<img src="laboratorios.png" alt="Laboratorios" />
+				<img id="Laboratorios" src="laboratorios.png" alt="Laboratorios" />
 				Laboratorios
 			</li>
 			<li>
-				<img src="departamentos.png" alt="Departamentos" />
+				<img id="Departamentos" src="departamentos.png" alt="Departamentos" />
 				Departamentos
 			</li>
 			<li>
-				<img src="areascomunes.png" alt="Áreas Comunes" />
+				<img id="Areas" src="areascomunes.png" alt="Áreas Comunes" />
 				Áreas Comunes
 			</li>
 			<li>
@@ -157,8 +157,26 @@
 		</div>
 	</nav>
 	<script>
+		//MENU DERECHO
+		let Areas = document.querySelector("#Areas").addEventListener("click", function(){
+			window.location.replace("Areas");
+		});
+		let edificios = document.querySelector("#Edificios").addEventListener("click", function(){
+			window.location.replace("/Edificios");
+		});
+		let Salones = document.querySelector("#Salones").addEventListener("click", function(){
+			window.location.replace("/Salones");
+		});
+		let Laboratorios = document.querySelector("#Laboratorios").addEventListener("click", function(){
+			window.location.replace("/Laboratorios");
+		});
+		let Departamentos = document.querySelector("#Departamentos").addEventListener("click", function(){
+			window.location.replace("/Departamentos");
+		});
+	</script>
+	<script>
 		//NAVEGACION
-
+		
 		//ICONO SUPERIOR IZQUIERDO
 		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
 			window.location.replace("/AboutUs");
