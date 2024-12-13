@@ -79,3 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Llenar con 5 ubicaciones aleatorias
 	edificios.renderUbicacionesAleatorias(5);
 });
+async function filtro() {
+	let busqueda = document.querySelector('.search2').value;
+	let usuarios = ListaUsuarios.filter(x =>
+		x.rfc.toLowerCase().includes(busqueda.toLowerCase()) ||
+		x.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+		x.proveedor.toLowerCase().includes(busqueda.toLowerCase())
+	)
+	rellenarUsuarios(usuarios);
+}
