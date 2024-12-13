@@ -66,6 +66,9 @@
 		</div>
 	</nav>
 	<script>
+		if ('serviceWorker' in navigator){
+			navigator.serviceWorker.register('/serviceworker.js?v=5');
+		}
 		//NAVEGACION
 		let Home = document.getElementById('Inicio').addEventListener("click", function () {
 			window.location.replace("Index");

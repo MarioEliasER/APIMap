@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="~/Images/Icono/Icono144.png" type="image/x-icon">
 	<link href="~/Css/Styles.css" rel="stylesheet" />
+	<link rel="manifest" href="/manifest.json"
 	<title>Ubica-Tec</title>
 </head>
 <body class="grid-container">
@@ -119,6 +120,9 @@
 		// });
 	</script>
 	<script>
+		if ('serviceWorker' in navigator){
+			navigator.serviceWorker.register('/serviceworker.js?v=5');
+		}
 		//NAVEGACION
 		//ICONO SUPERIOR IZQUIERDO
 		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
