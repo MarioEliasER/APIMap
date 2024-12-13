@@ -439,9 +439,9 @@ input[type="file"] {
 }
 
     .Eliminar label {
-        font-size: 20px;
-        padding-left: 6%;
-        position: fixed;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
         color: white;
     }
 
@@ -814,8 +814,8 @@ input[type="file"] {
 
         .Eliminar label {
             font-size: 18px;
-            padding-left: 5%;
-            position: relative;
+            display: flex;
+            flex-direction: column;
             color: white;
         }
 
@@ -1174,9 +1174,9 @@ input[type="file"] {
     }
 
         .Eliminar label {
-            font-size: 20px;
-            padding-left: 5%;
-            position: relative;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
             color: white;
         }
 
@@ -1525,11 +1525,10 @@ input[type="file"] {
         padding-top: 10px;
         border-radius: 8px;
     }
-
         .Eliminar label {
             font-size: 18px;
-            padding-left: 5%;
-            position: relative;
+            display: flex;
+            flex-direction: column;
             color: white;
         }
 
@@ -1882,9 +1881,9 @@ input[type="file"] {
     }
 
         .Eliminar label {
-            font-size: 20px;
-            padding-left: 5%;
-            position: relative;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
             color: white;
         }
 
@@ -2241,9 +2240,9 @@ input[type="file"] {
     }
 
         .Eliminar label {
-            font-size: 20px;
-            padding-left: 6%;
-            position: fixed;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
             color: white;
         }
 
