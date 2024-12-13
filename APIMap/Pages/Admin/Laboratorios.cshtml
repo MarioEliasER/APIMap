@@ -5,69 +5,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="~/Images/Icono/Icono144.png" type="image/x-icon">
-	<link rel="stylesheet" href="~/Css/StylesAdmin.css" />
-	<title>Edificios Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/Images/Icono/Icono144.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/Css/StylesAdmin.css" />
+    <title>Edificios Admin</title>
 </head>
 <body class="grid-container">
-	<header class="header">
-		<div class="iconTitle">
-			<a><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
-			<h1>Ubica-Tec</h1>
-		</div>
-		<a id="Salir"><img class="iconMenu" src="~/Images/Diseños/CerrarSesion.png" alt="filter icon" /></a>
-	</header>
+    <header class="header">
+        <div class="iconTitle">
+            <a><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
+            <h1>Ubica-Tec</h1>
+        </div>
+        <a id="Salir"><img class="iconMenu" src="~/Images/Diseños/CerrarSesion.png" alt="filter icon" /></a>
+    </header>
 
-	<article class="navbar">
-		<div class="search2">
-			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
-			<input class="searchtext" type="search" placeholder="Buscar..." />
-		</div>
-	</article>
+    <article class="navbar">
+        <div class="search2">
+            <img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
+            <input class="searchtext" type="search" placeholder="Buscar..." />
+        </div>
+    </article>
 
-	<main class="main">
-		<div class="Lista-Container2">
-			<div class="ListaElementos">
-				<div class="elementos">
-					<div class="elemento">
-						<img src="~/Images/Diseños/LogoSistemas.png" alt="Edificio Sistemas" />
-						<p>Edificio Sistemas</p>
-					</div>
-					<div class="btn-group">
-						<a id="Editar" class="btn"><img class="btn" src="~/Images/Diseños/editar.png" /></a>
-						<a id="Eliminar" class="btn"><img class="btn" src="~/Images/Diseños/marca-x.png" /></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
+    <main class="main">
+        <div class="Lista-Container2">
+            <div class="ListaElementos">
+                <template>
+                    <div class="elementos">
+                        <div class="elemento">
+                            <img src="~/Images/Diseños/LogoSistemas.png" alt="Edificio Sistemas" />
+                            <p>Edificio Sistemas</p>
+                        </div>
+                        <div class="btn-group">
+                            <a id="Editar" class="btn">
+                                <img class="btn" src="~/Images/Diseños/editar.png" />
+                            </a>
+                            <a id="Eliminar" class="btn">
+                                <img class="btn" src="~/Images/Diseños/marca-x.png" />
+                            </a>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </main>
 
-	<nav class="footer">
-		<div class="nav-item">
-			<a id="Inicio">
-				<img src="~/Images/Diseños/casa.png" alt="home icon" />
-				<h3>Inicio</h3>
-			</a>
-		</div>
-	</nav>
-	<script src="~/Scripts/Laboratorios.js"></script>
-	<script>
-		//NAVEGACION
-		let Home = document.getElementById('Inicio').addEventListener("click", function () {
-			window.location.replace("Index");
-		});
-		// let Edit=document.getElementById('Editar').addEventListener("click", function(){
-		// 	window.location.replace("Editar");
-		// });
-		// let cancel=document.getElementById('Eliminar').addEventListener("click", function(){
-		// 	window.location.replace("Eliminar");
-		// });
-		let Salir= document.getElementById('Salir').addEventListener("click", function(){
-			window.location.replace("/Index");
-		});
-	</script>
-	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+    <nav class="footer">
+        <div class="nav-item">
+            <a id="Inicio">
+                <img src="~/Images/Diseños/casa.png" alt="home icon" />
+                <h3>Inicio</h3>
+            </a>
+        </div>
+    </nav>
+    <script src="~/Scripts/Laboratorios.js"></script>
+    <script>
+        //NAVEGACION
+        let Home = document.getElementById('Inicio').addEventListener("click", function () {
+            window.location.replace("Index");
+        });
+        // let Edit=document.getElementById('Editar').addEventListener("click", function(){
+        // 	window.location.replace("Editar");
+        // });
+        // let cancel=document.getElementById('Eliminar').addEventListener("click", function(){
+        // 	window.location.replace("Eliminar");
+        // });
+        let Salir = document.getElementById('Salir').addEventListener("click", function () {
+            window.location.replace("/Index");
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
 </html>

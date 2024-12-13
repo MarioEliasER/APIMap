@@ -33,9 +33,6 @@
 				<div class="form-group">
 					<label for="area">Área:</label>
 					<select id="area" name="area">
-						<option value="edificios">Edificios</option>
-						<option value="laboratorio">Laboratorio</option>
-						<option value="departamento">Departamento</option>
 					</select>
 				</div>
 
@@ -68,18 +65,18 @@
 			</a>
 		</div>
 	</nav>
-
+	<script src="~/Scripts/Editar.js"></script>
 	<script>
 		//NAVEGACION
 		let Home = document.getElementById('Inicio').addEventListener("click", function () {
 			window.location.replace("Index");
 		});
-		let Acept=document.getElementById('Aceptar').addEventListener("click", function(){
-			window.location.replace("Index");
-		});
-		let Cancel=document.getElementById('Cancelar').addEventListener("click",function(){
-			window.location.replace("Index");
-		});
+		// let Acept=document.getElementById('Aceptar').addEventListener("click", function(){
+		// 	window.location.replace("Index");
+		// });
+		// let Cancel=document.getElementById('Cancelar').addEventListener("click",function(){
+		// 	window.location.replace("Index");
+		// });
 		let PrimeraVista= document.querySelector('.PrimeraVista').addEventListener("click", function(){
 			window.location.replace("/Index");
 		});
@@ -96,7 +93,8 @@
 
 	</script>
 	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
-	
+
 </body>
 </html>
+
 

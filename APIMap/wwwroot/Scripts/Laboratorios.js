@@ -1,4 +1,17 @@
-﻿class Ubicaciones{
+﻿
+const template = document.querySelector('template');
+const lista = document.querySelector('.Lista-Container2');
+let elementos;
+async function verEditar(id) {
+    console.log(id);
+    localStorage.setItem('idLugar', id);
+    window.location.replace("Editar");
+}
+async function verEliminar(id) {
+    localStorage.setItem('idLugar', id);
+    window.location.replace("Eliminar");
+}
+class Ubicaciones {
     constructor(apiUrl) {
         this.apiUrl = apiUrl;
         this.listaContainer = document.querySelector('.Lista-Container2');
@@ -10,7 +23,6 @@
             if (!response.ok) {
                 throw new Error('Error al obtener datos de la API');
             }
-
             const data = await response.json();
             return data;
         } catch (error) {
@@ -18,7 +30,66 @@
             return [];
         }
     }
+    async generarElementos(data) {
 
+        console.log(data);
+        if (lista.firstElementChild == undefined) {
+            elementos = document.createElement('div');
+            elementos.className = "elementos";
+            elementos.style.display = "flex";
+            elementos.style.flexDirection = "column";
+            elementos.style.alignSelf = "center";
+            elementos.style.margin = "0px 20px 30px";
+            elementos.style.height = "100%";
+            lista.appendChild(elementos);
+        }
+        console.log(template);
+        for (var i = 0; i < data.length; i++) {
+            let clone = template.content.querySelector('.elemento').cloneNode(true)
+            console.log(clone);
+            clone.style.width = 100;
+            clone.style.height = 400;
+
+            //Imagen
+            let imagen = clone.querySelector('img');
+            imagen.src = "/Images/Diseños/" + data[i].nombre + ".jpg";
+
+
+            //Nombre
+            clone.querySelector('.elemento p').textContent = data[i].nombre;
+            //Botones
+            let btngroup = document.createElement('div');
+            btngroup.style.className = "btn-group";
+            let btnEditar = document.createElement('a');
+            let id = data[i].id;
+            btnEditar.onclick = async () => verEliminar(id);
+            btnEditar.style.width = 50;
+            btnEditar.style.height = 50;
+            btngroup.appendChild(btnEditar);
+
+            let btnEliminar = document.createElement('a');
+            btnEliminar.onclick = () => verEditar(id);
+            btngroup.appendChild(btnEliminar);
+
+            let imagenEditar = document.createElement('img');
+            imagenEditar.style.width = 50;
+            imagenEditar.style.height = 50;
+            imagenEditar.src = '/Images/Diseños/marca-x.png';
+            btnEditar.appendChild(imagenEditar);
+
+            let imagenEliminar = document.createElement('img');
+            imagenEliminar.src = '/Images/Diseños/editar.png';
+            btnEliminar.appendChild(imagenEliminar);
+
+
+            imagenEliminar.onclick = () => verEliminar(id);
+            imagenEditar.onclick = () => verEditar(id);
+
+            clone.appendChild(btngroup);
+            elementos.appendChild(clone);
+
+        }
+    }
     // Método para filtrar solo los laboratorios
     filtrarLaboratorios(ubicaciones) {
         // Filtramos ubicaciones que incluyen "laboratorio" en el nombre del área
@@ -26,33 +97,34 @@
     }
 
     // Método para generar el HTML de cada elemento
-    createElementoHTML(ubicacion) {
-        const elemento = document.createElement('div');
-        elemento.classList.add('elementos');
+    //createElementoHTML(ubicacion) {
+    //    const elemento = document.createElement('div');
+    //    elemento.classList.add('elementos');
 
-        elemento.innerHTML = `
-            <div class="elemento">
-                <img src="/Images/Diseños/${ubicacion.nombre}.jpg" alt="${ubicacion.nombre}" />
-                <p>${ubicacion.nombre}</p>
-            </div>
-          <div class="btn-group">
-        <a alt="Editar" class="btn Editar" onClick="verEditar(${ubicacion.id})" data-id="${ubicacion.id}">
-            <img class="btn" src="/Images/Diseños/editar.png" alt="Editar">
-        </a>
-        <a alt="Eliminar" class="btn Eliminar" onClick="verEliminar(${ubicacion.id})" data-id="${ubicacion.id}">
-            <img class="btn" src="/Images/Diseños/marca-x.png" alt="Eliminar">
-        </a>
-    </div>
-        `;
+    //    elemento.innerHTML = `
+    //        <div class="elemento">
+    //            <img src="/Images/Diseños/${ubicacion.nombre}.jpg" alt="${ubicacion.nombre}" />
+    //            <p>${ubicacion.nombre}</p>
+    //        </div>
+    //      <div class="btn-group">
+    //    <a alt="Editar" class="btn Editar" onClick="verEditar(${ubicacion.id})" data-id="${ubicacion.id}">
+    //        <img class="btn" src="/Images/Diseños/editar.png" alt="Editar">
+    //    </a>
+    //    <a alt="Eliminar" class="btn Eliminar" onClick="verEliminar(${ubicacion.id})" data-id="${ubicacion.id}">
+    //        <img class="btn" src="/Images/Diseños/marca-x.png" alt="Eliminar">
+    //    </a>
+    //</div>
+    //    `;
 
-        return elemento;
-    }
+    //    return elemento;
+    //}
 
     // Método para renderizar los laboratorios en el contenedor
     async renderLaboratorios() {
         this.listaContainer.innerHTML = ''; // Limpiar el contenido actual
 
         const ubicaciones = await this.fetchUbicaciones();
+
         const laboratorios = this.filtrarLaboratorios(ubicaciones);
 
         this.renderLaboratoriosList(laboratorios);
@@ -66,14 +138,14 @@
             return;
         }
 
-        // Si hay laboratorios, renderizamos los elementos
-        laboratorios.forEach((laboratorio) => {
-            const elementoHTML = this.createElementoHTML(laboratorio);
-            this.listaContainer.appendChild(elementoHTML);
-        });
+        this.generarElementos(laboratorios);
+        //// Si hay laboratorios, renderizamos los elementos
+        //laboratorios.forEach((laboratorio) => {
+        //    const elementoHTML = this.createElementoHTML(laboratorio);
+        //    this.listaContainer.appendChild(elementoHTML);
+        //});
     }
 }
-
 // Usar la clase para llenar los laboratorios
 const ubicacionManager = new Ubicaciones('https://apimap.websitos256.com/api/ubicacion');
 
@@ -81,13 +153,3 @@ const ubicacionManager = new Ubicaciones('https://apimap.websitos256.com/api/ubi
 document.addEventListener('DOMContentLoaded', () => {
     ubicacionManager.renderLaboratorios();
 });
-
-async function verEditar(id) {
-
-    localStorage.setItem('idLugar', id);
-    window.location.replace("Admin/Editar");
-}
-async function verEliminar(id) {
-    localStorage.setItem('idLugar', id);
-    window.location.replace("Admin/Editar");
-}
