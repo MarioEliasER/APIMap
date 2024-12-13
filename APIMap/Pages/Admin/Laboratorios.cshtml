@@ -30,7 +30,7 @@
 	<main class="main">
 		<div class="Lista-Container2">
 			<div class="ListaElementos">
-				@* <div class="elementos">
+				<div class="elementos">
 					<div class="elemento">
 						<img src="~/Images/Diseños/LogoSistemas.png" alt="Edificio Sistemas" />
 						<p>Edificio Sistemas</p>
@@ -39,7 +39,7 @@
 						<a id="Editar" class="btn"><img class="btn" src="~/Images/Diseños/editar.png" /></a>
 						<a id="Eliminar" class="btn"><img class="btn" src="~/Images/Diseños/marca-x.png" /></a>
 					</div>
-				</div> *@
+				</div>
 			</div>
 		</div>
 	</main>
@@ -58,12 +58,12 @@
 		let Home = document.getElementById('Inicio').addEventListener("click", function () {
 			window.location.replace("Index");
 		});
-		let Edit=document.getElementById('Editar').addEventListener("click", function(){
-			window.location.replace("Editar");
-		});
-		let cancel=document.getElementById('Eliminar').addEventListener("click", function(){
-			window.location.replace("Eliminar");
-		});
+		// let Edit=document.getElementById('Editar').addEventListener("click", function(){
+		// 	window.location.replace("Editar");
+		// });
+		// let cancel=document.getElementById('Eliminar').addEventListener("click", function(){
+		// 	window.location.replace("Eliminar");
+		// });
 		let Salir= document.getElementById('Salir').addEventListener("click", function(){
 			window.location.replace("/Index");
 		});

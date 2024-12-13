@@ -39,7 +39,7 @@
 
 		elemento.innerHTML = `
 					<a class="Detalles">
-						<img class="place-icon" src="${ubicacion.imagen || '~/Images/Diseños/ubicacion.png'}" alt="icon" />
+						<img class="place-icon" src="Images/Diseños/${ubicacion.nombre || '~/Images/Diseños/Logo1.png'}.jpg" alt="icon" />
 						<div class="Title">
 							<h2>${ubicacion.nombre || 'Nombre desconocido'}</h2>
 						</div>

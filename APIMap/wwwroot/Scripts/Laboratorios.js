@@ -36,10 +36,10 @@
                 <p>${ubicacion.nombre}</p>
             </div>
           <div class="btn-group">
-        <a id="Editar" class="btn Editar" data-id="${ubicacion.id}">
+        <a alt="Editar" class="btn Editar" onClick="verEditar(${ubicacion.id})" data-id="${ubicacion.id}">
             <img class="btn" src="/Images/Diseños/editar.png" alt="Editar">
         </a>
-        <a id="Eliminar" class="btn Eliminar" data-id="${ubicacion.id}">
+        <a alt="Eliminar" class="btn Eliminar" onClick="verEliminar(${ubicacion.id})" data-id="${ubicacion.id}">
             <img class="btn" src="/Images/Diseños/marca-x.png" alt="Eliminar">
         </a>
     </div>
@@ -82,4 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ubicacionManager.renderLaboratorios();
 });
 
-//BOTON EDITAR Y ELIMINAR 
+async function verEditar(id) {
+
+    localStorage.setItem('idLugar', id);
+    window.location.replace("Admin/Editar");
+}
+async function verEliminar(id) {
+    localStorage.setItem('idLugar', id);
+    window.location.replace("Admin/Editar");
+}
