@@ -1,13 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using APIMap.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace APIMap.Repositories
 {
     public class Repository<T> where T : class
     {
-        private readonly DbContext _context;
+        private readonly WebsitosApimapContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public Repository(DbContext context)
+        public Repository(WebsitosApimapContext context)
         {
             _context = context;
             _dbSet = context.Set<T>();

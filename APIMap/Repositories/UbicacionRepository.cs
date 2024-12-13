@@ -5,7 +5,7 @@ namespace APIMap.Repositories
 {
     public class UbicacionRepository : Repository<Ubicacion>
     {
-        public UbicacionRepository(DbContext context) : base(context) { }
+        public UbicacionRepository(WebsitosApimapContext context) : base(context) { }
 
 
     }

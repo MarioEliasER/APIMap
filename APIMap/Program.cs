@@ -1,5 +1,6 @@
 using APIMap.Models.Entities;
 using Microsoft.EntityFrameworkCore;
+using APIMap.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 var connection = builder.Configuration.GetConnectionString("apimap");
 builder.Services.AddDbContext<WebsitosApimapContext>(x =>
 x.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+
+builder.Services.AddScoped(typeof(Repository<>));
+builder.Services.AddTransient<UbicacionRepository>();
+builder.Services.AddTransient<UsuarioRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
