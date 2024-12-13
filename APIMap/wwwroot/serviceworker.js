@@ -5,6 +5,7 @@ let urls = [
     "/index",
     "/mapacompleto",
     "/vistainicio",
+    "/generarruta",
     "/manifest.json",
     "/serviceworker.js",
     "/css/stylelogin.css",
@@ -62,7 +63,10 @@ async function cacheFirst(req) {
         } else {
             let respuesta = await fetch(req);
             if (respuesta && respuesta.ok) { // Verificar si la respuesta es válida
-                cache.put(req, respuesta.clone());
+                // Verificar si el esquema de la URL es compatible con la API de Cache Storage
+                if (req.url.startsWith('http://') || req.url.startsWith('https://')) {
+                    cache.put(req, respuesta.clone());
+                }
             }
             return respuesta;
         }
@@ -76,7 +80,10 @@ async function networkFirst(req) {
     try {
         let respuesta = await fetch(req);
         if (respuesta.ok) {
-            cache.put(req, respuesta.clone());
+            // Verificar si el método de la solicitud es GET antes de intentar almacenarlo en caché
+            if (req.method === 'GET') {
+                cache.put(req, respuesta.clone());
+            }
         }
         return respuesta;
     } catch (x) {
