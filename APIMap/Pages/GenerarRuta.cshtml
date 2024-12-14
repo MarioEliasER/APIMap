@@ -18,15 +18,41 @@
 			<h1>Ubica-Tec</h1>
 		</div>
 
-		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
-	</header>
-
-	@* <article class="navbar">
-		<div class="search2">
-			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
-			<input class="searchtext" type="search" placeholder="Buscar..." />
+		<div class="menu-toggle">
+			<img class="iconMenu" src="~/Images/Diseños/menu.png" alt="menu icon" />
 		</div>
-	</article> *@
+	</header>
+	<!-- Menú desplegable flotante -->
+	<div class="dropdown-menu" id="dropdownMenu">
+		<ul>
+			<li>
+				<img id="Edificios" src="~/Images/Diseños/casa.png" alt="Edificios" />
+				Edificios
+			</li>
+			<li>
+				<img id="Salones" src="salones.png" alt="Salones" />
+				Salones
+			</li>
+			<li>
+				<img id="Laboratorios" src="laboratorios.png" alt="Laboratorios" />
+				Laboratorios
+			</li>
+			<li>
+				<img id="Departamentos" src="departamentos.png" alt="Departamentos" />
+				Departamentos
+			</li>
+			<li>
+				<img id="Areas" src="areascomunes.png" alt="Áreas Comunes" />
+				Áreas Comunes
+			</li>
+			<li>
+				<img src="salir.png" alt="Salir" />
+				Salir
+			</li>
+		</ul>
+	</div>
+
+
 	<main class="main2">
 		<div class="ListaElementos">
 			<div class="ImgMapa">
@@ -124,6 +150,21 @@
 		});
 		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
 			window.location.replace("/Ayuda");
+		});
+		// Mostrar/Ocultar el menú desplegable
+		document.querySelector('.menu-toggle').addEventListener('click', function () {
+			const menu = document.querySelector('#dropdownMenu');
+			menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+		});
+
+		// Cerrar el menú al hacer clic fuera de él
+		document.addEventListener('click', function (event) {
+			const menu = document.querySelector('#dropdownMenu');
+			const toggle = document.querySelector('.menu-toggle');
+
+			if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+				menu.style.display = 'none';
+			}
 		});
 
 	</script>
