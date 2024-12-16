@@ -347,6 +347,10 @@ header h1 {
     justify-self: center;
     text-align: center;
 }
+    .Container h3 {
+        color: black;
+        margin-bottom: 2%;
+    }
 
 .imagLogo {
     max-width: 230px;
@@ -775,7 +779,10 @@ nav h3 {
         object-fit: contain;
     }
 
-    /* Estilo para el contenedor de la descripción (flexbox) */
+    .Container h3 {
+        color: black;
+        margin-bottom: 2%;
+    }
     .scroll-container a {
         display: flex;
         align-items: center;
@@ -954,6 +961,7 @@ nav h3 {
         width: 80%;
         padding-top: 20px;
     }
+
     /*Vista Detalles */
     .ImgAula {
         width: 45%;
@@ -985,6 +993,7 @@ nav h3 {
             padding: 2px;
             text-align: center;
         }
+
     /* Vista ayuda */
     .Lista-Container2 {
         margin-top: -3%;
@@ -1058,6 +1067,10 @@ nav h3 {
         justify-self: center;
         text-align: center;
     }
+        .Container h3 {
+            color: black;
+            margin-bottom: 2%;
+        }
 
     .imagLogo {
         max-width: 300px;
@@ -1319,6 +1332,7 @@ nav h3 {
     .iconMenu:hover{
         cursor:pointer;
     }
+
     /*Vista Detalles */
     .ImgAula {
         width: 40%;
@@ -1350,6 +1364,7 @@ nav h3 {
             padding: 2px;
             text-align: center;
         }
+
     /* Vista ayuda */
     .Lista-Container2 {
         margin-top: 1%;
@@ -1482,12 +1497,12 @@ nav h3 {
         width: 100%;
         color: black;
         font-size: 18px;
-        padding-left: 38%;
+        padding-left: 40%;
         margin-bottom: 20px;
     }
     .Container h3{
         color:black;
-
+        margin-bottom:2%;
     }
     /* Generar Ruta */
     .ImgMapa {
@@ -1840,7 +1855,10 @@ nav h3 {
         justify-self: center;
         text-align: center;
     }
-
+        .Container h3 {
+            color: black;
+            margin-bottom: 2%;
+        }
     .imagLogo {
         max-width: 300px;
         width: 100%;
@@ -1858,7 +1876,7 @@ nav h3 {
         width: 100%;
         color: black;
         font-size: 18px;
-        padding-left: 38%;
+        padding-left: 35%;
         margin-bottom: 20px;
     }
 
@@ -2101,6 +2119,7 @@ nav h3 {
         font-weight: bolder;
         font-size: 13px;
     }
+
     /*Vista Detalles */
     .ImgAula {
         width: 80%;
@@ -2142,6 +2161,10 @@ nav h3 {
         justify-self: center;
         text-align: center;
     }
+        .Container h3 {
+            color: black;
+            margin-bottom: 3%;
+        }
 
     .imagLogo {
         max-width: 300px;
@@ -2160,7 +2183,7 @@ nav h3 {
         width: 100%;
         color: black;
         font-size: 18px;
-        padding-left: 34%;
+        padding-left: 26%;
         margin-bottom: 20px;
     }
 
@@ -2512,6 +2535,7 @@ nav h3 {
             padding: 2px;
             text-align: center;
         }
+
     /* Vista Desarrolladores */
     .Container {
         height: 100%;
@@ -2522,7 +2546,10 @@ nav h3 {
         justify-self: center;
         text-align: center;
     }
-
+        .Container h3 {
+            color: black;
+            margin-bottom: 2%;
+        }
     .imagLogo {
         max-width: 250px;
         width: 100%;
@@ -2540,7 +2567,7 @@ nav h3 {
         width: 100%;
         color: black;
         font-size: 18px;
-        padding-left: 34%;
+        padding-left: 28%;
         margin-bottom: 20px;
     }
 
@@ -2844,7 +2871,6 @@ nav h3 {
         object-fit: contain;
     }
 
-    /* Estilo para el contenedor de la descripción (flexbox) */
     .scroll-container a {
         display: flex;
         align-items: center;
@@ -2938,7 +2964,7 @@ nav h3 {
         padding-top: 5%;
         width: 100%;
     }
-        /* Vista ayuda */
+ 
         .Lista-Container2 h3 {
             margin-left: 10%;
             font-size: 20px;
@@ -3000,6 +3026,7 @@ nav h3 {
         padding-top: 20px;
         margin-left: -2%;
     }
+
     /* Vista InfoDesarrollador */
     .Container {
         /* margin-top: 10%; */
@@ -3011,6 +3038,10 @@ nav h3 {
         justify-self: center;
         text-align: center;
     }
+        .Container h3 {
+            color: black;
+            margin-bottom: 5%;
+        }
 
     .imagLogo {
         max-width: 180px;

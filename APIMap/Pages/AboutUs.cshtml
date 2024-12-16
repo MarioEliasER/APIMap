@@ -18,12 +18,46 @@
 			<h1>Ubica-Tec</h1>
 		</div>
 
-		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
+		<div class="menu-toggle">
+			<img class="iconMenu" src="~/Images/Diseños/menu.png" alt="menu icon" />
+		</div>
 	</header>
+
+	<!-- Menú desplegable flotante -->
+	<div class="dropdown-menu" id="dropdownMenu">
+		<ul>
+			<li id="Edificios">
+				<img src="~/Images/Diseños/casa.png" alt="Edificios" />
+				Edificios
+			</li>
+			<li id="Salones">
+				<img src="~/Images/Diseños/pizarra.png" alt="Salones" />
+				Salones
+			</li>
+			<li id="Laboratorios">
+				<img src ="~/Images/Diseños/laboratorios.png" alt="Laboratorios" />
+				Laboratorios
+			</li>
+			<li id="Departamentos">
+				<img src="departamentos.png" alt="Departamentos" />
+				Departamentos
+			</li>
+			<li id="Areas">
+				<img src="~/Images/Diseños/Areas.png" alt="Áreas Comunes" />
+				Áreas Comunes
+			</li>
+			<li id="Salir">
+				<img src="~/Images/Diseños/CerrarSesion.png" alt="Salir" />
+				Salir
+			</li>
+		</ul>
+	</div>
+
 	<main class="main2">
 		<div class="Container">
+			<h3>TES de la Región Carbonífera</h3>
 			<img class="imagLogo" src="~/Images/Diseños/sin-login.png" />
-						<h3>TES de la Región Carbonífera</h3>
+						
 			<h4 id="title">Desarrolladores:</h4>
 			<ul class="Desarrolladores">
 				<li> Diseñador: Alexander Contreras</li>
@@ -35,6 +69,7 @@
 
 		</div>
 	</main>
+
 	<nav class="footer">
 		<div class="nav-item">
 			<a class="GenerarRutas">
@@ -43,21 +78,37 @@
 			</a>
 		</div>
 		<div class="nav-item">
-			<a hr class="Inicio">
+			<a  class="Inicio">
 				<img src="~/Images/Diseños/casa.png" alt="home icon" />
 				<h3>Inicio</h3>
 			</a>
 		</div>
 		<div class="nav-item">
-			<a h class="Ayuda">
+			<a  class="Ayuda">
 				<img src="~/Images/Diseños/Help.png" alt="help icon" />
 				<h3>Ayuda</h3>
 			</a>
 		</div>
 
 	</nav>
+
 	<script>
 		//NAVEGACION
+		// Mostrar/Ocultar el menú desplegable
+		document.querySelector('.menu-toggle').addEventListener('click', function () {
+			const menu = document.querySelector('#dropdownMenu');
+			menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+		});
+
+		// Cerrar el menú al hacer clic fuera de él
+		document.addEventListener('click', function (event) {
+			const menu = document.querySelector('#dropdownMenu');
+			const toggle = document.querySelector('.menu-toggle');
+
+			if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+				menu.style.display = 'none';
+			}
+		});
 
 		//ICONO SUPERIOR IZQUIERDO
 		let Icono = document.querySelector(".Icono").addEventListener("click", function () {

@@ -17,8 +17,42 @@
             <a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
             <h1>Ubica-Tec</h1>
         </div>
-        <a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
+        <div class="menu-toggle">
+            <img class="iconMenu" src="~/Images/Diseños/menu.png" alt="menu icon" />
+        </div>
+
     </header>
+
+    <!-- Menú desplegable flotante -->
+    <div class="dropdown-menu" id="dropdownMenu">
+        <ul>
+            <li id="Edificios">
+                <img src="/Images/Diseños/casa.png" alt="Edificios" />
+                Edificios
+            </li>
+            <li id="Salones">
+                <img src="salones.png" alt="Salones" />
+                Salones
+            </li>
+            <li id="Laboratorios">
+                <img src="laboratorios.png" alt="Laboratorios" />
+                Laboratorios
+            </li>
+            <li id="Departamentos">
+                <img src="departamentos.png" alt="Departamentos" />
+                Departamentos
+            </li>
+            <li id="Areas">
+                <img src="areascomunes.png" alt="Áreas Comunes" />
+                Áreas Comunes
+            </li>
+            <li id="Salir">
+                <img src="salir.png" alt="Salir" />
+                Salir
+            </li>
+        </ul>
+    </div>
+
     <main class="main2">
         <div class="Lista-Container">
             <a id="Edificios" class="floating-button2"><img src="~/Images/Diseños/flecha-izquierda.png" /></a>
@@ -29,6 +63,7 @@
             </div>
         </div>
     </main>
+
     <nav class="footer">
         <div class="nav-item">
             <a class="GenerarRutas">
@@ -49,6 +84,24 @@
             </a>
         </div>
     </nav>
+    <script>
+        //NAVEGACION
+        // Mostrar/Ocultar el menú desplegable
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            const menu = document.querySelector('#dropdownMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Cerrar el menú al hacer clic fuera de él
+        document.addEventListener('click', function (event) {
+            const menu = document.querySelector('#dropdownMenu');
+            const toggle = document.querySelector('.menu-toggle');
+
+            if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
     <script src="detalles.js"></script>
 </body>
 </html>
