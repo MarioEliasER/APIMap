@@ -33,7 +33,7 @@ body {
     position: fixed;
     width: 100%;
     color: white;
-    height: 50px;
+    height: 55px;
 }
 
 header h1 {
@@ -518,7 +518,7 @@ nav h3 {
 .grid-container2 {
     display: grid;
     grid-template:
-        "header" 60px
+        "header" 70px
         "navbar" 50px
         "main2" auto
         "footer" 60px;
@@ -583,7 +583,6 @@ nav h3 {
 
 
 /* Media Queries */
-
 
 @media (min-width:1023px) and (max-height:600px) {
     .main {
@@ -793,21 +792,11 @@ nav h3 {
         width: 90%;
     }
 
-        .Title h2 {
+      .Title h2 {
             margin-left: -50%;
             font-weight: bolder;
             font-size: 14px;
         }
-    /* .MapaCompleto-Container{
-	width: 80%;
-}
-.MapaCompleto-Container #mapaCompleto{
-	width: 60%;
-	margin-top: -200px;
-	margin-left: 350px;
-	
-       transform: rotate(-70deg);
-} */
     .MapaCompleto {
         width: 100%;
         height: 100%;
@@ -821,7 +810,7 @@ nav h3 {
     .mapCompleto {
         align-self: center;
         object-fit: contain;
-        width: 140%;
+        width: 150%;
         margin-top: 42%;
         transform: rotate(none);
     }
@@ -1195,7 +1184,7 @@ nav h3 {
 @media (min-width:1000px) {
     .grid-container {
         grid-template:
-            "header  header header" 60px
+            "header  header header" 70px
             "navbar  navbar" 50px
             "main" auto
             "article article article" 80px
@@ -1204,7 +1193,7 @@ nav h3 {
 
     .grid-container2 {
         grid-template:
-            "header  header header" 60px
+            "header  header header" 70px
             "navbar  navbar" 50px
             "main2" auto
             "footer  footer footer" 60px;
@@ -1228,7 +1217,7 @@ nav h3 {
 
     .map {
         justify-self: center;
-        width: 90%;
+        width: 95%;
         height: 85%;
     }
     .main2 {
@@ -1496,7 +1485,10 @@ nav h3 {
         padding-left: 38%;
         margin-bottom: 20px;
     }
+    .Container h3{
+        color:black;
 
+    }
     /* Generar Ruta */
     .ImgMapa {
         position: absolute;
@@ -1953,7 +1945,7 @@ nav h3 {
     .mapCompleto {
       /*  position:fixed;*/
         object-fit: contain;
-        width: 130%;
+        width: 135%;
         margin-top:35%;
         margin-left: -10%;
         transform: rotate(90deg);
@@ -2019,7 +2011,8 @@ nav h3 {
     }
 
     .map {
-        width: 100%;
+        width: 120%;
+        margin-left:-10%;
         top: 5%;
         transform: rotate(70deg);
         object-fit: contain;
@@ -2326,8 +2319,8 @@ nav h3 {
 
     .mapCompleto {
         object-fit: contain;
-        width: 180%;
-        margin-left:-38%;
+        width: 190%;
+        margin-left:-42%;
         margin-top: 65%;
         transform: rotate(90deg);
     }
@@ -2399,9 +2392,9 @@ nav h3 {
     }
 
     .map {
-        width: 70%;
+        width: 80%;
         top: 2%;
-        left: 15%;
+        left: 12%;
         transform: rotate(70deg);
         object-fit: contain;
     }
@@ -2710,8 +2703,8 @@ nav h3 {
     .mapCompleto {
         align-self: center;
         object-fit: contain;
-        width: 140%;
-        margin-left:-15%;
+        width: 160%;
+        margin-left:-25%;
         margin-top: 42%;
         transform: rotate(90deg);
     }
@@ -2791,9 +2784,9 @@ nav h3 {
 
     .map {
         height: 100%;
-        margin-left: -5%;
+        margin-left: -10%;
         top: -10%;
-        width: 120%;
+        width: 135%;
         transform: rotate(70deg);
         object-fit: contain;
     }
@@ -2801,7 +2794,7 @@ nav h3 {
     .scroll-container {
         position: fixed;
         z-index: 2;
-        height: 85px;
+        height: 88px;
         bottom: 10%;
         background: rgba(255, 255, 255, 0.1);
         width: 100%;
@@ -3119,9 +3112,9 @@ nav h3 {
     .mapCompleto {
         align-self: center;
         object-fit: contain;
-        width: 180%;
-        margin-left:-35%;
-        margin-top: 65%;
+        width: 200%;
+        margin-left:-50%;
+        margin-top: 58%;
         transform: rotate(90deg);
     }
 
