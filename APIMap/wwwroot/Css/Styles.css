@@ -451,6 +451,7 @@ header h1 {
 
 .GenerarRuta {
     position:fixed;
+    margin-left:-5%;
     margin-top: 5.5px;
     background-color: #296EB4;
     border-radius: 6px;
@@ -1141,7 +1142,7 @@ nav h3 {
     .GenerarRuta {
         position: fixed;
         margin-top: 2%;
-        margin-left: 6.5%;
+        margin-left: 5%;
         background-color: #296EB4;
         border-radius: 6px;
         height: 40px;
@@ -2275,7 +2276,7 @@ nav h3 {
         display: grid;
         background: rgba(255, 255, 255, 255);
         z-index: 2;
-        top: 50%;
+        top: 57%;
         left: 29%;
     }
 
@@ -2684,8 +2685,8 @@ nav h3 {
 
     .GenerarRuta {
         position: fixed;
-        margin-top: 20%;
-        margin-left: 10%;
+        margin-top: 15%;
+        margin-left: 5%;
         background-color: #296EB4;
         border-radius: 6px;
         height: 40px;
@@ -3063,7 +3064,7 @@ nav h3 {
         background: rgba(255, 255, 255, 255);
         z-index: 2;
         left: 1%;
-        top: 65%;
+        top: 60%;
         width: 100%;
     }
 
@@ -3079,7 +3080,7 @@ nav h3 {
         }
 
     .ruta {
-        width: 250px;
+        width: 230px;
         max-width: 300px;
         margin-bottom: 4px;
         border-radius: 8px;
@@ -3093,7 +3094,7 @@ nav h3 {
 
     .GenerarRuta {
         position: fixed;
-        margin-top: 30%;
+        top: 68%;
         margin-left: -1%;
         font-size: 14px;
         background-color: #296EB4;
