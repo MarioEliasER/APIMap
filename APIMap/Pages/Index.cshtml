@@ -70,8 +70,11 @@
 		</div>
 
 		<div>
-			<a id="MapaCompleto" class="floating-button"><img src="~/Images/Diseños/Zoom.png" /></a>
+			<a id="MapaCompleto" class="floating-button">
+				<img src="~/Images/Diseños/Zoom.png" />
+			</a>
 		</div>
+
 	</main>
 
 	<article class="article">
@@ -126,28 +129,9 @@
 		//ICONO SUPERIOR IZQUIERDO
 		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
 			window.location.replace("/AboutUs");
-		});
-		//NAVBAR INFERIOR
-		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
-			window.location.replace("/Index");
-		});
-		let Ruta = document.querySelector(".GenerarRutas").addEventListener("click", function () {
-			window.location.replace("/GenerarRuta");
-		});
-		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
-			window.location.replace("/Ayuda");
-		});
 
-		//SCROLL HORIZONTAL
-		let Detalle = document.querySelector(".Detalles").addEventListener("click", function () {
-			window.location.replace("/Detalles");
 		});
-		//AMPLIAR MAPA INDEX
-		let MapaCompleto = document.querySelector("#MapaCompleto").addEventListener("click", function () {
-			window.location.replace("/MapaCompleto");
-		});
-
-		  // Mostrar/Ocultar el menú desplegable
+		// Mostrar/Ocultar el menú desplegable
 		document.querySelector('.menu-toggle').addEventListener('click', function () {
 			const menu = document.querySelector('#dropdownMenu');
 			menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
@@ -162,6 +146,34 @@
 				menu.style.display = 'none';
 			}
 		});
+		//NAVBAR INFERIOR
+		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
+			window.location.replace("/Index");
+		});
+		let Ruta = document.querySelector(".GenerarRutas").addEventListener("click", function () {
+			window.location.replace("/GenerarRuta");
+		});
+		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
+			window.location.replace("/Ayuda");
+		});
+
+		//SCROLL HORIZONTAL
+		// let Detalle = document.querySelector(".Detalles").addEventListener("click", function () {
+		// 	window.location.replace("/Detalles");
+		// });
+		//AMPLIAR MAPA INDEX
+				
+		document.addEventListener("DOMContentLoaded", function () {
+			const mapaCompletoBtn = document.getElementById('MapaCompleto');
+
+			if (mapaCompletoBtn) { // Verificamos
+				mapaCompletoBtn.addEventListener("click", function () {
+					console.log("click");
+					window.location.replace("/MapaCompleto");
+				});
+			}
+		});
+
 	</script>
 </body>
 </html>
