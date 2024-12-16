@@ -59,6 +59,8 @@ async function fetchAreas() {
         console.error('Error:', error);
     }
 }
+
+
 document.querySelector('#Aceptar.btn.aceptar').addEventListener('click', async function (event) {
     event.preventDefault(); // Evita la recarga de la página
     console.log("Evento 'click' capturado en el botón Editar");
@@ -98,10 +100,13 @@ document.querySelector('#Aceptar.btn.aceptar').addEventListener('click', async f
         console.log("Respuesta de la API recibida:", result);
         alert('Registro agregado exitosamente');
         console.log("Redirigiendo al usuario a la página principal...");
-        window.location.replace("Index"); // Cambia esto según tu lógica de navegación
+        window.location.replace("Index");
     } catch (error) {
         console.error("Error al realizar el POST:", error);
         alert('Hubo un error al guardar los datos');
     }
 });
+//let cancel = document.getElementById('Cancelar').addEventListener("click", function () {
+//    window.location.replace("Index");
+//});
 obtenerArea();
