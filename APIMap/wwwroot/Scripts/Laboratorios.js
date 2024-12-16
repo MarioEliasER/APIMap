@@ -96,30 +96,7 @@ class Ubicaciones {
         return ubicaciones.filter(ubicacion => ubicacion.area.toLowerCase().includes('laboratorio'));
     }
 
-    // Método para generar el HTML de cada elemento
-    //createElementoHTML(ubicacion) {
-    //    const elemento = document.createElement('div');
-    //    elemento.classList.add('elementos');
-
-    //    elemento.innerHTML = `
-    //        <div class="elemento">
-    //            <img src="/Images/Diseños/${ubicacion.nombre}.jpg" alt="${ubicacion.nombre}" />
-    //            <p>${ubicacion.nombre}</p>
-    //        </div>
-    //      <div class="btn-group">
-    //    <a alt="Editar" class="btn Editar" onClick="verEditar(${ubicacion.id})" data-id="${ubicacion.id}">
-    //        <img class="btn" src="/Images/Diseños/editar.png" alt="Editar">
-    //    </a>
-    //    <a alt="Eliminar" class="btn Eliminar" onClick="verEliminar(${ubicacion.id})" data-id="${ubicacion.id}">
-    //        <img class="btn" src="/Images/Diseños/marca-x.png" alt="Eliminar">
-    //    </a>
-    //</div>
-    //    `;
-
-    //    return elemento;
-    //}
-
-    // Método para renderizar los laboratorios en el contenedor
+  
     async renderLaboratorios() {
         this.listaContainer.innerHTML = ''; // Limpiar el contenido actual
 
@@ -139,17 +116,12 @@ class Ubicaciones {
         }
 
         this.generarElementos(laboratorios);
-        //// Si hay laboratorios, renderizamos los elementos
-        //laboratorios.forEach((laboratorio) => {
-        //    const elementoHTML = this.createElementoHTML(laboratorio);
-        //    this.listaContainer.appendChild(elementoHTML);
-        //});
+        
     }
 }
-// Usar la clase para llenar los laboratorios
+
 const ubicacionManager = new Ubicaciones('https://apimap.websitos256.com/api/ubicacion');
 
-// Llenar los datos de los laboratorios al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     ubicacionManager.renderLaboratorios();
 });

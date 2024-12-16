@@ -29,27 +29,27 @@
 	<!-- Menú desplegable flotante -->
 	<div class="dropdown-menu" id="dropdownMenu">
 		<ul>
-			<li>
-				<img id="Edificios" src="~/Images/Diseños/casa.png" alt="Edificios" />
+			<li id="Edificios">
+				<img src="/Images/Diseños/casa.png" alt="Edificios" />
 				Edificios
 			</li>
-			<li>
-				<img id="Salones" src="salones.png" alt="Salones" />
+			<li id="Salones">
+				<img src="salones.png" alt="Salones" />
 				Salones
 			</li>
-			<li>
-				<img id="Laboratorios" src="laboratorios.png" alt="Laboratorios" />
+			<li id="Laboratorios">
+				<img src="laboratorios.png" alt="Laboratorios" />
 				Laboratorios
 			</li>
-			<li>
-				<img id="Departamentos" src="departamentos.png" alt="Departamentos" />
+			<li id="Departamentos">
+				<img src="departamentos.png" alt="Departamentos" />
 				Departamentos
 			</li>
-			<li>
-				<img id="Areas" src="areascomunes.png" alt="Áreas Comunes" />
+			<li id="Areas">
+				<img src="areascomunes.png" alt="Áreas Comunes" />
 				Áreas Comunes
 			</li>
-			<li>
+			<li id="Salir">
 				<img src="salir.png" alt="Salir" />
 				Salir
 			</li>
@@ -105,21 +105,37 @@
 	<script src="~/Scripts/Scroll.js"></script>
 	<script>
 		//MENU DERECHO
-		// let Areas = document.querySelector("#Areas").addEventListener("click", function(){
-		// 	window.location.replace("Areas");
-		// });
-		// let edificios = document.querySelector("#Edificios").addEventListener("click", function(){
-		// 	window.location.replace("/Edificios");
-		// });
-		// let Salones = document.querySelector("#Salones").addEventListener("click", function(){
-		// 	window.location.replace("/Salones");
-		// });
-		// let Laboratorios = document.querySelector("#Laboratorios").addEventListener("click", function(){
-		// 	window.location.replace("/Laboratorios");
-		// });
-		// let Departamentos = document.querySelector("#Departamentos").addEventListener("click", function(){
-		// 	window.location.replace("/Departamentos");
-		// });
+			// Mapea los IDs de los elementos a las rutas correspondientes
+		const rutas = {
+			Areas: "/Areas",
+			Edificios: "/Edificios",
+			Salones: "/Salones",
+			Laboratorios: "/Laboratorios",
+			Departamentos: "/Departamentos",
+		};
+
+		// Espera a que el DOM esté completamente cargado
+		document.addEventListener("DOMContentLoaded", () => {
+			// Recorre cada entrada del mapa y asigna eventos
+			Object.keys(rutas).forEach((id) => {
+				const elemento = document.querySelector(`#${id}`);
+				if (elemento) { // Verifica que el elemento exista
+					elemento.addEventListener("click", () => {
+						window.location.replace(rutas[id]);
+					});
+				}
+			});
+
+			// Manejo especial para "Salir" si se requiere funcionalidad diferente
+			const salir = document.querySelector("#Salir");
+			if (salir) {
+				salir.addEventListener("click", () => {
+					console.log("Cerrar sesión"); // Puedes agregar lógica adicional aquí
+					window.location.replace("/Salir");
+				});
+			}
+		});
+
 	</script>
 	<script>
 		if ('serviceWorker' in navigator){
@@ -156,11 +172,6 @@
 		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
 			window.location.replace("/Ayuda");
 		});
-
-		//SCROLL HORIZONTAL
-		// let Detalle = document.querySelector(".Detalles").addEventListener("click", function () {
-		// 	window.location.replace("/Detalles");
-		// });
 		//AMPLIAR MAPA INDEX
 				
 		document.addEventListener("DOMContentLoaded", function () {

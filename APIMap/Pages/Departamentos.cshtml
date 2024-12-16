@@ -2,3 +2,90 @@
 @model APIMap.Pages.DepartamentosModel
 @{
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="~/Images/Icono/Icono144.png" type="image/x-icon">
+	<link href="~/Css/Styles.css" rel="stylesheet" />
+	<title>Ubica-Tec</title>
+</head>
+<body class="grid-container2">
+	<header class="header">
+		<div class="iconTitle">
+			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
+			<h1>Ubica-Tec</h1>
+		</div>
+
+		<a href="#"><img class="iconMenu" src="~/Images/Diseños/menu.png" alt="filter icon" /></a>
+	</header>
+
+	<article class="navbar">
+		<div class="search2">
+			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
+			<input class="searchtext" type="search" placeholder="Buscar..." />
+		</div>
+	</article>
+
+
+	<main class="main2">
+		@* 	<a id="Index" class="floating-button2"><img src="~/Images/Diseños/flecha-izquierda.png" /></a>
+ *@
+		<div class="ListaElementos">
+		</div>
+
+	</main>
+	<nav class="footer">
+		<div class="nav-item">
+			<a class="GenerarRutas">
+				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
+				<h3>Ruta</h3>
+			</a>
+		</div>
+		<div class="nav-item">
+			<a class="Inicio">
+				<img src="~/Images/Diseños/casa.png" alt="home icon" />
+				<h3>Inicio</h3>
+			</a>
+		</div>
+		<div class="nav-item">
+			<a class="Ayuda">
+				<img src="~/Images/Diseños/Help.png" alt="help icon" />
+				<h3>Ayuda</h3>
+			</a>
+		</div>
+	</nav>
+	<script>
+			//NAVEGACION
+
+			 //ICONO SUPERIOR IZQUIERDO
+			 let Icono = document.querySelector(".Icono").addEventListener("click", function () {
+				window.location.replace("/AboutUs");
+			 });
+			 //REGRESAR A VISTA EDIFICIOS
+		// let EdificiosView = document.querySelector("#Edificios").addEventListener("click", function () {
+		// 	window.location.replace("/Edificios");
+		// });
+
+		//REGRESAR A VISTA EDIFICIOS
+		let EdificiosView = document.querySelector("#Index").addEventListener("click", function () {
+			window.location.replace("/Index")
+		});
+		//NAVEGAR A VISTA DETALLES
+		let DetalleView = document.querySelector("#Detalle").addEventListener("click", function () {
+			window.location.replace("/Detalles")
+		});
+			//NAVBAR INFERIOR
+			let Home = document.querySelector(".Inicio").addEventListener("click", function () {
+				window.location.replace("/Index");
+			});
+			let Ruta = document.querySelector(".GenerarRutas").addEventListener("click", function () {
+				window.location.replace("/GenerarRuta");
+			});
+			let help = document.querySelector(".Ayuda").addEventListener("click", function () {
+				window.location.replace("/Ayuda");
+			});
+	</script>
+</body>
+</html>
