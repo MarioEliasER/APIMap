@@ -821,7 +821,7 @@ nav h3 {
         object-fit: contain;
         width: 140%;
         margin-top: 42%;
-        transform: rotate(20deg);
+        transform: rotate(none);
     }
 
     .floating-buttonReturn {
@@ -1165,7 +1165,7 @@ nav h3 {
         object-fit: contain;
         width: 140%;
         margin-top: 42%;
-        transform: rotate(20deg);
+        transform: rotate(90deg);
     }
 
     .floating-buttonReturn {
