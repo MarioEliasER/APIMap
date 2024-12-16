@@ -9,7 +9,6 @@ let urls = [
     "/manifest.json",
     "/serviceworker.js",
     "/css/stylelogin.css",
-    "/css/stylemapa.css",
     "/css/styles.css",
     "/css/stylesadmin.css",
     "/images/icono/icono128.png",
@@ -26,7 +25,7 @@ let urls = [
     "/scripts/usuario/salones.js"
 ];
 
-let cacheName = "ubicatecCachev3";
+let cacheName = "ubicatecCachev2";
 
 async function precache() {
     let cache = await caches.open(cacheName);
