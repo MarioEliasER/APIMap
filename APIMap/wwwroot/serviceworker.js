@@ -26,7 +26,7 @@ let urls = [
     "/scripts/usuario/salones.js"
 ];
 
-let cacheName = "ubicatecCachev2";
+let cacheName = "ubicatecCachev1";
 
 async function precache() {
     let cache = await caches.open(cacheName);

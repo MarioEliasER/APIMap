@@ -540,10 +540,43 @@ nav h3 {
     margin-top: -22px;
 }
 
+
+.MapaCompleto {
+    width: 100%;
+    height: 100%;
+}
+
 .MapaCompleto-Container {
     width: 100%;
-    transform: translate(none);
+    height: 100%;
 }
+
+.mapCompleto {
+    align-self: center;
+    object-fit: contain;
+    width: 140%;
+    margin-top: 42%;
+   /* transform: translate(none);*/
+    transform: rotate(20deg);
+}
+
+.floating-buttonReturn {
+    position: fixed;
+    top: 40px;
+    left: 30px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 2;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+    .floating-buttonReturn img {
+        width: 45px;
+        height: 45px;
+    }
+
 
 
 
@@ -770,8 +803,43 @@ nav h3 {
 	width: 60%;
 	margin-top: -200px;
 	margin-left: 350px;
-	transform: rotate(-70deg);
+	
+       transform: rotate(-70deg);
 } */
+    .MapaCompleto {
+        width: 100%;
+        height: 100%;
+    }
+
+    .MapaCompleto-Container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mapCompleto {
+        align-self: center;
+        object-fit: contain;
+        width: 140%;
+        margin-top: 42%;
+        transform: rotate(20deg);
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 45px;
+            height: 45px;
+        }
 }
 
 /* Pantallas chicas */
@@ -1081,17 +1149,44 @@ nav h3 {
         color: white;
         cursor: pointer;
     }
-    /* .MapaCompleto-Container{
-	width: 80%;
-}
-.MapaCompleto-Container #mapaCompleto{
-	width: 60%;
-	margin-top: -200px;
-	margin-left: 350px;
-	transform: rotate(-70deg);
-} */
-}
 
+    .MapaCompleto {
+        width: 100%;
+        height: 100%;
+    }
+
+    .MapaCompleto-Container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mapCompleto {
+        align-self: center;
+        object-fit: contain;
+        width: 140%;
+        margin-top: 42%;
+        transform: rotate(20deg);
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 35px;
+            height: 35px;
+        }
+
+
+}
 
 /* Pantalla Grande*/
 
@@ -1465,17 +1560,22 @@ nav h3 {
         cursor: pointer;
     }
 
+    .MapaCompleto{
+        width:100%;
+        height:100%;
+    }
     .MapaCompleto-Container {
         width: 100%;
+        height:100%;
     }
 
     .mapCompleto {
+        position:fixed;
         width: 90%;
-      /*  margin-top: 100px;*/
-       
-       align-self:center;
-        margin-left: 70px;
-   /*     transform: rotate(-70deg);*/
+        margin-top: 1%;
+        margin-left: 4%;
+        transform: none;
+
     }
 
     .floating-buttonReturn {
@@ -1839,17 +1939,20 @@ nav h3 {
         color: white;
         cursor: pointer;
     }
-
-
+    
+    .MapaCompleto{
+        width:100%;
+        height:100%;
+    }
     .MapaCompleto-Container {
-        width: 120%;
+        width: 100%;
     }
 
     .mapCompleto {
-        align-self: center;
+      /*  position:fixed;*/
         object-fit: contain;
-        width: 100%;
-        margin-top: 300px;
+        width: 130%;
+        margin-top:35%;
         margin-left: -10%;
         transform: rotate(90deg);
     }
@@ -1867,8 +1970,8 @@ nav h3 {
     }
 
         .floating-buttonReturn img {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
         }
 }
 
@@ -2209,17 +2312,40 @@ nav h3 {
         color: white;
         cursor: pointer;
     }
-
+    .MapaCompleto {
+        width: 100%;
+        height: 100%;
+    }
     .MapaCompleto-Container {
-        width: 105%;
+        width: 100%;
+        height: 100%;
+
     }
 
-        .MapaCompleto-Container #mapaCompleto {
-            width: 120%;
-            margin-top: 70px;
-            margin-left: -100px;
-            transform: rotate(20deg);
+    .mapCompleto {
+        object-fit: contain;
+        width: 180%;
+        margin-left:-38%;
+        margin-top: 65%;
+        transform: rotate(90deg);
+    }
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 50px;
+            height: 50px;
         }
+
 }
 
 @media (max-width: 999px) and (max-height:1188px) and (min-height:600px) {
@@ -2569,16 +2695,42 @@ nav h3 {
         cursor: pointer;
     }
 
-    .MapaCompleto-Container {
+    .MapaCompleto {
         width: 100%;
+        height: 100%;
     }
 
-        .MapaCompleto-Container #mapaCompleto {
-            width: 90%;
-            margin-top: -40px;
-            margin-left: 70px;
-            transform: rotate(20deg);
+    .MapaCompleto-Container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mapCompleto {
+        align-self: center;
+        object-fit: contain;
+        width: 140%;
+        margin-left:-15%;
+        margin-top: 42%;
+        transform: rotate(90deg);
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 45px;
+            height: 45px;
         }
+
 }
 
 /* Estilos para pantallas pequeñas */
@@ -2952,17 +3104,42 @@ nav h3 {
         cursor: pointer;
     }
 
-    .MapaCompleto-Container {
-        width: 110%;
+    .MapaCompleto {
+        width: 100%;
+        height: 100%;
     }
 
-        .MapaCompleto-Container #mapaCompleto {
-            width: 110%;
-            margin-left: -45px;
-            margin-top: 60px;
-            transform: rotate(20deg);
+    .MapaCompleto-Container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mapCompleto {
+        align-self: center;
+        object-fit: contain;
+        width: 180%;
+        margin-left:-35%;
+        margin-top: 65%;
+        transform: rotate(90deg);
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 30px;
+        left: 10px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 25px;
+            height: 25px;
         }
-    
+
     /* Navegación inferior */
     nav {
         background-color: #D9D9D9;
