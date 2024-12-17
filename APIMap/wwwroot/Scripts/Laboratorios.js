@@ -47,9 +47,8 @@ class Ubicaciones {
         for (var i = 0; i < data.length; i++) {
             let clone = template.content.querySelector('.elemento').cloneNode(true)
             console.log(clone);
-            clone.style.justifyContent = "space-between";
-            clone.style.width = "100%";
-            clone.style.height = "400px";
+            clone.style.width = "100";
+            clone.style.height = "200";
 
             //Imagen
             let imagen = clone.querySelector('img');
