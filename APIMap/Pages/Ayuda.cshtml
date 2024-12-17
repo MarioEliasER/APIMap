@@ -27,29 +27,29 @@
 	<div class="dropdown-menu" id="dropdownMenu">
 		<ul>
 			<li id="Edificios">
-				<img src="/Images/Diseños/casa.png" alt="Edificios" />
+				<img src="~/Images/Diseños/Edificio.png" alt="Edificios" />
 				Edificios
 			</li>
 			<li id="Salones">
-				<img src="salones.png" alt="Salones" />
+				<img src="~/Images/Diseños/aula.png" alt="Salones" />
 				Salones
 			</li>
 			<li id="Laboratorios">
-				<img src="laboratorios.png" alt="Laboratorios" />
+				<img src="~/Images/Diseños/matraz.png" alt="Laboratorios" />
 				Laboratorios
 			</li>
 			<li id="Departamentos">
-				<img src="departamentos.png" alt="Departamentos" />
+				<img src="~/Images/Diseños/Departamento.png" alt="Departamentos" />
 				Departamentos
 			</li>
 			<li id="Areas">
-				<img src="areascomunes.png" alt="Áreas Comunes" />
+				<img src="~/Images/Diseños/Areas.png" alt="Áreas Comunes" />
 				Áreas Comunes
 			</li>
-			<li id="Salir">
-				<img src="salir.png" alt="Salir" />
+			@* <li id="Salir">
+				<img src="~/Images/Diseños/CerrarSesion.png" alt="Salir" />
 				Salir
-			</li>
+			</li> *@
 		</ul>
 	</div>
 
@@ -164,7 +164,6 @@
 		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
 			window.location.replace("/Ayuda");
 		});
-
 		// Mostrar/Ocultar el menú desplegable
 		document.querySelector('.menu-toggle').addEventListener('click', function () {
 			const menu = document.querySelector('#dropdownMenu');

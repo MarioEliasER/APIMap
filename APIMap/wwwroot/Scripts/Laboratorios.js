@@ -47,8 +47,9 @@ class Ubicaciones {
         for (var i = 0; i < data.length; i++) {
             let clone = template.content.querySelector('.elemento').cloneNode(true)
             console.log(clone);
-            clone.style.width = 100;
-            clone.style.height = 400;
+            clone.style.justifyContent = "space-between";
+            clone.style.width = "100%";
+            clone.style.height = "400px";
 
             //Imagen
             let imagen = clone.querySelector('img');
@@ -63,8 +64,8 @@ class Ubicaciones {
             let btnEditar = document.createElement('a');
             let id = data[i].id;
             btnEditar.onclick = async () => verEliminar(id);
-            btnEditar.style.width = 50;
-            btnEditar.style.height = 50;
+            btnEditar.style.width = 40;
+            btnEditar.style.height = 40;
             btngroup.appendChild(btnEditar);
 
             let btnEliminar = document.createElement('a');

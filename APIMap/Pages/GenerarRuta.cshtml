@@ -25,33 +25,32 @@
 	<!-- Menú desplegable flotante -->
 	<div class="dropdown-menu" id="dropdownMenu">
 		<ul>
-			<li>
-				<img id="Edificios" src="~/Images/Diseños/casa.png" alt="Edificios" />
+			<li id="Edificios">
+				<img src="~/Images/Diseños/Edificio.png" alt="Edificios" />
 				Edificios
 			</li>
-			<li>
-				<img id="Salones" src="salones.png" alt="Salones" />
+			<li id="Salones">
+				<img src="~/Images/Diseños/aula.png" alt="Salones" />
 				Salones
 			</li>
-			<li>
-				<img id="Laboratorios" src="laboratorios.png" alt="Laboratorios" />
+			<li id="Laboratorios">
+				<img src="~/Images/Diseños/matraz.png" alt="Laboratorios" />
 				Laboratorios
 			</li>
-			<li>
-				<img id="Departamentos" src="departamentos.png" alt="Departamentos" />
+			<li id="Departamentos">
+				<img src="~/Images/Diseños/Departamento.png" alt="Departamentos" />
 				Departamentos
 			</li>
-			<li>
-				<img id="Areas" src="areascomunes.png" alt="Áreas Comunes" />
+			<li id="Areas">
+				<img src="~/Images/Diseños/Areas.png" alt="Áreas Comunes" />
 				Áreas Comunes
 			</li>
-			<li>
-				<img src="salir.png" alt="Salir" />
+			@* <li id="Salir">
+				<img src="~/Images/Diseños/CerrarSesion.png" alt="Salir" />
 				Salir
-			</li>
+			</li> *@
 		</ul>
 	</div>
-
 
 	<main class="main2">
 		<div class="ListaElementos">
@@ -84,33 +83,7 @@
 			</div>
 		</div>
 
-		@* <img class="ImgRuta" src="~/Images/Diseños/RutaMapa.png" />
-
-		<div class="SeleccionarRuta">
-			<p>Mi ubicación:</p>
-			<select class="ruta" id="Ruta" name="Ruta">
-				<option disabled selected>-- Selecciona un origen --</option>
-				<option disabled>Edificios</option>
-				<option value="Ruta1">Edificio de Industrial</option>
-				<option value="Ruta2">Edificio B</option>
-				<option value="Ruta2">sistemas</option>
-				<option disabled>Departamentos</option>
-				<option value="Ruta3">Departamento de Escolares</option>
-			</select>
-			<p>Mi destino:</p>
-			<select class="ruta" id="Destino" name="Destino">
-				<option disabled selected>-- Selecciona un destino --</option>
-				<option disabled>Edificios</option>
-				<option value="Ruta1">Edificio de Industrial</option>
-				<option value="Ruta2">Edificio B</option>
-				<option disabled>Departamentos</option>
-				<option value="Ruta3">Departamento de Escolares</option>
-				<option value="Ruta3">Biblioteca</option>
-			</select>
-
- <input type="submit" class="GenerarRuta" value="Obtener Ruta" onclick="obtenerRuta()"/>
-</div>
- *@
+		
 	</main>
 	<nav class="footer">
 		<div class="nav-item">
