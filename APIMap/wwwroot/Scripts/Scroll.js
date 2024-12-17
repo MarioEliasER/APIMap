@@ -1,6 +1,6 @@
 ﻿async function verDetalles(id)
 {
-	localStorage.setItem('laboratorioId', id);
+	localStorage.setItem('elementoId', id);
 	window.location.replace('/Detalles');
 }
 class Edificios {

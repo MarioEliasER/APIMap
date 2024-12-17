@@ -53,7 +53,7 @@ async function cargarObjetos(Tipo)
             divObjeto.addEventListener('click', () => {
                 console.log(`Guardando el ID del salón en localStorage: ${objeto.id}`);
                 // Guardar el ID del salón en localStorage
-                localStorage.setItem('laboratorioId', objeto.id);
+                localStorage.setItem('elementoId', objeto.id);
                 // Redirigir a la vista de detalles
                 console.log('Redirigiendo a la página de detalles...');
                 window.location.href = 'detalles';
