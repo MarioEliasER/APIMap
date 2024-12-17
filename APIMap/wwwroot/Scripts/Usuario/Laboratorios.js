@@ -36,7 +36,7 @@ async function cargarLaboratorios() {
 
             divLaboratorio.innerHTML = `
                 <img src="${rutaImagen}" alt="${laboratorio.nombre}" />
-                <p><strong>Nombre:</strong> ${laboratorio.nombre}</p>
+                <p><strong></strong> ${laboratorio.nombre}</p>
             `;
 
             // Agregar evento de clic para redirigir a la página de detalles
