@@ -135,6 +135,27 @@
 				});
 			}
 		});
+						// Función para manejar el clic y guardar el ID en localStorage
+		function seleccionarElemento(event) {
+			// Evitar que el enlace navegue a otro lugar
+			event.preventDefault();
+
+			// Obtener el ID del laboratorio desde el contenido de <h2>
+			const idElemento = event.target.closest('.description').querySelector('.Title h2').textContent.trim();
+			console.log('ID seleccionado:', idElemento);
+
+			// Guardar el ID en localStorage
+			localStorage.setItem('elementoId', idElemento);
+
+			// Redirigir a otra vista (HTML) donde se mostrarán los detalles
+			window.location.href = 'Detalles'; // Cambia 'detalles.html' por tu vista destino
+		}
+
+		// Asignar el evento de clic a todos los enlaces con la clase "Detalles"
+		document.querySelectorAll('.Detalles').forEach(elemento => {
+			elemento.addEventListener('click', seleccionarElemento);
+		});
+
 
 	</script>
 	<script>

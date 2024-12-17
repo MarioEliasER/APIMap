@@ -30,7 +30,7 @@
     <main class="main">
         <div class="Lista-Container2">
             <div class="ListaElementos">
-                <template>
+                @* <template>
                     <div class="elementos">
                         <div class="elemento">
                             <img src="~/Images/Diseños/LogoSistemas.png" alt="Edificio Sistemas" />
@@ -45,7 +45,7 @@
                             </a>
                         </div>
                     </div>
-                </template>
+                </template> *@
             </div>
         </div>
     </main>
@@ -58,8 +58,9 @@
             </a>
         </div>
     </nav>
-    <script src="~/Scripts/Laboratorios.js"></script>
+    <script src="~/Scripts/globalAdmin.js"></script>
     <script>
+        cargarObjetos("Laboratorios");
         //NAVEGACION
         let Home = document.getElementById('Inicio').addEventListener("click", function () {
             window.location.replace("Index");

@@ -1,4 +1,9 @@
-﻿class Edificios {
+﻿async function verDetalles(id)
+{
+	localStorage.setItem('laboratorioId', id);
+	window.location.replace('/Detalles');
+}
+class Edificios {
 	constructor(apiUrl) {
 		this.apiUrl = apiUrl;
 		this.scrollContainer = document.querySelector('.scroll-container'); // Contenedor donde se añadirán los elementos
@@ -23,34 +28,33 @@
 	seleccionarAleatorios(ubicaciones, cantidad) {
 		const aleatorios = [];
 		const copia = [...ubicaciones];
-
 		for (let i = 0; i < cantidad && copia.length > 0; i++) {
 			const indiceAleatorio = Math.floor(Math.random() * copia.length);
 			aleatorios.push(copia.splice(indiceAleatorio, 1)[0]);
 		}
-
 		return aleatorios;
 	}
-
+	
 	// Método para generar el HTML de cada elemento
 	createElementoHTML(ubicacion) {
 		const elemento = document.createElement('div');
 		elemento.classList.add('description');
-
 		elemento.innerHTML = `
-					<a class="Detalles">
+					<a class="Detalles" id=${ubicacion.id}>
 						<img class="place-icon" src="Images/Diseños/${ubicacion.nombre || '~/Images/Diseños/Logo1.png'}.jpg" alt="icon" />
 						<div class="Title">
 							<h2>${ubicacion.nombre || 'Nombre desconocido'}</h2>
 						</div>
 					</a>
 				`;
-
+		elemento.onclick = () => verDetalles(ubicacion.id);
+		
 		return elemento;
 	}
 
 	// Método para renderizar ubicaciones aleatorias
-	async renderUbicacionesAleatorias(cantidad) {
+	async renderUbicacionesAleatorias(cantidad)
+	{
 		this.scrollContainer.innerHTML = ''; // Limpiar el contenido actual
 
 		const ubicaciones = await this.fetchUbicaciones();
@@ -75,7 +79,8 @@
 const edificios = new Edificios('https://apimap.websitos256.com/api/ubicacion');
 
 // Llenar datos al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async() =>
+{
 	// Llenar con 5 ubicaciones aleatorias
 	edificios.renderUbicacionesAleatorias(5);
 });
@@ -88,3 +93,9 @@ async function filtro() {
 	)
 	rellenarUsuarios(usuarios);
 }
+
+window.onload = () =>
+{
+	localStorage.clear();
+}
+window.onload();

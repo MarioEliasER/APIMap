@@ -11,6 +11,7 @@
 	<link href="~/Css/Styles.css" rel="stylesheet" />
 	<title>Ubica-Tec</title>
 </head>
+
 <body class="grid-container2">
 	<header class="header">
 		<div class="iconTitle">
@@ -59,16 +60,10 @@
 			<input class="searchtext" type="search" placeholder="Buscar..." />
 		</div>
 	</article>
-
-
 	<main class="main2">
-
 		<div class="ListaElementos">
-
 		</div>
-
 	</main>
-
 	<nav class="footer">
 		<div class="nav-item">
 			<a class="GenerarRutas">
@@ -89,7 +84,10 @@
 			</a>
 		</div>
 	</nav>
+
+	<script src="~/Scripts/Usuario/global.js"></script>
 	<script>
+		cargarObjetos("Salones");
 			//NAVEGACION
 				// Mostrar/Ocultar el menú desplegable
 		document.querySelector('.menu-toggle').addEventListener('click', function () {
@@ -98,31 +96,31 @@
 		});
 
 		// Cerrar el menú al hacer clic fuera de él
-		document.addEventListener('click', function (event) {
+		document.addEventListener('click', function (event)
+		{
 			const menu = document.querySelector('#dropdownMenu');
 			const toggle = document.querySelector('.menu-toggle');
 
 			if (!menu.contains(event.target) && !toggle.contains(event.target)) {
 				menu.style.display = 'none';
 			}
-		}); 
-			 //ICONO SUPERIOR IZQUIERDO
-			 let Icono = document.querySelector(".Icono").addEventListener("click", function () {
-				window.location.replace("/AboutUs");
-			 });
-			 //REGRESAR A VISTA EDIFICIOS
+		});
+		//ICONO SUPERIOR IZQUIERDO
+		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
+			window.location.replace("/AboutUs");
+		});
+		//REGRESAR A VISTA EDIFICIOS
 		// let EdificiosView = document.querySelector("#Edificios").addEventListener("click", function () {
 		// 	window.location.replace("/Edificios");
 		// });
-
 		//REGRESAR A VISTA EDIFICIOS
-		let EdificiosView = document.querySelector("#Index").addEventListener("click", function () {
-			window.location.replace("/Index")
-		});
+		// let EdificiosView = document.querySelector("#Index").addEventListener("click", function () {
+		// 	window.location.replace("/Index")
+		// });
 		//NAVEGAR A VISTA DETALLES
-		let DetalleView = document.querySelector("#Detalle").addEventListener("click", function () {
-			window.location.replace("/Detalles")
-		});
+		// let DetalleView = document.querySelector("#Detalle").addEventListener("click", function () {
+		// 	window.location.replace("/Detalles")
+		// });
 		//NAVBAR INFERIOR
 		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
 			window.location.replace("/Index");
