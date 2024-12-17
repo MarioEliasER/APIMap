@@ -53,6 +53,7 @@ class Ubicaciones {
             //Imagen
             let imagen = clone.querySelector('img');
             imagen.src = "/Images/Diseños/" + data[i].nombre + ".jpg";
+            
 
 
             //Nombre
