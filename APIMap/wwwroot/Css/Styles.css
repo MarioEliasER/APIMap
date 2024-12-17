@@ -1390,13 +1390,22 @@ nav h3 {
     }
 
     /*Vista Detalles */
-    .ImgAula {
+    /*.ImgAula {
         width: 40%;
         height: auto;
         max-height: 430px;
         position: fixed;
         top: 110px;
         margin-left: 30%;
+        border-radius: 8px;
+    }*/
+    .ImgElemento {
+        width: 35%;
+        height: auto;
+        max-height: 450px;
+        position: fixed;
+        top: 90px;
+        margin-left: 32%;
         border-radius: 8px;
     }
 
@@ -3064,7 +3073,15 @@ nav h3 {
         margin-left: 5%;
         border-radius: 8px;
     }
-
+    .ImgElemento {
+        width: 90%;
+        height: 300px;
+        max-height: 400px;
+        /* position: fixed; */
+        top: 160px;
+        margin-left: 5%;
+        border-radius: 8px;
+    }
     .Info {
         background-color: #296EB4;
         color: white;
