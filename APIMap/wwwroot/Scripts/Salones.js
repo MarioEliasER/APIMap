@@ -27,7 +27,8 @@
     }
 
     // Método para generar el HTML de cada elemento
-    createElementoHTML(ubicacion) {
+    createElementoHTML(ubicacion)
+    {
         const elemento = document.createElement('div');
         elemento.classList.add('elementos');
 
@@ -48,10 +49,8 @@
     // Método para renderizar los salones en el contenedor
     async renderSalones() {
         this.listaContainer.innerHTML = ''; // Limpiar el contenido actual
-
         const ubicaciones = await this.fetchUbicaciones();
         const salones = this.filtrarSalones(ubicaciones);
-
         this.renderSalonesList(salones); // Llamamos a renderSalonesList para manejar la lógica adicional
     }
 
@@ -75,6 +74,7 @@
 const ubicacionManager = new UbicacionManager('https://apimap.websitos256.com/api/ubicacion');
 
 // Llenar los datos de los salones al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () =>
+{
     ubicacionManager.renderSalones();
 });
