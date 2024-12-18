@@ -58,44 +58,6 @@ header h1 {
     width: 20px;
 }
 
-.navbar {
-    grid-area: navbar;
-    background-color: #fff;
-    align-content: center;
-    justify-items: center;
-}
-
-.search2 {
-    background: rgba(255, 255, 255, 255);
-    width: 60%;
-    top: 20px;
-    align-items: center;
-    display: flex;
-    padding: 5px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    ;
-    background-color: #fff;
-}
-
-.busquedaIcon {
-    width: 16px;
-    height: 16px;
-    margin-right: 10px;
-}
-
-.searchtext {
-    border: none;
-    outline: none;
-    -webkit-appearance: none; /* Quita estilos por defecto en Chrome/Safari */
-    -moz-appearance: none; /* Quita estilos por defecto en Firefox */
-    appearance: none; /* Para otros navegadores */
-    padding: 3px;
-    font-size: 16px;
-    width: 100%;
-    border-radius: 3px;
-    background: transparent;
-}
 
 .main {
     grid-area: main;
@@ -509,7 +471,6 @@ nav h3 {
     /* gap: 10px; */
     grid-template:
         "header" 60px
-        "navbar" 50px
         "main" auto
         "article" 80px
         "footer" 60px;
@@ -523,7 +484,6 @@ nav h3 {
     display: grid;
     grid-template:
         "header" 70px
-        "navbar" 50px
         "main2" auto
         "footer" 60px;
 }
@@ -616,7 +576,7 @@ nav h3 {
     }
     /* Vista ayuda */
     .Lista-Container2 {
-        padding-top: 5%;
+        padding-top: 2%;
         width: 100%;
     }
 
@@ -897,7 +857,6 @@ nav h3 {
     .grid-container {
         grid-template:
             "header  header" 60px
-            "navbar  navbar" 50px
             "main" auto
             "article" 80px
             "footer  footer" 60px;
@@ -906,7 +865,6 @@ nav h3 {
     .grid-container2 {
         grid-template:
             "header  header" 60px
-            "navbar  navbar" 50px
             "main2" auto
             "footer  footer" 60px;
     }
@@ -916,10 +874,6 @@ nav h3 {
         height: 100%;
         top: -10px;
         width: 100%;
-    }
-
-    .navbar {
-        background-color: transparent;
     }
 
     .map {
@@ -1269,7 +1223,6 @@ nav h3 {
     .grid-container {
         grid-template:
             "header  header header" 70px
-            "navbar  navbar" 50px
             "main" auto
             "article article article" 80px
             "footer  footer footer" 60px;
@@ -1278,7 +1231,6 @@ nav h3 {
     .grid-container2 {
         grid-template:
             "header  header header" 70px
-            "navbar  navbar" 50px
             "main2" auto
             "footer  footer footer" 60px;
     }
@@ -1290,16 +1242,7 @@ nav h3 {
         justify-self: center;
     }
 
-    .navbar {
-        top: 60px;
-        background-color: transparent;
-    }
-
-    .search2 {
-        width: 75%;
-    }
-
-    .map {
+     .map {
         margin-left:-4%;
         justify-self: center;
         width: 100%;
@@ -1373,8 +1316,8 @@ nav h3 {
 
     .floating-button {
         position: absolute;
-        top: 18%;
-        right: 8%;
+        top: 11%;
+        right: 18%;
         background: rgba(255, 255, 255, 1);
         z-index: 2;
         padding: 10px;
@@ -1449,7 +1392,7 @@ nav h3 {
 
     /* Vista ayuda */
     .Lista-Container2 {
-        margin-top: 1%;
+        margin-top: -3%;
         width: 100%;
     }
 
@@ -1586,6 +1529,7 @@ nav h3 {
         color:black;
         margin-bottom:2%;
     }
+
     /* Generar Ruta */
     .ImgMapa {
         position: absolute;
@@ -1598,9 +1542,9 @@ nav h3 {
 
     .ImgRuta {
         position: absolute;
-        top: -1%;
-        left: 23%;
-        width: 30%;
+        top: 5%;
+        left: 22%;
+        width: 31%;
         height: 100%;
         object-fit: contain;
         z-index: 0;
@@ -1717,7 +1661,6 @@ nav h3 {
     .grid-container {
         grid-template:
             "header  header header" 60px
-            "navbar  navbar" 50px
             "main" auto
             "article article article" 80px
             "footer  footer footer" 60px;
@@ -1726,20 +1669,9 @@ nav h3 {
     .grid-container2 {
         grid-template:
             "header  header header" 60px
-            "navbar  navbar" 50px
             "main2" auto
             "footer  footer footer" 60px;
     }
-
-    .navbar {
-        top: 65px;
-        background-color: transparent;
-    }
-
-    .search2 {
-        width: 80%;
-    }
-
 
     .main {
         height: 100%;
@@ -1898,7 +1830,7 @@ nav h3 {
 
     /* Vista ayuda */
     .Lista-Container2 {
-        margin-top: -3%;
+        margin-top: -4%;
         width: 100%;
     }
 
@@ -2105,7 +2037,6 @@ nav h3 {
     .grid-container {
         grid-template:
             "header  header header" 60px
-            "navbar  navbar" 50px
             "main" auto
             "article article article" 80px
             "footer  footer footer" 60px;
@@ -2114,19 +2045,9 @@ nav h3 {
     .grid-container2 {
         grid-template:
             "header  header header" 60px
-            "navbar  navbar" 50px
             "main2" auto
             "footer  footer footer" 60px;
     }
-
-    .navbar {
-        top: 70px;
-    }
-
-    .navbar {
-        background-color: transparent;
-    }
-
 
     .main {
         /* align-self: center; */
@@ -2179,9 +2100,6 @@ nav h3 {
             height: 35px;
         }
 
-    .search2 {
-        width: 85%;
-    }
 
     .description {
         width: 100%;
@@ -2339,7 +2257,7 @@ nav h3 {
     /* Vista ayuda */
     .Lista-Container2 {
         justify-items: center;
-        padding-top: 5%;
+        padding-top: 2%;
         width: 100%;
         padding-left: 1%;
     }
@@ -2507,7 +2425,6 @@ nav h3 {
     .grid-container {
         grid-template:
             "header  header header" 60px
-            "navbar  navbar" 50px
             "main" auto
             "article article article" 80px
             "footer  footer footer" 60px;
@@ -2516,19 +2433,9 @@ nav h3 {
     .grid-container2 {
         grid-template:
             "header  header header" 60px
-            "navbar  navbar" 50px
             "main2" auto
             "footer  footer footer" 60px;
     }
-
-    .navbar {
-        top: 70px;
-    }
-
-    .navbar {
-        background-color: transparent;
-    }
-
 
     .main {
         /* align-self: center; */
@@ -2750,7 +2657,7 @@ nav h3 {
     /* Vista ayuda */
     .Lista-Container2 {
         justify-items: center;
-        padding-top: 5%;
+        padding-top: 2%;
         width: 100%;
         padding-left: 1%;
     }
@@ -2925,7 +2832,6 @@ nav h3 {
     .grid-container {
         grid-template:
             "header  header" 60px
-            "navbar  navbar" 50px
             "main" auto
             "article" 80px
             "footer  footer" 60px;
@@ -2934,7 +2840,6 @@ nav h3 {
     .grid-container2 {
         grid-template:
             "header  header" 60px
-            "navbar  navbar" 50px
             "main2" auto
             "footer  footer" 60px;
     }
@@ -2942,15 +2847,6 @@ nav h3 {
         width:100%;
     }
 
-
-    .search2 {
-        width: 85%;
-    }
-
-
-    .navbar {
-        background-color: transparent;
-    }
 
     .main {
         height: 100%;
@@ -3020,7 +2916,7 @@ nav h3 {
 
     .description {
         width: 100%;
-        min-width: 220px;
+        min-width: 230px;
         height: 63px;
         padding: 4px;
         font-size: 13px;
@@ -3133,7 +3029,7 @@ nav h3 {
         }
     /* Vista ayuda */
     .Lista-Container2 {
-        padding-top: 5%;
+        padding-top: 0%;
         width: 100%;
     }
  
