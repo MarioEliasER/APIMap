@@ -59,7 +59,6 @@ namespace APIMap.Controllers
             return Ok(ubicacionesDto);
         }
 
-        [Authorize]
         [HttpPost]
         public IActionResult Post(UbicacionDTO dto)
         {
@@ -102,7 +101,6 @@ namespace APIMap.Controllers
             return BadRequest(result.Errors.Select(x => x.ErrorMessage));
         }
 
-        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
