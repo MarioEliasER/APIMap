@@ -797,18 +797,18 @@ nav h3 {
 
     .description {
         width: 100%;
-        min-width: 270px;
-        height: 60%;
+        min-width: 290px;
+        height: 65%;
         padding: 2px;
         font-size: 13px;
     }
 
     .place-icon {
-        width: 23%;
+        width: 21%;
         align-content: center;
         height: 8%;
-        margin-left: 10%;
-        margin-right: 1%;
+        margin-left: 5%;
+        margin-right: 3%;
         object-fit: contain;
     }
 
@@ -829,11 +829,11 @@ nav h3 {
         }
 
     .Title {
-        width: 90%;
+        width: 95%;
     }
 
       .Title h2 {
-            margin-left: -50%;
+            margin-left: -40%;
             font-weight: bolder;
             font-size: 14px;
         }
@@ -967,18 +967,18 @@ nav h3 {
 
     .description {
         width: 100%;
-        min-width: 210px;
-        height: 60px;
-        padding: 8px;
+        min-width: 230px;
+        height: 65px;
+        padding: 5px;
         font-size: 13px;
     }
 
     .place-icon {
-        width: 23%;
+        width: 21%;
         align-content:center;
          height: 8%;
-        margin-left: 10%;
-        margin-right:1%;
+        margin-left: 5%;
+        margin-right:3%;
         object-fit: contain;
       
     }
@@ -992,10 +992,10 @@ nav h3 {
         width: 360px;
     }
     .Title{
-        width:80%;
+        width:90%;
     }
     .Title h2 {
-        margin-left:-20%;
+        margin-left:-16%;
         font-weight: bolder;
         font-size: 13px;
     }
@@ -2185,19 +2185,19 @@ nav h3 {
 
     .description {
         width: 100%;
-        min-width: 230px;
-        height: 75px;
+        min-width: 250px;
+        height: 77px;
         padding: 0;
         font-size: 13px;
     }
 
     .place-icon {
 
-        width: 22%;
+        width: 20%;
         align-content: center;
-        height: 7%;
+        height: 8%;
         margin-left: 5%;
-        margin-right: 1%;
+        margin-right: 5%;
         object-fit: contain;
     }
 
@@ -2231,10 +2231,10 @@ nav h3 {
             margin-right: 20px;
         }
     .Title{
-        width:90%;
+        width:100%;
     }
     .Title h2 {
-        margin-left:-55%;
+        margin-left:-10%;
         font-weight: bolder;
         font-size: 13px;
     }
@@ -2597,18 +2597,18 @@ nav h3 {
 
     .description {
         width: 100%;
-        min-width: 250px;
+        min-width: 260px;
         height: 85%;
         padding: 0;
         font-size: 13px;
     }
 
     .place-icon {
-        width: 22%;
+        width: 24%;
         align-content: center;
-        height: 7%;
+        height: 9%;
         margin-left: 5%;
-        margin-right: 1%;
+        margin-right: 3%;
         object-fit: contain;
     }
 
@@ -2642,11 +2642,11 @@ nav h3 {
             margin-right: 20px;
         }
     .Title{
-        width:85%;
+        width:100%;
     }
 
     .Title h2 {
-        margin-left:-45%;
+        margin-left:-11%;
         font-weight: bolder;
         font-size: 13px;
     }
@@ -3020,18 +3020,18 @@ nav h3 {
 
     .description {
         width: 100%;
-        min-width: 200px;
-        height: 60px;
-        padding: 8px;
+        min-width: 220px;
+        height: 63px;
+        padding: 4px;
         font-size: 13px;
     }
 
     .place-icon {
-        width: 23%;
+        width: 21%;
         align-content: center;
         height: 8%;
-        margin-left: 5%;
-        margin-right: 1%;
+        margin-left: 3%;
+        margin-right: 3%;
         object-fit: contain;
     }
 
@@ -3043,10 +3043,10 @@ nav h3 {
         width: 320px;
     }
     .Title {
-        width: 95%;
+        width: 100%;
     }
     .Title h2 {
-        margin-left:-40%;
+        margin-left:-5%;
         font-weight: bolder;
         font-size: 13px;
     }
