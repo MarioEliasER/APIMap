@@ -6,7 +6,7 @@
     ObtenerImagen(origen, destino);
 }
 
-let url_local = "https://localhost:44380/";
+let url_estatica = "https://apimap.websitos256.com/";
 
 function limpiarNombre(texto) {
     return texto
@@ -23,7 +23,7 @@ async function ObtenerImagen(origen, destino) {
     let destinoLimpio = limpiarNombre(destino);
 
     // Genera la URL limpia
-    let url = `${url_local}Rutas/${origenLimpio}-${destinoLimpio}.png`;
+    let url = `${url_estatica}Rutas/${origenLimpio}-${destinoLimpio}.png`;
 
     console.log("URL generada:", url); // Log para depuración
     imagen.src = url;
