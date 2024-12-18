@@ -47,12 +47,12 @@
 	<script src="~/Scripts/globalAdmin.js"></script>
 	<script>
 		cargarObjetos("Areas Comunes");
-		window.onload = function () {
-			const token = localStorage.getItem("token");
-			if (!token) {
-				window.location.href = "/login"; // Redirige al login si no hay token
-			}
-		}
+		// window.onload = function () {
+		// 	const token = localStorage.getItem("token");
+		// 	if (!token) {
+		// 		window.location.href = "/login"; // Redirige al login si no hay token
+		// 	}
+		// }
 		//NAVEGACION
 		let Home = document.getElementById('Inicio').addEventListener("click", function () {
 			window.location.replace("Index");
