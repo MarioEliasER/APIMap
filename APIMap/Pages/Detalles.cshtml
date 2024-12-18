@@ -101,6 +101,7 @@
                 menu.style.display = 'none';
             }
         });
+
         //NAVBAR INFERIOR
         let Home = document.querySelector(".Inicio").addEventListener("click", function () {
             window.location.replace("/Index");
@@ -111,9 +112,7 @@
         let help = document.querySelector(".Ayuda").addEventListener("click", function () {
             window.location.replace("/Ayuda");
         });
-        let regresar = document.querySelector('#Edificios').addEventListener("click", function () {
-            window.location.replace("/Index");
-        });
+        
         // Mapea los IDs de los elementos a las rutas correspondientes
         const rutas = {
             Areas: "/Areas",
@@ -133,6 +132,9 @@
                     });
                 }
             });
+        });
+        let regresar = document.getElementById('Edificios').addEventListener("click", function () {
+            window.location.replace("/Index");
         });
         </script>
 
