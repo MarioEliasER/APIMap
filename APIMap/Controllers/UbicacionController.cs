@@ -79,7 +79,6 @@ namespace APIMap.Controllers
             return BadRequest(result.Errors.Select(x => x.ErrorMessage));
         }
 
-        [Authorize]
         [HttpPut]
         public IActionResult Put(UbicacionDTO dto)
         {
