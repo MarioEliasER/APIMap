@@ -93,6 +93,26 @@
 		cargarObjetos("Areas comunes");
 
 			//NAVEGACION
+		// Mapea los IDs de los elementos a las rutas correspondientes
+		const rutas = {
+			Areas: "/Areas",
+			Edificios: "/Edificios",
+			Salones: "/Salones",
+			Laboratorios: "/Laboratorios",
+			Departamentos: "/Departamentos",
+		};
+		// Espera a que el DOM esté completamente cargado
+		document.addEventListener("DOMContentLoaded", () => {
+			// Recorre cada entrada del mapa y asigna eventos
+			Object.keys(rutas).forEach((id) => {
+				const elemento = document.querySelector(`#${id}`);
+				if (elemento) { // Verifica que el elemento exista
+					elemento.addEventListener("click", () => {
+						window.location.replace(rutas[id]);
+					});
+				}
+			});
+		});
 		 // Mostrar/Ocultar el menú desplegable
 		document.querySelector('.menu-toggle').addEventListener('click', function () {
 			const menu = document.querySelector('#dropdownMenu');
@@ -119,13 +139,14 @@
 		// });
 
 		//REGRESAR A VISTA EDIFICIOS
-		let EdificiosView = document.querySelector("#Index").addEventListener("click", function () {
-			window.location.replace("/Index")
-		});
+		// let EdificiosView = document.querySelector("#Index").addEventListener("click", function () {
+		// 	window.location.replace("/Index")
+		// });
 		//NAVEGAR A VISTA DETALLES
 		let DetalleView = document.querySelector("#Detalle").addEventListener("click", function () {
 			window.location.replace("/Detalles")
 		});
+	
 		//NAVBAR INFERIOR
 		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
 			window.location.replace("/Index");

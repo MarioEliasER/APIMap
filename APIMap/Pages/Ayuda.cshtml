@@ -148,7 +148,26 @@
 	</nav>
 	<script>
 		//NAVEGACION
-
+		// Mapea los IDs de los elementos a las rutas correspondientes
+		const rutas = {
+			Areas: "/Areas",
+			Edificios: "/Edificios",
+			Salones: "/Salones",
+			Laboratorios: "/Laboratorios",
+			Departamentos: "/Departamentos",
+		};
+		// Espera a que el DOM esté completamente cargado
+		document.addEventListener("DOMContentLoaded", () => {
+			// Recorre cada entrada del mapa y asigna eventos
+			Object.keys(rutas).forEach((id) => {
+				const elemento = document.querySelector(`#${id}`);
+				if (elemento) { // Verifica que el elemento exista
+					elemento.addEventListener("click", () => {
+						window.location.replace(rutas[id]);
+					});
+				}
+			});
+		});
 		//ICONO SUPERIOR IZQUIERDO
 		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
 			window.location.replace("/AboutUs");
