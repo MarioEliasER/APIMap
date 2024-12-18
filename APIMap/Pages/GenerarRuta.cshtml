@@ -21,7 +21,9 @@
 		<div class="menu-toggle">
 			<img class="iconMenu" src="~/Images/Diseños/menu.png" alt="menu icon" />
 		</div>
+
 	</header>
+	
 	<!-- Menú desplegable flotante -->
 	<div class="dropdown-menu" id="dropdownMenu">
 		<ul>
@@ -34,7 +36,7 @@
 				Salones
 			</li>
 			<li id="Laboratorios">
-				<img src="~/Images/Diseños/matraz.png" alt="Laboratorios" />
+				<img src ="~/Images/Diseños/matraz.png" alt="Laboratorios" />
 				Laboratorios
 			</li>
 			<li id="Departamentos">
@@ -51,6 +53,7 @@
 			</li> *@
 		</ul>
 	</div>
+
 
 	<main class="main2">
 		<div class="ListaElementos">
@@ -142,6 +145,7 @@
 
 		
 	</main>
+
 	<nav class="footer">
 		<div class="nav-item">
 			<a class="GenerarRutas">
@@ -186,6 +190,9 @@
 				}
 			});
 		});
+		</script>
+	<script>
+		
 		// Mostrar/Ocultar el menú desplegable
 		document.querySelector('.menu-toggle').addEventListener('click', function () {
 			const menu = document.querySelector('#dropdownMenu');
