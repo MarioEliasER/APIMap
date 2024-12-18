@@ -6,6 +6,25 @@ async function verEliminar(id) {
     localStorage.setItem('idLugar', id);
     window.location.replace("/Admin/Eliminar");
 }
+
+// Al registrar el service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/serviceworker.js?v=7').then(registration => {
+        console.log("Service Worker registrado", registration);
+    }).catch(error => {
+        console.log("Error al registrar el Service Worker", error);
+    });
+}
+
+// Escuchar el mensaje del service worker para enviarle el token
+navigator.serviceWorker.addEventListener('message', (event) => {
+    if (event.data === 'getToken') {
+        // Enviar el token al service worker
+        event.source.postMessage(localStorage.getItem('token'));
+    }
+});
+
+
 // Función para obtener los datos de la API y llenarlos en la vista
 async function cargarObjetos(Tipo) {
     try {

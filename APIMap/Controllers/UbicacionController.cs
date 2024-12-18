@@ -2,6 +2,7 @@
 using APIMap.Models.Entities;
 using APIMap.Models.Validators;
 using APIMap.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -58,6 +59,7 @@ namespace APIMap.Controllers
             return Ok(ubicacionesDto);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Post(UbicacionDTO dto)
         {
@@ -77,6 +79,7 @@ namespace APIMap.Controllers
             return BadRequest(result.Errors.Select(x => x.ErrorMessage));
         }
 
+        [Authorize]
         [HttpPut]
         public IActionResult Put(UbicacionDTO dto)
         {
@@ -100,6 +103,7 @@ namespace APIMap.Controllers
             return BadRequest(result.Errors.Select(x => x.ErrorMessage));
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

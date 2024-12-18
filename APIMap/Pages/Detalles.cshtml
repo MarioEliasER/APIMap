@@ -92,6 +92,8 @@
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         });
 
+        document.querySelector('#Edificios.floating-button2').addEventListener('click', function() { window.location.replace("/Index"); });
+
         // Cerrar el menú al hacer clic fuera de él
         document.addEventListener('click', function (event) {
             const menu = document.querySelector('#dropdownMenu');
@@ -133,9 +135,7 @@
                 }
             });
         });
-        let regresar = document.getElementById('Edificios').addEventListener("click", function () {
-            window.location.replace("/Index");
-        });
+
         </script>
 
     @* @* <script src="detalles.js"></script> *@

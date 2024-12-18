@@ -5,6 +5,7 @@ let urls = [
     "/index",
     "/mapacompleto",
     "/vistainicio",
+    "/ayuda",
     "/generarruta",
     "/manifest.json",
     "/serviceworker.js",
@@ -24,6 +25,148 @@ let urls = [
     "/scripts/usuario/laboratorios.js",
     "/scripts/usuario/salones.js",
 ];
+self.addEventListener("fetch", (event) => {
+    if (event.request.url.includes("/api/Login")) {
+        event.respondWith(
+            (async () => {
+                try {
+                    const networkResponse = await fetch(event.request);
+                    if (networkResponse.ok) {
+                        const clonedResponse = networkResponse.clone();
+                        const data = await clonedResponse.json();
+                        // Opcionalmente, guardar datos en caché o realizar operaciones.
+                        return networkResponse;
+                    } else {
+                        return new Response("Credenciales incorrectas", { status: 401 });
+                    }
+                } catch (err) {
+                    console.warn("No se pudo conectar al servidor.");
+                    return new Response(
+                        JSON.stringify({ error: "No se pudo conectar al servidor." }),
+                        { status: 503, headers: { "Content-Type": "application/json" } }
+                    );
+                }
+            })()
+        );
+    }
+});
+
+self.addEventListener("fetch", (event) => {
+    // Si la URL es la de la API de login o cualquier otra API que necesite autenticación
+    if (event.request.url.includes("/api/")) {
+        event.respondWith(
+            (async () => {
+                try {
+                    // Obtener el token de localStorage
+                    const token = await self.clients.matchAll().then(clients => clients[0]?.postMessage('getToken'));
+
+                    // Clonar la petición para agregar el token
+                    const modifiedRequest = new Request(event.request, {
+                        headers: new Headers({
+                            ...event.request.headers,
+                            "Authorization": `Bearer ${token}`  // Agregar el token al encabezado de la solicitud
+                        })
+                    });
+
+                    const networkResponse = await fetch(modifiedRequest);
+                    if (networkResponse.ok) {
+                        const clonedResponse = networkResponse.clone();
+                        const data = await clonedResponse.json();
+                        return networkResponse;
+                    } else {
+                        return new Response("Credenciales incorrectas", { status: 401 });
+                    }
+                } catch (err) {
+                    console.warn("No se pudo conectar al servidor.");
+                    return new Response(
+                        JSON.stringify({ error: "No se pudo conectar al servidor." }),
+                        { status: 503, headers: { "Content-Type": "application/json" } }
+                    );
+                }
+            })()
+        );
+    }
+});
+
+self.addEventListener('message', (event) => {
+    if (event.data === 'getToken') {
+        // El servicio worker recibe el mensaje y responde con el token
+        event.source.postMessage(localStorage.getItem('token'));
+    }
+});
+
+
+// Instalación: cachear recursos
+self.addEventListener("install", (event) => {
+    event.waitUntil(
+        caches.open(cacheName).then((cache) => {
+            //mostrar las url de los recursos faltantes y agregar los demas
+            for (let url of urls) {
+                try {
+                    cache.add(url);
+                }
+                catch (err) {
+                    console.log(url + " no agregado");
+                }
+            }
+        })
+    );
+});
+// Activación: limpiar cachés antiguas
+self.addEventListener("activate", (event) => {
+    event.waitUntil(
+        caches.keys().then((keys) => {
+            return Promise.all(
+                keys.map((key) => {
+
+                    if (key !== cacheName) {
+                        console.log("Eliminando caché antigua:", key);
+                        return caches.delete(key);
+                    }
+                })
+            );
+        })
+    );
+});
+// Fetch: Interceptar peticiones y actualizar la caché si hay internet
+self.addEventListener("fetch", (event) => {
+    event.respondWith(
+        caches.match(event.request)
+            .then((cachedResponse) => {
+                // Si la solicitud está en la caché, devolverla
+                if (cachedResponse) {
+                    return cachedResponse;
+                }
+
+                // Si la solicitud es POST, no cachearla
+                if (event.request.method === 'POST') {
+                    return fetch(event.request, { mode: 'cors', cache: "reload" })
+                        .catch(() => {
+                            console.warn("Fallo en la red, recurso no disponible:", event.request.url);
+                            return caches.match("/offline.html");
+                        });
+                }
+
+                // Si la solicitud no está en la caché y no es POST, intentar obtenerla de la red
+                return fetch(event.request, { mode: 'cors', cache: "reload" })
+                    .then((networkResponse) => {
+                        // Guarda en la caché solo si la respuesta es exitosa y no es una solicitud POST
+                        if (networkResponse.ok) {
+                            return caches.open(cacheName).then((cache) => {
+                                cache.put(event.request, networkResponse.clone());
+                                return networkResponse;
+                            });
+                        }
+                        return networkResponse;
+                    })
+                    .catch(() => {
+                        console.warn("Fallo en la red, recurso no disponible:", event.request.url);
+                        return caches.match("/offline.html");
+                    });
+            })
+    );
+});
+
 
 //async function precache() {
 //    let cache = await caches.open(cacheName);
@@ -95,61 +238,3 @@ let urls = [
 //        }
 //    }
 //}
-
-// Instalación: cachear recursos
-self.addEventListener("install", (event) => {
-    event.waitUntil(
-        caches.open(cacheName).then((cache) => {
-            //mostrar las url de los recursos faltantes y agregar los demas
-            for (let url of urls) {
-                try {
-                    cache.add(url);
-                }
-                catch (err) {
-                    console.log(url + " no agregado");
-                }
-            }
-        })
-    );
-});
-// Activación: limpiar cachés antiguas
-self.addEventListener("activate", (event) => {
-    event.waitUntil(
-        caches.keys().then((keys) => {
-            return Promise.all(
-                keys.map((key) => {
-
-                    if (key !== cacheName) {
-                        console.log("Eliminando caché antigua:", key);
-                        return caches.delete(key);
-                    }
-                })
-            );
-        })
-    );
-});
-// Fetch: Interceptar peticiones y actualizar la caché si hay internet
-self.addEventListener("fetch", (event) => {
-    event.respondWith(
-        caches.match(event.request)
-            .then((cachedResponse) => {
-                if (cachedResponse) {
-                    return cachedResponse;
-                }
-                // Si no está en la caché, intenta obtenerlo de la red
-                return fetch(event.request, { mode: 'cors' , cache:"reload"})
-                    .then((networkResponse) => {
-                        // Guarda en la caché si la petición fue exitosa
-                        return caches.open(cacheName).then((cache) => {
-                            cache.put(event.request, networkResponse.clone());
-                            return networkResponse;
-                        });
-                    })
-                    .catch(() => {
-                        console.warn("Fallo en la red, recurso no disponible:", event.request.url);
-                        // Recurso de fallback en caso de error
-                        return caches.match("/offline.html");
-                    });
-            })
-    );
-});
