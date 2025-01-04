@@ -1392,7 +1392,7 @@ nav h3 {
 
     /* Vista ayuda */
     .Lista-Container2 {
-        margin-top: -3%;
+        margin-top: -2%;
         width: 100%;
     }
 
@@ -1402,14 +1402,14 @@ nav h3 {
         }
 
     .informacion {
-        margin-top: -4%;
+        margin-top: -3%;
         margin-left: 20%;
         font-size: 14px;
         width: 90%;
     }
 
         .informacion h4 {
-            padding-top: 20px;
+            padding-top: 19px;
             font-size: 18px;
             margin-left: -2%;
         }
