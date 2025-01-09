@@ -22,7 +22,6 @@ body {
     display: grid;
     grid-template:
         "header" 60px
-        "navbar" 50px
         "main" auto
         "footer" 60px;
 }
@@ -502,6 +501,7 @@ input[type="file"] {
     }
 
 /* Pantallas pequeñas (celulares) */
+
 @media screen and (max-width: 700px) {
     body {
         flex-direction: column;
@@ -534,27 +534,6 @@ input[type="file"] {
             cursor: pointer;
         }
 
-    .search2 {
-        grid-area: navbar;
-        background: rgba(255, 255, 255, 255);
-        width: 90%;
-        top: 10%;
-        left: 5%;
-        align-items: center;
-        display: flex;
-        position: fixed;
-        padding: 5px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        ;
-        background-color: #fff;
-    }
-
-    .busquedaIcon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-    }
 
     .main {
         grid-area: main;
@@ -876,6 +855,370 @@ input[type="file"] {
             }
 }
 
+@media (max-height: 681px) and (max-width: 391px) {
+    body {
+        flex-direction: column;
+        overflow-y: auto; /* Permite el scroll vertical si es necesario */
+        height: auto;
+    }
+
+    header {
+        justify-content: space-between;
+        position: fixed;
+    }
+
+
+    .iconTitle {
+        margin-left: 1%;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon {
+        width: 35px;
+        padding-right: 5px;
+    }
+
+    .iconMenu {
+        margin-right: 8px;
+        width: 30px;
+    }
+
+        .iconMenu:hover {
+            cursor: pointer;
+        }
+
+  
+
+    .main {
+        grid-area: main;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .Lista-Container {
+        width: 90%;
+        height: 100%;
+    }
+
+    .ElementosCategorias {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        margin-left: 12%;
+        gap: 20px;
+        width: 88%;
+    }
+
+    .categoria {
+        width: 100%;
+    }
+
+        .categoria:hover {
+            cursor: pointer;
+        }
+
+        .categoria img {
+            width: 80%;
+        }
+
+        .categoria p {
+            font-size: 15px;
+            padding: 10px;
+        }
+
+
+    .nav-item:hover {
+        cursor: pointer;
+    }
+
+    .btnAgregar {
+        bottom: 14%;
+        right: 6%;
+        width: 65px;
+        height: 65px;
+    }
+
+        .btnAgregar:hover {
+            cursor: pointer;
+        }
+
+    .Lista-Container2 {
+        background-color: #fff;
+        text-align: center;
+        margin-top: 2%;
+        width: 90%;
+        justify-self: center;
+        height: 100%;
+        margin-left: 5%;
+        right: 0;
+    }
+
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .elementos {
+        display: flex;
+        background-color: #007EA7;
+        justify-content: space-between;
+        border-radius: 10px;
+        color: white;
+        height: 65px;
+        padding-left: 1px;
+        align-items: center;
+        margin-bottom: 2px;
+    }
+
+        .elementos p {
+            text-align: left;
+            font-size: 15px;
+            width: 95%;
+        }
+
+    .elemento {
+        height: 60px;
+        display: flex;
+        background-color: #007EA7;
+        border-radius: 10px;
+        width: 100%;
+        color: white;
+        align-items: center;
+    }
+
+    .elementos img {
+        width: 15%;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+
+    .btn-group {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+    }
+
+
+    .btn img {
+        width: 22px;
+        height: 22px;
+        margin-left: 5px;
+    }
+
+        .btn img:hover {
+            cursor: pointer;
+        }
+
+    /* Agregar y editar*/
+    .Lista-Container3 {
+        background-color: #fff;
+        text-align: center;
+        width: 190%;
+        justify-self: center;
+        height: 87%;
+        top: 0;
+        overflow-y: hidden;
+        margin-left: 2%;
+        right: 0;
+    }
+
+    .title {
+        background-color: #00A8E8;
+        width: 50%;
+        padding: 5px;
+        font-size: 18px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        justify-self: center;
+    }
+
+    .form-container {
+        font-size: 15px;
+        background-color: #2e70b6;
+        border-radius: 10px;
+        width: 50%;
+        justify-items: center;
+        justify-self: center;
+        height: 94%;
+    }
+
+    .form-group {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+        .form-group label {
+            color: white;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-group:nth-child(1),
+        .form-group:nth-child(2) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .form-group:nth-child(1) label,
+            .form-group:nth-child(2) label {
+                width: 70px;
+                margin-bottom: 0;
+            }
+
+
+            .form-group:nth-child(1) input,
+            .form-group:nth-child(2) select {
+                flex: 1;
+                font-size: 14px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                height: 30px;
+            }
+
+
+    #descripcion {
+        width: 100%;
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        resize: none;
+        height: 80px;
+        font-family: Arial, sans-serif;
+    }
+
+    #imagen-preview {
+        max-width: 60%;
+        margin-top: 0px;
+        height: 15%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+
+
+    #imagen-preview-Edit {
+        width: 100%;
+        margin-top: 5px;
+        height: 5%;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+
+    /* Estilos para los botones */
+    .button-group {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 96%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 11%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group .btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+            .button-group .btn img {
+                width: 30%;
+                height: 85%;
+            }
+    /* Eliminar */
+    .Lista-Container4 {
+        background-color: #fff;
+        text-align: center;
+        width: 95%;
+        justify-self: center;
+        height: 110%;
+        overflow-y: hidden;
+        margin-left: 2%;
+        right: 0;
+    }
+
+    .MensajeEliminar {
+        background-color: #00A8E8;
+        height: 35px;
+        color: white;
+        border-radius: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        padding-left: 10px;
+        align-content: center;
+        text-align: center;
+    }
+
+    .Eliminar {
+        background-color: #2e70b6;
+        height: 70%;
+        padding-top: 10px;
+        border-radius: 8px;
+    }
+
+        .Eliminar label {
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+    .imagenEliminar {
+        width: 96%;
+        height: 75%;
+        margin-top: 40px;
+    }
+
+    .button-group2 {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+        width: 100%;
+        background-color: #00A8E8;
+        align-items: center;
+        height: 10%;
+        margin-left: 2px;
+        border-radius: 10px;
+    }
+
+        .button-group2 .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+    .btn-group2 .btn img:hover {
+        cursor: pointer;
+    }
+
+    .button-group2 .btn img {
+        width: 30%;
+        height: 80%;
+    }
+
+    .footer {
+        padding-bottom: 10px;
+    }
+}
+
+
 @media screen and (min-width:700px) and (max-width: 767px) {
     body {
         flex-direction: column;
@@ -908,27 +1251,6 @@ input[type="file"] {
             cursor: pointer;
         }
 
-    .search2 {
-        grid-area: navbar;
-        background: rgba(255, 255, 255, 255);
-        width: 90%;
-        top: 6%;
-        left: 5%;
-        align-items: center;
-        display: flex;
-        position: fixed;
-        padding: 5px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        ;
-        background-color: #fff;
-    }
-
-    .busquedaIcon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-    }
 
     .main {
         grid-area: main;
@@ -1283,27 +1605,6 @@ input[type="file"] {
             cursor: pointer;
         }
 
-    .search2 {
-        grid-area: navbar;
-        background: rgba(255, 255, 255, 255);
-        width: 75%;
-        top: 10%;
-        left: 13%;
-        align-items: center;
-        display: flex;
-        position: fixed;
-        padding: 5px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        ;
-        background-color: #fff;
-    }
-
-    .busquedaIcon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-    }
 
     .main {
         grid-area: main;
@@ -1648,27 +1949,7 @@ input[type="file"] {
             cursor: pointer;
         }
 
-    .search2 {
-        grid-area: navbar;
-        background: rgba(255, 255, 255, 255);
-        width: 75%;
-        top: 10%;
-        left: 13%;
-        align-items: center;
-        display: flex;
-        position: fixed;
-        padding: 5px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        ;
-        background-color: #fff;
-    }
 
-    .busquedaIcon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-    }
 
     .main {
         grid-area: main;
@@ -2017,27 +2298,6 @@ input[type="file"] {
             cursor: pointer;
         }
 
-    .search2 {
-        grid-area: navbar;
-        background: rgba(255, 255, 255, 255);
-        width: 60%;
-        top: 10%;
-        left: 20%;
-        align-items: center;
-        display: flex;
-        position: fixed;
-        padding: 5px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        ;
-        background-color: #fff;
-    }
-
-    .busquedaIcon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-    }
 
     .main {
         grid-area: main;

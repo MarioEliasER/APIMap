@@ -3293,8 +3293,8 @@ nav h3 {
 
     .map {
         height: 100%;
-        margin-left: -7%;
-        top: -8%;
+        margin-left: -9%;
+        top: -12%;
         width: 135%;
         transform: rotate(70deg);
         object-fit: contain;
