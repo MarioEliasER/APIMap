@@ -380,7 +380,7 @@ const urlsToCache = [
     '/Rutas/edificioing.sistemas-canchadebasquetbol.png',
     '/Rutas/edificioing.sistemas-departamentoescolares.png',
     '/Rutas/edificioing.sistemas-biblioteca.png',
-    '/Rutas/edificioing.sistemas-cafeteria.png'
+    '/Rutas/edificioing.sistemas-cafeteria.png',
 
 // EdificioA
 '/Rutas/edificioa-almacen.png',
