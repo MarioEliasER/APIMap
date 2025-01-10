@@ -1,110 +1,108 @@
 ﻿//NAVEGACION
 let Home = document.getElementById('Inicio').addEventListener("click", function () {
-	window.location.replace("Index");
+    window.location.replace("Index");
 });
-let acept = document.getElementById('aceptar').addEventListener("click", function () {
-	window.location.replace("Index");
-});
+//let acept = document.getElementById('aceptar').addEventListener("click", function () {
+//	window.location.replace("Index");
+//});
 let cancel = document.getElementById('cancelar').addEventListener("click", function () {
-	window.location.replace("Index");
+    window.location.replace("Index");
 });
 document.getElementById('imagen').addEventListener('change', function (event) {
-	const file = event.target.files[0];
-	if (file) {
-		const reader = new FileReader();
-		reader.onload = function (e) {
-			document.getElementById('imagen-preview').src = e.target.result;
-		};
-		reader.readAsDataURL(file);
-	}
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('imagen-preview').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
 });
 let Salir = document.getElementById('Salir').addEventListener("click", function () {
-	window.location.replace("/Index");
+    window.location.replace("Index");
 });
 
-    async function fetchAreas() {
-	    try {
-		    const response = await fetch('https://apimap.websitos256.com/api/ubicacion');
-		    if (!response.ok) {
-			    throw new Error('Error al obtener datos de la API');
-		    }
-		    else {
-			    console.log("accedio");
-		    }
+async function fetchAreas() {
+    try {
+        const response = await fetch('https://apimap.websitos256.com/api/ubicacion');
+        if (!response.ok) {
+            throw new Error('Error al obtener datos de la API');
+        }
+        else {
+            console.log("Se accedió correctamente.");
+        }
 
-		    const data = await response.json();
+        const data = await response.json();
 
-		    // Filtrar las áreas únicas
-		    const uniqueAreas = [...new Set(data.map(item => item.area))];
+        // Filtrar las áreas únicas
+        const uniqueAreas = [...new Set(data.map(item => item.area))];
 
-		    console.log('Áreas disponibles:', uniqueAreas);
+        console.log('Áreas disponibles:', uniqueAreas);
 
-		    // Agregar las áreas al select
-		    const areaSelect = document.getElementById('area');
-		    uniqueAreas.forEach(area => {
-			    const option = document.createElement('option');
-			    option.value = area.toLowerCase(); // Convertir a minúsculas para consistencia
-			    option.textContent = area;
-			    areaSelect.appendChild(option);
-		    });
-	    } catch (error) {
-		    console.error('Error:', error);
-	    }
+        // Agregar las áreas al select
+        const areaSelect = document.getElementById('area');
+        uniqueAreas.forEach(area => {
+            const option = document.createElement('option');
+            option.value = area.toLowerCase(); // Convertir a minúsculas para consistencia
+            option.textContent = area;
+            areaSelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error('Error:', error);
     }
-    document.getElementById('aceptar').addEventListener('click', async function (event) {
-        event.preventDefault(); // Evita la recarga de la página
-        console.log("Evento 'click' capturado en el botón Aceptar");
+}
 
-        const formData = new FormData();
+document.getElementById('aceptar').addEventListener('click', async function (event) {
+    event.preventDefault(); // Evita la recarga de la página
+    console.log("Evento 'click' capturado en el botón Aceptar");
 
-        // Agregar los datos del formulario
-        const nombre = document.getElementById('nombre').value;
-        const area = document.getElementById('area').value;
-        const descripcion = document.getElementById('descripcion').value;
+    const formData = new FormData();
 
-        console.log("Nombre:", nombre);
-        console.log("Área seleccionada:", area);
-        console.log("Descripción:", descripcion);
+    // Agregar los datos del formulario
+    const nombre = document.getElementById('nombre').value;
+    const area = document.getElementById('area').value;
+    const descripcion = document.getElementById('descripcion').value;
 
-        formData.append('nombre', nombre);
-        formData.append('area', area);
-        formData.append('descripcion', descripcion);
+    console.log("Nombre:", nombre);
+    console.log("Área seleccionada:", area);
+    console.log("Descripción:", descripcion);
 
-        // Agregar la imagen si existe
-        const imagen = document.getElementById('imagen').files[0];
-        if (imagen) {
-            formData.append('imagen', imagen);
-            console.log("Imagen seleccionada:", imagen.name);
-        } else {
-            console.log("No se seleccionó ninguna imagen");
+    formData.append('nombre', nombre);
+    formData.append('area', area);
+    formData.append('descripcion', descripcion);
+
+    // Agregar la imagen si existe
+    const imagen = document.getElementById('imagen').files[0];
+    if (imagen) {
+        formData.append('imagen', imagen);
+        console.log("Imagen seleccionada:", imagen.name);
+    } else {
+        console.log("No se seleccionó ninguna imagen");
+    }
+
+    console.log("FormData creado con éxito:", formData);
+
+    try {
+        const response = await fetch('https://apimap.websitos256.com/api/ubicacion', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error(`Error en la respuesta de la API: ${response.statusText} - ${errorText}`);
+            throw new Error(`Error en la petición: ${response.status} - ${errorText}`);
         }
 
-        console.log("FormData creado con éxito:", formData);
+        const result = await response.json();
+        alert('Registro agregado exitosamente');
+        window.location.replace("Index");
+    } catch (error) {
+        console.error("Error al realizar el POST:", error);
+        alert('Hubo un error al guardar los datos: ' + error.message);
+    }
 
-        try {
-            console.log("Iniciando petición POST a la API...");
-            const response = await fetch('https://apimap.websitos256.com/api/ubicacion', {
-                method: 'POST',
-                body: formData
-            });
-
-            console.log("Petición completada. Verificando estado...");
-            if (!response.ok) {
-                console.error("Error en la respuesta de la API:", response.statusText);
-                throw new Error(`Error en la petición: ${response.statusText}`);
-            }
-
-            const result = await response.json();
-            console.log("Respuesta de la API recibida:", result);
-
-            alert('Registro agregado exitosamente');
-            console.log("Redirigiendo al usuario a la página principal...");
-            window.location.replace("Index"); // Cambia esto según tu lógica de navegación
-        } catch (error) {
-            console.error("Error al realizar el POST:", error);
-            alert('Hubo un error al guardar los datos');
-        }
-    });
+});
 //METODO PARA ACEPTAR LA IMAGEN Y QUE NO SE DETENGA LA DEPURACION
 document.addEventListener('DOMContentLoaded', function () {
     // Seleccionamos el input de tipo archivo

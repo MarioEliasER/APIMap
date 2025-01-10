@@ -20,6 +20,7 @@ builder.Services.AddTransient<UsuarioRepository>();
 builder.Services.AddSingleton<JwtHelper>();
 
 builder.Services.AddControllers();
+builder.Services.AddCors();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>
 {
     var issuer = builder.Configuration.GetSection("JwtBearer").GetValue<string>("Issuer");
