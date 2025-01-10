@@ -8,6 +8,7 @@ const urlsToCache = [
     "/vistainicio",
     "/ayuda",
     "/generarruta",
+    "/detalles",
     "/manifest.json",
     "/serviceworker.js",
     "/Css/StyleLogin.css",
@@ -904,63 +905,63 @@ const urlsToCache = [
 ];
 
  //Instalación: Cachear recursos
-self.addEventListener("install", (event) => {
-    event.waitUntil(
-        caches.open(cacheName).then((cache) => {
-            return cache.addAll(urlsToCache);
-        }).catch((error) => {
-            console.error("Error al cachear recursos durante la instalación:", error);
-        })
-    );
-});
+//self.addEventListener("install", (event) => {
+//    event.waitUntil(
+//        caches.open(cacheName).then((cache) => {
+//            return cache.addAll(urlsToCache);
+//        }).catch((error) => {
+//            console.error("Error al cachear recursos durante la instalación:", error);
+//        })
+//    );
+//});
 
 
- //Activación: Limpiar cachés antiguas
-self.addEventListener("activate", (event) => {
-    event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cache) => {
-                    if (cache !== cacheName) {
-                        console.log("Eliminando caché antigua:", cache);
-                        return caches.delete(cache);
-                    }
-                })
-            );
-        })
-    );
-});
+// //Activación: Limpiar cachés antiguas
+//self.addEventListener("activate", (event) => {
+//    event.waitUntil(
+//        caches.keys().then((cacheNames) => {
+//            return Promise.all(
+//                cacheNames.map((cache) => {
+//                    if (cache !== cacheName) {
+//                        console.log("Eliminando caché antigua:", cache);
+//                        return caches.delete(cache);
+//                    }
+//                })
+//            );
+//        })
+//    );
+//});
 
 
 
 
-// Fetch: Interceptar peticiones y usar caché primero
-self.addEventListener("fetch", (event) => {
-    event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            if (cachedResponse) {
-                return cachedResponse; // Si está en la caché, devolverlo
-            }
+//// Fetch: Interceptar peticiones y usar caché primero
+//self.addEventListener("fetch", (event) => {
+//    event.respondWith(
+//        caches.match(event.request).then((cachedResponse) => {
+//            if (cachedResponse) {
+//                return cachedResponse; // Si está en la caché, devolverlo
+//            }
 
-            // Intentar obtener el recurso de la red y cachearlo
-            return fetch(event.request).then((networkResponse) => {
-                if (networkResponse && networkResponse.ok) {
-                    return caches.open(cacheName).then((cache) => {
-                        cache.put(event.request, networkResponse.clone());
-                        return networkResponse;
-                    });
-                }
-                return networkResponse;
-            }).catch(() => {
-                // En caso de fallo, mostrar un recurso de reserva (si aplica)
-                if (event.request.destination === "image") {
-                    return caches.match("/Images/Icono/Icono128.png"); // Imagen de reserva
-                }
-                return new Response("Contenido no disponible sin conexión", { status: 503 });
-            });
-        })
-    );
-});
+//            // Intentar obtener el recurso de la red y cachearlo
+//            return fetch(event.request).then((networkResponse) => {
+//                if (networkResponse && networkResponse.ok) {
+//                    return caches.open(cacheName).then((cache) => {
+//                        cache.put(event.request, networkResponse.clone());
+//                        return networkResponse;
+//                    });
+//                }
+//                return networkResponse;
+//            }).catch(() => {
+//                // En caso de fallo, mostrar un recurso de reserva (si aplica)
+//                if (event.request.destination === "image") {
+//                    return caches.match("/Images/Icono/Icono128.png"); // Imagen de reserva
+//                }
+//                return new Response("Contenido no disponible sin conexión", { status: 503 });
+//            });
+//        })
+//    );
+//});
 
 
 // Instalación: Cachea todos los recursos especificados 22
@@ -982,79 +983,80 @@ self.addEventListener("fetch", (event) => {
 //});
 
 
-//self.addEventListener("install", (event) => {
-//    event.waitUntil(
-//        caches.open(cacheName).then((cache) => {
-//            return Promise.all(
-//                urlsToCache.map((url) => {
-//                    return fetch(url)
-//                        .then((response) => {
-//                            if (!response.ok) {
-//                                console.warn(`No se pudo cachear: ${url}`);
-//                                return;
-//                            }
-//                            return cache.put(url, response);
-//                        })
-//                        .catch((err) => {
-//                            console.warn(`Error al intentar cachear: ${url}`, err);
-//                        });
-//                })
-//            );
-//        }).catch((error) => {
-//            console.error("Error al abrir caché:", error);
-//        })
-//    );
-//});
+self.addEventListener("install", (event) => {
+    event.waitUntil(
+        caches.open(cacheName).then((cache) => {
+            return Promise.all(
+                urlsToCache.map((url) => {
+                    return fetch(url)
+                        .then((response) => {
+                            if (!response.ok) {
+                                console.warn(`No se pudo cachear: ${url}`);
+                                return;
+                            }
+                            return cache.put(url, response);
+                        })
+                        .catch((err) => {
+                            console.warn(`Error al intentar cachear: ${url}`, err);
+                        });
+                })
+            );
+        }).catch((error) => {
+            console.error("Error al abrir caché:", error);
+        })
+    );
+});
 
 
-//// Activación: Limpiar cachés antiguas
-//self.addEventListener("activate", (event) => {
-//    event.waitUntil(
-//        caches.keys().then((cacheNames) => {
-//            return Promise.all(
-//                cacheNames.map((cache) => {
-//                    if (cache !== cacheName) {
-//                        console.log("Eliminando caché antigua:", cache);
-//                        return caches.delete(cache);
-//                    }
-//                })
-//            );
-//        })
-//    );
-//});
-//self.addEventListener("fetch", (event) => {
-//    event.respondWith(
-//        caches.match(event.request).then((cachedResponse) => {
-//            if (cachedResponse) {
-//                // Si el recurso está en la caché, devuélvelo
-//                return cachedResponse;
-//            }
+// Activación: Limpiar cachés antiguas
+self.addEventListener("activate", (event) => {
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cache) => {
+                    if (cache !== cacheName) {
+                        console.log("Eliminando caché antigua:", cache);
+                        return caches.delete(cache);
+                    }
+                })
+            );
+        })
+    );
+});
 
-//            // Si no está en la caché, intenta obtenerlo de la red
-//            return fetch(event.request)
-//                .then((networkResponse) => {
-//                    // Si la respuesta de red es válida, cachearla para el futuro
-//                    if (networkResponse && networkResponse.status === 200) {
-//                        return caches.open(cacheName).then((cache) => {
-//                            cache.put(event.request, networkResponse.clone());
-//                            return networkResponse;
-//                        });
-//                    }
-//                    return networkResponse; // Devuelve la respuesta de red
-//                })
-//                .catch(() => {
-//                    // Manejo en caso de que no haya conexión y no esté en la caché
-//                    if (event.request.destination === "image") {
-//                        return caches.match("/Images/Icono/Icono128.png"); // Imagen de reserva
-//                    }
-//                    return new Response("Recurso no disponible sin conexión.", {
-//                        status: 503,
-//                        statusText: "Servicio no disponible",
-//                    });
-//                });
-//        })
-//    );
-//});
+self.addEventListener("fetch", (event) => {
+    event.respondWith(
+        caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) {
+                // Si el recurso está en la caché, devuélvelo
+                return cachedResponse;
+            }
+
+            // Si no está en la caché, intenta obtenerlo de la red
+            return fetch(event.request)
+                .then((networkResponse) => {
+                    // Si la respuesta de red es válida, cachearla para el futuro
+                    if (networkResponse && networkResponse.status === 200) {
+                        return caches.open(cacheName).then((cache) => {
+                            cache.put(event.request, networkResponse.clone());
+                            return networkResponse;
+                        });
+                    }
+                    return networkResponse; // Devuelve la respuesta de red
+                })
+                .catch(() => {
+                    // Manejo en caso de que no haya conexión y no esté en la caché
+                    if (event.request.destination === "image") {
+                        return caches.match("/Images/Icono/Icono128.png"); // Imagen de reserva
+                    }
+                    return new Response("Recurso no disponible sin conexión.", {
+                        status: 503,
+                        statusText: "Servicio no disponible",
+                    });
+                });
+        })
+    );
+});
 
 
 
