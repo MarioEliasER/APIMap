@@ -8,13 +8,13 @@ async function verEliminar(id) {
 }
 
 // Al registrar el service worker
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/serviceworker.js?v=7').then(registration => {
-        console.log("Service Worker registrado", registration);
-    }).catch(error => {
-        console.log("Error al registrar el Service Worker", error);
-    });
-}
+//if ('serviceWorker' in navigator) {
+//    navigator.serviceWorker.register('/serviceworker.js?v=10').then(registration => {
+//        console.log("Service Worker registrado", registration);
+//    }).catch(error => {
+//        console.log("Error al registrar el Service Worker", error);
+//    });
+//}
 
 // Escuchar el mensaje del service worker para enviarle el token
 navigator.serviceWorker.addEventListener('message', (event) => {

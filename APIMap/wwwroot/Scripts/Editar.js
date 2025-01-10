@@ -3,8 +3,7 @@ const nombre = document.getElementById('nombre');
 const area = document.getElementById('area');
 const descripcion = document.getElementById('descripcion');
 const imagen = document.getElementsByClassName('form-group')[3].querySelector('img');
-async function obtenerArea()
-{
+async function obtenerArea() {
     const response = await fetch('https://apimap.websitos256.com/api/ubicacion');
     datos = await response.clone().json();
 
@@ -20,15 +19,14 @@ async function obtenerArea()
         option.value = areaoption.toLowerCase();
         option.textContent = areaoption;
         areaSelect.appendChild(option);
-        if (area.area.toLowerCase() == option.value.toLowerCase())
-        {
+        if (area.area.toLowerCase() == option.value.toLowerCase()) {
             areaSelect.selectedIndex = option.index;
         }
     });
 
     descripcion.textContent = area.descripcion;
     imagen.src = "/Images/Diseños/" + area.nombre + ".jpg";
-}   
+}
 
 async function fetchAreas() {
     try {
@@ -74,12 +72,12 @@ document.querySelector('#Aceptar.btn.aceptar').addEventListener('click', async f
     formData.append('nombre', nombre);
     formData.append('area', area);
     formData.append('descripcion', descripcion);
-   
+
     // Agregar la imagen si existe
-    const imagen = document.getElementById('imagen').files[0];
-    if (imagen) {
-        formData.append('imagen', imagen);
-        console.log("Imagen seleccionada:", imagen.name);
+    const imagenInput = document.getElementById('imagen');
+    if (imagenInput.files.length > 0) {
+        formData.append('imagen', imagenInput.files[0]);
+        console.log("Imagen seleccionada:", imagenInput.name);
     } else {
         console.log("No se seleccionó ninguna imagen");
     }

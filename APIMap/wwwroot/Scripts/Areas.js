@@ -22,8 +22,8 @@
 
     // Método para filtrar solo las Áreas Comunes
     filtrarAreasComunes(ubicaciones) {
-        // Filtramos las ubicaciones que incluyen "común" en el nombre del área
-        return ubicaciones.filter(ubicacion => ubicacion.area.toLowerCase().includes('común'));
+        // Filtramos las ubicaciones que incluyen "comun" en el nombre del área
+        return ubicaciones.filter(ubicacion => ubicacion.area.toLowerCase().includes('comun'));
     }
 
     // Método para generar el HTML de cada elemento

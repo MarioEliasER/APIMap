@@ -28,13 +28,16 @@ namespace APIMap.Controllers
                 return NotFound();
             }
 
+            string imagePath = $"wwwroot/images/diseños/{ubicacion.Nombre}.jpg";
+            string imageUrl = System.IO.File.Exists(imagePath) ? $"/images/diseños/{ubicacion.Nombre}.jpg" : null;
+
             var ubicacionDto = new UbicacionDTO
             {
                 Id = ubicacion.Id,
                 Nombre = ubicacion.Nombre,
                 Descripcion = ubicacion.Descripcion,
                 Area = ubicacion.Area,
-                Imagen = ConvertImageToBase64($"wwwroot/images/diseños{ubicacion.Nombre}")
+                ImagenUrl = imageUrl
             };
             return Ok(ubicacionDto);
         }
@@ -49,21 +52,25 @@ namespace APIMap.Controllers
                 ubicaciones = ubicaciones.Where(u => u.Area.Equals(area, StringComparison.OrdinalIgnoreCase));
             }
 
-            var ubicacionesDto = ubicaciones.Select(u => new UbicacionDTO
+            var ubicacionesDto = ubicaciones.Select(u =>
             {
-                Id = u.Id,
-                Nombre = u.Nombre,
-                Descripcion = u.Descripcion,
-                Area = u.Area,
-                Imagen = ConvertImageToBase64($"wwwroot/images/diseños{u.Nombre}")
+                string imagePath = $"wwwroot/images/diseños/{u.Nombre}.jpg";
+                string imageUrl = System.IO.File.Exists(imagePath) ? $"/images/diseños/{u.Nombre}.jpg" : null;
+                return new UbicacionDTO
+                {
+                    Id = u.Id,
+                    Nombre = u.Nombre,
+                    Descripcion = u.Descripcion,
+                    Area = u.Area,
+                    ImagenUrl = imageUrl
+                };
             });
-
             return Ok(ubicacionesDto);
         }
 
         [HttpPost]
         [Consumes("multipart/form-data")]
-        public IActionResult Post([FromForm] UbicacionDTO dto)
+        public async Task<IActionResult> Post([FromForm] UbicacionDTO dto)
         {
             if (!System.IO.Directory.Exists("wwwroot/images/diseños"))
             {
@@ -80,16 +87,26 @@ namespace APIMap.Controllers
                     Area = dto.Area
                 };
                 _repository.Insert(ubicacion);
-                string imagePath = $"wwwroot/images/diseños/{ubicacion.Id}.jpg";
-                byte[] imageBytes = Convert.FromBase64String(dto.Imagen);
-                System.IO.File.WriteAllBytes(imagePath, imageBytes);
+                if (dto.Imagen != null)
+                {
+                    string imagePath = $"wwwroot/images/diseños/{ubicacion.Nombre}.jpg";
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await dto.Imagen.CopyToAsync(stream);
+                    }
+                }
+                else
+                {
+                    return BadRequest("La imagen es requerida.");
+                }
                 return Ok(ubicacion);
             }
             return BadRequest(result.Errors.Select(x => x.ErrorMessage));
         }
 
         [HttpPut]
-        public IActionResult Put(UbicacionDTO dto)
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> Put([FromForm] UbicacionDTO dto)
         {
             if (!System.IO.Directory.Exists("wwwroot/images/diseños"))
             {
@@ -110,12 +127,13 @@ namespace APIMap.Controllers
                 ubicacion.Area = dto.Area;
 
                 _repository.Update(ubicacion);
-                if (!string.IsNullOrWhiteSpace(dto.Imagen))
+                if (dto.Imagen != null)
                 {
-                    string imageName = $"{dto.Nombre}.jpg";
-                    string imagePath = $"wwwroot/images/diseños/{dto.Id}.jpg";
-                    byte[] imageBytes = Convert.FromBase64String(dto.Imagen);
-                    System.IO.File.WriteAllBytes(imagePath, imageBytes);
+                    string imagePath = $"wwwroot/images/diseños/{ubicacion.Nombre}.jpg";
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await dto.Imagen.CopyToAsync(stream);
+                    }
                 }
 
                 return Ok();

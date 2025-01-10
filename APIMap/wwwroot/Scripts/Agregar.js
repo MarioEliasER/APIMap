@@ -43,7 +43,6 @@ async function fetchAreas() {
         const areaSelect = document.getElementById('area');
         uniqueAreas.forEach(area => {
             const option = document.createElement('option');
-            option.value = area.toLowerCase(); // Convertir a minúsculas para consistencia
             option.textContent = area;
             areaSelect.appendChild(option);
         });
