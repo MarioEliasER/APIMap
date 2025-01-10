@@ -1,7 +1,6 @@
-﻿//Borre las versiones anteriores del cache, utilice CacheFirst para que no depende unicamente de la red
-//hay que ver que recursos estaticos falta agregar en el array de UrlsToCache
+﻿
 // service-worker.js
-const cacheName = "ubicatecCache-v2";
+const cacheName = "ubicatecCache-v1";
 const urlsToCache = [
     "/", // Página principal
     "/index",
@@ -134,7 +133,7 @@ const urlsToCache = [
     '/Images/Diseños/Oficina de Petrolera.jpg',
     '/Images/Diseños/Papeleria.jpg',
     '/Images/Diseños/Prefectura.jpg',
-    '/Images/Diseños/Ruta.png',
+    '/Images/Diseños/Ruta.jpg',
     '/Images/Diseños/RutaMapa.png',
     '/Images/Diseños/Sala Audiovisual.jpg',
     '/Images/Diseños/SALA DE JUNTAS.jpg',
@@ -225,7 +224,32 @@ const urlsToCache = [
     '/Rutas/audiovisual-saladejuntas.png',
 
     //biblioteca
-
+    '/Rutas/biblioteca-almacen.png',
+    '/Rutas/biblioteca-audiovisual.png',
+    '/Rutas/biblioteca-cafeteria.png',
+    '/Rutas/biblioteca-canchadebasquetbol.png',
+    '/Rutas/biblioteca-caseta.png',
+    '/Rutas/biblioteca-centrodeidiomas.png',
+    '/Rutas/biblioteca-departamentodeescolares.png',
+    '/Rutas/biblioteca-departamentodefinanzas.png',
+    '/Rutas/biblioteca-departamentodeplaneacionyvinculacion.png',
+    '/Rutas/biblioteca-direccionacademica.png',
+    '/Rutas/biblioteca-direcciongeneral.png',
+    '/Rutas/biblioteca-domo.png',
+    '/Rutas/biblioteca-edificioa.png',
+    '/Rutas/biblioteca-edificiob.png',
+    '/Rutas/biblioteca-edificioc.png',
+    '/Rutas/biblioteca-edificioing.electromecanicamecatronica.png',
+    '/Rutas/biblioteca-edificioing.industrial.png',
+    '/Rutas/biblioteca-edificioing.sistemas.png',
+    '/Rutas/biblioteca-explanada.png',
+    '/Rutas/biblioteca-extraescolares.png',
+    '/Rutas/biblioteca-incubadoradeempresas.png',
+    '/Rutas/biblioteca-laboratoriodegeologia.png',
+    '/Rutas/biblioteca-laboratoriodequimica.png',
+    '/Rutas/biblioteca-saladedocentespetrolera.png',
+    '/Rutas/biblioteca-oficinadepetrolera.png',
+    '/Rutas/biblioteca-saladejuntas.png',
 
 
     // Cafeteria
@@ -367,6 +391,31 @@ const urlsToCache = [
     '/Rutas/departamentodeescolares-saladejuntas.png',
 
     //dep. finanzas
+    '/Rutas/departamentodefinanzas-almacen.png',
+    '/Rutas/departamentodefinanzas-audiovisual.png',
+    '/Rutas/departamentodefinanzas-biblioteca.png',
+    '/Rutas/departamentodefinanzas-cafeteria.png',
+    '/Rutas/departamentodefinanzas-canchadebasquetbol.png',
+    '/Rutas/departamentodefinanzas-caseta.png',
+    '/Rutas/departamentodefinanzas-departamentodeescolares.png',
+    '/Rutas/departamentodefinanzas-centrodeidiomas.png',
+    '/Rutas/departamentodefinanzas-departamentodeplaneacionyvinculacion.png',
+    '/Rutas/departamentodefinanzas-direccionacademica.png',
+    '/Rutas/departamentodefinanzas-direcciongeneral.png',
+    '/Rutas/departamentodefinanzas-domo.png',
+    '/Rutas/departamentodefinanzas-edificioa.png',
+    '/Rutas/departamentodefinanzas-edificiob.png',
+    '/Rutas/departamentodefinanzas-edificiodeing.electromecanicamecatronica.png',
+    '/Rutas/departamentodefinanzas-edificioing.sistemas.png',
+    '/Rutas/departamentodefinanzas-explanada.png',
+    '/Rutas/departamentodefinanzas-extraescolares.png',
+    '/Rutas/departamentodefinanzas-incubadoradeempresas.png',
+    '/Rutas/departamentodefinanzas-laboratoriodegeologia.png',
+    '/Rutas/departamentodefinanzas-laboratoriodequimica.png',
+    '/Rutas/departamentodefinanzas-oficinadepetrolera.png',
+    '/Rutas/departamentodefinanzas-saladedocentespetrolera.png',
+    '/Rutas/departamentodefinanzas-saladejuntas.png',
+
 
     // DepartamentodePlaneacionyVinculacion
     '/Rutas/departamentodeplaneacionyvinculacion-canchadebasquetbol.png',
@@ -450,6 +499,29 @@ const urlsToCache = [
     '/Rutas/domo-almacen.png',
     '/Rutas/domo-biblioteca.png',
     '/Rutas/domo-cafeteria.png',
+    '/Rutas/domo-audiovisual.png',
+    '/Rutas/domo-canchadebasquetbol.png',
+    '/Rutas/domo-caseta.png',
+    '/Rutas/domo-centrodeidiomas.png',
+    '/Rutas/domo-departamentodeescolares.png',
+    '/Rutas/domo-departamentodefinanzas.png',
+    '/Rutas/domo-departamentodeplaneacionyvinculacion.png',
+    '/Rutas/domo-direccionacademica.png',
+    '/Rutas/domo-direcciongeneral.png',
+    '/Rutas/domo-edificioa.png',
+    '/Rutas/domo-edificiob.png',
+    '/Rutas/domo-edificioc.png',
+    '/Rutas/domo-edificioing.electromecanicamecatronica.png',
+    '/Rutas/domo-edificioing.industrial.png',
+    '/Rutas/domo-edificioing.sistemas.png',
+    '/Rutas/domo-explanada.png',
+    '/Rutas/domo-extraescolares.png',
+    '/Rutas/domo-incubadoradeempresas.png',
+    '/Rutas/domo-laboratoriodegeologia.png',
+    '/Rutas/domo-laboratoriodequimica.png',
+    '/Rutas/domo-oficinadepetrolera.png',
+    '/Rutas/domo-saladedocentespetrolera.png',
+    '/Rutas/domo-saladejuntas.png',
 
     // Edificio Ing. Sistemas
     '/Rutas/edificioing.sistemas-canchadebasquetbol.png',
@@ -457,6 +529,27 @@ const urlsToCache = [
     '/Rutas/edificioing.sistemas-departamentodeplaneacionyvinculacion.png',
     '/Rutas/edificioing.sistemas-cafeteria.png',
     '/Rutas/edificioing.sistemas-Biblioteca.png',
+    '/Rutas/edificioing.sistemas-almacen.png',
+    '/Rutas/edificioing.sistemas-audiovisual.png',
+    '/Rutas/edificioing.sistemas-caseta.png',
+    '/Rutas/edificioing.sistemas-centrodeidiomas.png',
+    '/Rutas/edificioing.sistemas-departamentodefinanzas.png',
+    '/Rutas/edificioing.sistemas-direccionacademica.png',
+    '/Rutas/edificioing.sistemas-direcciongeneral.png',
+    '/Rutas/edificioing.sistemas-domo.png',
+    '/Rutas/edificioing.sistemas-edificioa.png',
+    '/Rutas/edificioing.sistemas-edificiob.png',
+    '/Rutas/edificioing.sistemas-edificioc.png',
+    '/Rutas/edificioing.sistemas-extraescolares.png',
+    '/Rutas/edificioing.sistemas-edificioing.electromecanicamecatronica.png',
+    '/Rutas/edificioing.sistemas-incubadoradeempresas.png',
+    '/Rutas/edificioing.sistemas-edificioing.industrial.png',
+    '/Rutas/edificioing.sistemas-laboratoriodegeologia.png',
+    '/Rutas/edificioing.sistemas-laboratoriodequimica.png',
+    '/Rutas/edificioing.sistemas-oficinadepetrolera.png',
+    '/Rutas/edificioing.sistemas-saladedocentespetrolera.png',
+    '/Rutas/edificioing.sistemas-saladejuntas.png',
+    '/Rutas/edificioing.sistemas-explanada.png',
 
 // EdificioA
 '/Rutas/edificioa-almacen.png',
@@ -592,36 +685,40 @@ const urlsToCache = [
     '/Rutas/edificioing.electromecanicamecatronica-saladejuntas.png',
 
 
-    //sistemas
-
-    '/Rutas/edificioing.sistemas-almacen.png',
-    '/Rutas/edificioing.sistemas-audiovisual.png',
-    '/Rutas/edificioing.sistemas-cafeteria.png',
-    '/Rutas/edificioing.sistemas-canchadebasquetbol.png',
-    '/Rutas/edificioing.sistemas-caseta.png',
-    '/Rutas/edificioing.sistemas-centrodeidiomas.png',
-    '/Rutas/edificioing.sistemas-departamentodeescolares.png',
-    '/Rutas/edificioing.sistemas-departamentodefinanzas.png',
-    '/Rutas/edificioing.sistemas-departamentodeplaneacionyvinculacion.png',
-    '/Rutas/edificioing.sistemas-direccionacademica.png',
-    '/Rutas/edificioing.sistemas-direcciongeneral.png',
-    '/Rutas/edificioing.sistemas-domo.png',
-    '/Rutas/edificioing.sistemas-edificioa.png',
-    '/Rutas/edificioing.sistemas-edificiob.png',
-    '/Rutas/edificioing.sistemas-edificioing.electromecanicamecatronica.png',
-    '/Rutas/edificioing.sistemas-incubadoradeempresas.png',
-    '/Rutas/edificioing.sistemas-edificioing.industrial.png',
-    '/Rutas/edificioing.sistemas-laboratoriodegeologia.png',
-    '/Rutas/edificioing.sistemas-laboratoriodequimica.png',
-    '/Rutas/edificioing.sistemas-explanada.png',
+  
 
     //explanada
+    '/Rutas/explanada-almacen.png',
+    '/Rutas/explanada-biblioteca.png',
+    '/Rutas/explanada-cafeteria.png',
+    '/Rutas/explanada-canchadebasquetbol.png',
+    '/Rutas/explanada-caseta.png',
+    '/Rutas/explanada-centrodeidiomas.png',
+    '/Rutas/explanada-departamentodeescolares.png',
+    '/Rutas/explanada-departamentodefinanzas.png',
+    '/Rutas/explanada-departamentodeplaneacionyvinculacion.png',
+    '/Rutas/explanada-direccionacademica.png',
+    '/Rutas/explanada-direcciongeneral.png',
+    '/Rutas/explanada-domo.png',
+    '/Rutas/explanada-edificioa.png',
+    '/Rutas/explanada-edificiob.png',
+    '/Rutas/explanada-edificioc.png',
+    '/Rutas/explanada-edificiodeing.electromecanicamecatronica.png',
+    '/Rutas/explanada-edificioing.industrial.png',
+    '/Rutas/explanada-edificioing.sistemas.png',
+    '/Rutas/explanada-extraescolares.png',
+    '/Rutas/explanada-incubadoradeempresas.png',
+    '/Rutas/explanada-laboratoriodegeologia.png',
+    '/Rutas/explanada-laboratoriodequimica.png',
+    '/Rutas/explanada-oficinadepetrolera.png',
+    '/Rutas/explanada-saladedocentespetrolera.png',
+    '/Rutas/explanada-saladejuntas.png',
 
     //extraescolares
     '/Rutas/extraescolares-almacen.png',
     '/Rutas/extraescolares-biblioteca.png',
     '/Rutas/extraescolares-cafeteria.png',
-    '/Rutas/extraescolares-cafeteria.png',
+    '/Rutas/extraescolares-canchadebasquetbol.png',
     '/Rutas/extraescolares-caseta.png',
     '/Rutas/extraescolares-centrodeidiomas.png',
     '/Rutas/extraescolares-departamentodeescolares.png',
@@ -673,8 +770,33 @@ const urlsToCache = [
     '/Rutas/incubadoradeempresas-saladejuntas.png', 'Rutas/laboratoriodequimica-biblioteca.png',
 
     //lab. geologia
+    '/Rutas/laboratoriodegeologia-almacen.png',
+    '/Rutas/laboratoriodegeologia-biblioteca.png',
+    '/Rutas/laboratoriodegeologia-cafeteria.png',
+    '/Rutas/laboratoriodegeologia-canchaDebasquetbol.png',
+    '/Rutas/laboratoriodegeologia-caseta.png',
+    '/Rutas/laboratoriodegeologia-centrodeidiomas.png',
+    '/Rutas/laboratoriodegeologia-departamentodeescolares.png',
+    '/Rutas/laboratoriodegeologia-departamentodefinanzas.png',
+    '/Rutas/laboratoriodegeologia-departamentodeplaneacionyvinculacion.png',
+    '/Rutas/laboratoriodegeologia-direccionacademica.png',
+    '/Rutas/laboratoriodegeologia-direcciongeneral.png',
+    '/Rutas/laboratoriodegeologia-domo.png',
+    '/Rutas/laboratoriodegeologia-edificioa.png',
+    '/Rutas/laboratoriodegeologia-edificiob.png',
+    '/Rutas/laboratoriodegeologia-edificioc.png',
+    '/Rutas/laboratoriodegeologia-edificiodeing.electromecanicamecatronica.png',
+    '/Rutas/laboratoriodegeologia-edificioing.industrial.png',
+    '/Rutas/laboratoriodegeologia-explanada.png',
+    '/Rutas/laboratoriodegeologia-extraescolares.png',
+    '/Rutas/laboratoriodegeologia-incubadoradeempresas.png',
+    '/Rutas/laboratoriodegeologia-oficinadepetrolera.png',
+    '/Rutas/laboratoriodegeologia-saladejuntas.png',
+    '/Rutas/laboratoriodegeologia-saladedocentespetrolera.png',
 
     //lab quimica
+    '/Rutas/laboratoriodequimica-almacen.png',
+    '/Rutas/laboratoriodequimica-biblioteca.png',
     '/Rutas/laboratoriodequimica-cafeteria.png',
     '/Rutas/laboratoriodequimica-canchaDebasquetbol.png',
     '/Rutas/laboratoriodequimica-caseta.png',
@@ -685,6 +807,7 @@ const urlsToCache = [
     '/Rutas/laboratoriodequimica-direccionacademica.png',
     '/Rutas/laboratoriodequimica-direcciongeneral.png',
     '/Rutas/laboratoriodequimica-domo.png',
+    '/Rutas/laboratoriodequimica-edificioa.png',
     '/Rutas/laboratoriodequimica-edificiob.png',
     '/Rutas/laboratoriodequimica-edificioc.png',
     '/Rutas/laboratoriodequimica-edificiodeing.electromecanicamecatronica.png',
@@ -694,78 +817,150 @@ const urlsToCache = [
     '/Rutas/laboratoriodequimica-extraescolares.png',
     '/Rutas/laboratoriodequimica-incubadoradeempresas.png',
     '/Rutas/laboratoriodequimica-oficinadepetrolera.png',
+    '/Rutas/laboratoriodequimica-saladedocentespetrolera.png',
     '/Rutas/laboratoriodequimica-saladejuntas.png',
 
     //ofi petrolera
     '/Rutas/oficinadepetrolera-almacen.png',
     '/Rutas/oficinadepetrolera-biblioteca.png',
     '/Rutas/oficinadepetrolera-cafeteria.png',
+    '/Rutas/oficinadepetrolera-canchadebasquetbol.png',
+    '/Rutas/oficinadepetrolera-caseta.png',
+    '/Rutas/oficinadepetrolera-centrodeidiomas.png',
+     '/Rutas/oficinadepetrolera-departamentodeescolares.png',
+    '/Rutas/oficinadepetrolera-departamentodefinanzas',
+    '/Rutas/oficinadepetrolera-departamentodeplaneacionyvinculacion.png',
+    '/Rutas/oficinadepetrolera-direccionacademica.png',
+    '/Rutas/oficinadepetrolera-direcciongeneral.png',
+    '/Rutas/oficinadepetrolera-domo.png',
+    '/Rutas/oficinadepetrolera-edificiob.png',
+    '/Rutas/oficinadepetrolera-direcciongeneral.png',
+    '/Rutas/oficinadepetrolera-edificioc.png',
+    '/Rutas/oficinadepetrolera-edificioing.industrial.png',
+    '/Rutas/oficinadepetrolera-edificioing.sistemas.png',
+    '/Rutas/oficinadepetrolera-explanada.png',
+    '/Rutas/oficinadepetrolera-extraescolares.png',
+    '/Rutas/oficinadepetrolera-incubadoradeempresas.png',
+    '/Rutas/oficinadepetrolera-laboratoriodegeologia.png',
+    '/Rutas/oficinadepetrolera-laboratoriodequimica.png',
+    '/Rutas/oficinadepetrolera-saladedocentespetrolera.png',
+    '/Rutas/oficinadepetrolera-saladejuntas.png',
 
     //sala docentes
+    '/Rutas/saladedocentespetrolera-almacen.png',
+    '/Rutas/saladedocentespetrolera-biblioteca.png',
+    '/Rutas/saladedocentespetrolera-cafeteria.png',
+    '/Rutas/saladedocentespetrolera-canchadebasquetbol.png',
+    '/Rutas/saladedocentespetrolera-caseta.png',
+    '/Rutas/saladedocentespetrolera-centrodeidiomas.png',
+    '/Rutas/saladedocentespetrolera-departamentodeescolares.png',
+    '/Rutas/saladedocentespetrolera-departamentodefinanzas',
+    '/Rutas/saladedocentespetrolera-departamentodeplaneacionyvinculacion.png',
+    '/Rutas/saladedocentespetrolera-direccionacademica.png',
+    '/Rutas/saladedocentespetrolera-direcciongeneral.png',
+    '/Rutas/saladedocentespetrolera-domo.png',
+    '/Rutas/saladedocentespetrolera-edificioa.png',
+    '/Rutas/saladedocentespetrolera-edificiob.png',
+    '/Rutas/saladedocentespetrolera-edificiodeing.electromecanicamecatronica.png',
+    '/Rutas/saladedocentespetrolera-edificioc.png',
+    '/Rutas/saladedocentespetrolera-edificioing.industrial.png',
+    '/Rutas/saladedocentespetrolera-edificioing.sistemas.png',
+    '/Rutas/saladedocentespetrolera-explanada.png',
+    '/Rutas/saladedocentespetrolera-extraescolares.png',
+    '/Rutas/saladedocentespetrolera-incubadoradeempresas.png',
+    '/Rutas/saladedocentespetrolera-laboratoriodegeologia.png',
+    '/Rutas/saladedocentespetrolera-laboratoriodequimica.png',
+    '/Rutas/saladedocentespetrolera-oficinadepetrolera.png',
+    '/Rutas/saladedocentespetrolera-saladejuntas.png',
 
     //sala juntas
-
+    '/Rutas/saladejuntas-almacen.png',
+    '/Rutas/saladejuntas-biblioteca.png',
+    '/Rutas/saladejuntas-cafeteria.png',
+    '/Rutas/saladejuntas-canchadebasquetbol.png',
+    '/Rutas/saladejuntas-caseta.png',
+    '/Rutas/saladejuntas-centrodeidiomas.png',
+    '/Rutas/saladejuntas-departamentodeescolares.png',
+    '/Rutas/saladejuntas-departamentodefinanzas',
+    '/Rutas/saladejuntas-departamentodeplaneacionyvinculacion.png',
+    '/Rutas/saladejuntas-direccionacademica.png',
+    '/Rutas/saladejuntas-direcciongeneral.png',
+    '/Rutas/saladejuntas-domo.png',
+    '/Rutas/saladejuntas-edificioa.png',
+    '/Rutas/saladejuntas-edificiob.png',
+    '/Rutas/saladejuntas-edificiodeing.electromecanicamecatronica.png',
+    '/Rutas/saladejuntas-edificioc.png',
+    '/Rutas/saladejuntas-edificioing.industrial.png',
+    '/Rutas/saladejuntas-edificioing.sistemas.png',
+    '/Rutas/saladejuntas-explanada.png',
+    '/Rutas/saladejuntas-extraescolares.png',
+    '/Rutas/saladejuntas-incubadoradeempresas.png',
+    '/Rutas/saladejuntas-laboratoriodegeologia.png',
+    '/Rutas/saladejuntas-laboratoriodequimica.png',
+    '/Rutas/saladejuntas-oficinadepetrolera.png',
+    '/Rutas/saladejuntas-saladedocentespetrolera.png',
 
 
 ];
 
-// Instalación: Cachear recursos
-//self.addEventListener("install", (event) => {
-//    event.waitUntil(
-//        caches.open(cacheName).then((cache) => {
-//            return cache.addAll(urlsToCache);
-//        }).catch((error) => {
-//            console.error("Error al cachear recursos durante la instalación:", error);
-//        })
-//    );
-//});
+ //Instalación: Cachear recursos
+self.addEventListener("install", (event) => {
+    event.waitUntil(
+        caches.open(cacheName).then((cache) => {
+            return cache.addAll(urlsToCache);
+        }).catch((error) => {
+            console.error("Error al cachear recursos durante la instalación:", error);
+        })
+    );
+});
 
 
-// Activación: Limpiar cachés antiguas
-//self.addEventListener("activate", (event) => {
-//    event.waitUntil(
-//        caches.keys().then((cacheNames) => {
-//            return Promise.all(
-//                cacheNames.map((cache) => {
-//                    if (cache !== cacheName) {
-//                        console.log("Eliminando caché antigua:", cache);
-//                        return caches.delete(cache);
-//                    }
-//                })
-//            );
-//        })
-//    );
-//});
+ //Activación: Limpiar cachés antiguas
+self.addEventListener("activate", (event) => {
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cache) => {
+                    if (cache !== cacheName) {
+                        console.log("Eliminando caché antigua:", cache);
+                        return caches.delete(cache);
+                    }
+                })
+            );
+        })
+    );
+});
 
 
 
 
 // Fetch: Interceptar peticiones y usar caché primero
-//self.addEventListener("fetch", (event) => {
-//    event.respondWith(
-//        caches.match(event.request).then((cachedResponse) => {
-//            if (cachedResponse) {
-//                return cachedResponse; // Si está en la caché, devolverlo
-//            }
+self.addEventListener("fetch", (event) => {
+    event.respondWith(
+        caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) {
+                return cachedResponse; // Si está en la caché, devolverlo
+            }
 
-//            // Intentar obtener el recurso de la red y cachearlo
-//            return fetch(event.request).then((networkResponse) => {
-//                if (networkResponse && networkResponse.ok) {
-//                    return caches.open(cacheName).then((cache) => {
-//                        cache.put(event.request, networkResponse.clone());
-//                        return networkResponse;
-//                    });
-//                }
-//                return networkResponse;
-//            }).catch(() => {
-//                // En caso de fallo, mostrar un recurso de reserva (si aplica)
-//                if (event.request.destination === "image") {
-//                    return caches.match("/images/icono/icono128.png"); // Imagen de reserva
-//                }
-//                return new Response("Contenido no disponible sin conexión", { status: 503 });
-//            });
-//        })
-//    );
+            // Intentar obtener el recurso de la red y cachearlo
+            return fetch(event.request).then((networkResponse) => {
+                if (networkResponse && networkResponse.ok) {
+                    return caches.open(cacheName).then((cache) => {
+                        cache.put(event.request, networkResponse.clone());
+                        return networkResponse;
+                    });
+                }
+                return networkResponse;
+            }).catch(() => {
+                // En caso de fallo, mostrar un recurso de reserva (si aplica)
+                if (event.request.destination === "image") {
+                    return caches.match("/Images/Icono/Icono128.png"); // Imagen de reserva
+                }
+                return new Response("Contenido no disponible sin conexión", { status: 503 });
+            });
+        })
+    );
+});
 
 
 // Instalación: Cachea todos los recursos especificados 22
@@ -787,79 +982,79 @@ const urlsToCache = [
 //});
 
 
-self.addEventListener("install", (event) => {
-    event.waitUntil(
-        caches.open(cacheName).then((cache) => {
-            return Promise.all(
-                urlsToCache.map((url) => {
-                    return fetch(url)
-                        .then((response) => {
-                            if (!response.ok) {
-                                console.warn(`No se pudo cachear: ${url}`);
-                                return;
-                            }
-                            return cache.put(url, response);
-                        })
-                        .catch((err) => {
-                            console.warn(`Error al intentar cachear: ${url}`, err);
-                        });
-                })
-            );
-        }).catch((error) => {
-            console.error("Error al abrir caché:", error);
-        })
-    );
-});
+//self.addEventListener("install", (event) => {
+//    event.waitUntil(
+//        caches.open(cacheName).then((cache) => {
+//            return Promise.all(
+//                urlsToCache.map((url) => {
+//                    return fetch(url)
+//                        .then((response) => {
+//                            if (!response.ok) {
+//                                console.warn(`No se pudo cachear: ${url}`);
+//                                return;
+//                            }
+//                            return cache.put(url, response);
+//                        })
+//                        .catch((err) => {
+//                            console.warn(`Error al intentar cachear: ${url}`, err);
+//                        });
+//                })
+//            );
+//        }).catch((error) => {
+//            console.error("Error al abrir caché:", error);
+//        })
+//    );
+//});
 
 
-// Activación: Limpiar cachés antiguas
-self.addEventListener("activate", (event) => {
-    event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cache) => {
-                    if (cache !== cacheName) {
-                        console.log("Eliminando caché antigua:", cache);
-                        return caches.delete(cache);
-                    }
-                })
-            );
-        })
-    );
-});
-self.addEventListener("fetch", (event) => {
-    event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            if (cachedResponse) {
-                // Si el recurso está en la caché, devuélvelo
-                return cachedResponse;
-            }
+//// Activación: Limpiar cachés antiguas
+//self.addEventListener("activate", (event) => {
+//    event.waitUntil(
+//        caches.keys().then((cacheNames) => {
+//            return Promise.all(
+//                cacheNames.map((cache) => {
+//                    if (cache !== cacheName) {
+//                        console.log("Eliminando caché antigua:", cache);
+//                        return caches.delete(cache);
+//                    }
+//                })
+//            );
+//        })
+//    );
+//});
+//self.addEventListener("fetch", (event) => {
+//    event.respondWith(
+//        caches.match(event.request).then((cachedResponse) => {
+//            if (cachedResponse) {
+//                // Si el recurso está en la caché, devuélvelo
+//                return cachedResponse;
+//            }
 
-            // Si no está en la caché, intenta obtenerlo de la red
-            return fetch(event.request)
-                .then((networkResponse) => {
-                    // Si la respuesta de red es válida, cachearla para el futuro
-                    if (networkResponse && networkResponse.status === 200) {
-                        return caches.open(cacheName).then((cache) => {
-                            cache.put(event.request, networkResponse.clone());
-                            return networkResponse;
-                        });
-                    }
-                    return networkResponse; // Devuelve la respuesta de red
-                })
-                .catch(() => {
-                    // Manejo en caso de que no haya conexión y no esté en la caché
-                    if (event.request.destination === "image") {
-                        return caches.match("/images/icono/icono128.png"); // Imagen de reserva
-                    }
-                    return new Response("Recurso no disponible sin conexión.", {
-                        status: 503,
-                        statusText: "Servicio no disponible",
-                    });
-                });
-        })
-    );
-});
+//            // Si no está en la caché, intenta obtenerlo de la red
+//            return fetch(event.request)
+//                .then((networkResponse) => {
+//                    // Si la respuesta de red es válida, cachearla para el futuro
+//                    if (networkResponse && networkResponse.status === 200) {
+//                        return caches.open(cacheName).then((cache) => {
+//                            cache.put(event.request, networkResponse.clone());
+//                            return networkResponse;
+//                        });
+//                    }
+//                    return networkResponse; // Devuelve la respuesta de red
+//                })
+//                .catch(() => {
+//                    // Manejo en caso de que no haya conexión y no esté en la caché
+//                    if (event.request.destination === "image") {
+//                        return caches.match("/Images/Icono/Icono128.png"); // Imagen de reserva
+//                    }
+//                    return new Response("Recurso no disponible sin conexión.", {
+//                        status: 503,
+//                        statusText: "Servicio no disponible",
+//                    });
+//                });
+//        })
+//    );
+//});
 
 
 
